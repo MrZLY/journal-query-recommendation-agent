@@ -42,4 +42,43 @@ Develop reusable agent design paradigms to facilitate engineering-grade agent de
 **Key Tasks:**
 - Define and validate a reference architecture for “scientific research agents”  
   *(Perception → Planning → Execution → Feedback)*
-- Build exemplar agents for typical scientific scenarios:
+- Build exemplar agents for typical scientific scenarios:  
+  - Materials structure optimization  
+  - Molecular property prediction  
+  - Literature summarization + model recommendation  
+  - Experimental condition planning  
+- Provide agent development guides and tutorial notebooks
+- Support common agent frameworks: ADK / Camel / LangChain / Autogen
+
+---
+
+## Phase 3: Optimize Community Co-Creation Mechanisms (By 2025/7/30)
+
+**Goal:**  
+Evolve the project into a “Developer Community Hub for Agents” supporting collaboration, sharing, and feedback.
+
+**Key Tasks:**
+- Launch an “Agent Tool Contribution” mechanism via:
+  - Pull Requests (PRs)
+  - Online forms
+  - API registration
+- Establish a contribution rewards program:
+  - Recognition
+  - GitHub badges
+  - Community showcases
+- Build a community webpage:
+  - Co-creation leaderboard
+  - User feedback board
+  - Tool demonstration area
+- Organize themed events through DeepModeling:
+  - Agent Hackathons
+  - AI for Science Challenges
+
+---
+
+## Phase 4: Accelerate Closed-Loop Workflows and Real-World Scientific Task Integration (By 2025/12/31)
+
+**Goal:**  
+Enable scientific tasks to achieve an automated or collaborative closed-loop process “from objective to outcome” within the agent framework.
+Let me know if you'd like this adapted to another format (e.g., HTML, PDF, slides).
+
