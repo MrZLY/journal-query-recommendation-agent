@@ -35,7 +35,14 @@ BOHRIUM_EXECUTOR = {
         }
     }
 }
+<<<<<<< HEAD
+LOCAL_EXECUTOR = {
+    "type": "local"
+}
+BOHRIUM_STORAGE = {
+=======
 BOHRIUM_STORAGE  = {
+>>>>>>> main
     "type": "bohrium",
     "username": os.getenv("BOHRIUM_EMAIL"),
     "password": os.getenv("BOHRIUM_PASSWORD"),
@@ -56,9 +63,20 @@ class DPACalculatorAgent:
             connection_params=SseServerParams(
                 url=self.server_url,  
             ),
+<<<<<<< HEAD
+            storage=BOHRIUM_STORAGE,    
+        ).get_tools()
+        print(f"✅ MCP tools initialized successfully. {[t.name for t in mcp_tools]}")
+        for tool in mcp_tools:
+            if tool.name == "build_structure":
+                tool.executor = LOCAL_EXECUTOR
+            else:
+                tool.executor = BOHRIUM_EXECUTOR    
+=======
             executor=BOHRIUM_EXECUTOR,  
             storage=BOHRIUM_STORAGE,    
         ).get_tools()
+>>>>>>> main
         # Create the agent
         self.agent = LlmAgent(
             model=LiteLlm(model="azure/gpt-4o"),
@@ -67,7 +85,12 @@ class DPACalculatorAgent:
             instruction=(
                 "You are an expert in materials science and computational chemistry. "
                 "Help users perform Deep Potential calculations including structure optimization, molecular dynamics and property calculations. "
+<<<<<<< HEAD
+                "Use default parameters if the users do not mention, but let users confirm them before submission. "
+                "Always verify the input parameters to users and provide clear explanations of results."
+=======
                 "Always verify detinput parameters to users and provide clear explanations of results."
+>>>>>>> main
             ),
             tools=[*mcp_tools],
         )
@@ -116,9 +139,14 @@ class DPACalculatorAgent:
             }
         }
 
+<<<<<<< HEAD
+async def main():
+    agent = DPACalculatorAgent(server_url="http://kqti1328990.bohrium.tech:50001/sse")
+=======
 
 async def main():
     agent = DPACalculatorAgent(server_url="http://<remote-machine-url>:50001/sse")
+>>>>>>> main
     await agent.initialize()
     
     
