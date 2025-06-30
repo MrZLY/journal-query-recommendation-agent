@@ -10,7 +10,7 @@ from google.adk.agents import LlmAgent
 from google.adk.models.lite_llm import LiteLlm
 from google.adk.runners import Runner
 from google.adk.sessions import InMemorySessionService
-from google.adk.tools.mcp_tool.mcp_toolset import SseServerParams, MCPToolset
+from google.adk.tools.mcp_tool.mcp_session_manager import SseServerParams
 from google.genai import types
 
 load_dotenv()
