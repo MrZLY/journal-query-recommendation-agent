@@ -10,7 +10,7 @@ from google.adk.agents import LlmAgent
 from google.adk.models.lite_llm import LiteLlm
 from google.adk.runners import Runner
 from google.adk.sessions import InMemorySessionService
-from google.adk.tools.mcp_tool.mcp_toolset import SseServerParams, MCPToolset
+from google.adk.tools.mcp_tool.mcp_session_manager import SseServerParams
 from google.genai import types
 
 load_dotenv()
@@ -47,8 +47,7 @@ BOHRIUM_STORAGE = {
 }
 
 
-server_url = "http://kqti1328990.bohrium.tech:50001/sse"
-session_service = InMemorySessionService()
+server_url = "http://<remote-machine-url>:<port>/sse"
 
 # Initialize MCP tools and agent
 mcp_tools = CalculationMCPToolset(
