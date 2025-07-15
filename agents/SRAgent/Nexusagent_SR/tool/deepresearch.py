@@ -82,15 +82,15 @@ The user's topic is:
 async def deepresearch_agent(topic):
    # Configuration option 3: Use OpenAI o3 for both planning and writing (selected option)
    thread = {"configurable": {"thread_id": str(uuid.uuid4()),
-                              "search_api": os.getenv("SEARCH_API"),
+                              "search_api": os.getenv("SEARCH_API","gemini"),
                               "planner_provider": "openai",
-                              "planner_model": os.getenv("DEEPRESEARCH_MODEL"),
+                              "planner_model": os.getenv("DEEPRESEARCH_MODEL","o3-mini"),
                               "writer_provider": "openai",
-                              "writer_model": os.getenv("DEEPRESEARCH_MODEL"),
+                              "writer_model": os.getenv("DEEPRESEARCH_MODEL","o3-mini"),
                               "max_search_depth": 2,
                               "report_structure": REPORT_STRUCTURE,
-                              "base_url": os.getenv("DEEPRESEARCH_ENDPOINT"),
-                              "api_key": os.getenv("DEEPRESEARCH_GEMINI_API_KEY"),}
+                              "base_url": os.getenv("DEEPRESEARCH_ENDPOINT","https://api.deepresearch.ai/v1"),
+                              "api_key": os.getenv("DEEPRESEARCH_API_KEY","gemini-api-key"),}
    }
    topic = task.format(topic=topic)
    async for event in graph.astream({"topic": topic}, thread, stream_mode="updates"):

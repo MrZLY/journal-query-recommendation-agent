@@ -64,8 +64,8 @@ def _simplify_expr(expr, sig=3) -> str:
         expr_str = str(expr)
         
         # Fix common syntax issues first
-        # Remove extra closing parentheses that don't have matching opening ones
-        expr_str = re.sub(r'\)(?![^(]*\()', '', expr_str)
+        # Don't remove any parentheses - let sympy handle the expression as is
+        # expr_str = re.sub(r'\)(?![^(]*\()', '', expr_str)  # This was causing issues
         
         # Replace function calls with their equivalent forms
         expr_str = re.sub(r'square\(([^)]+)\)', r'(\1)**2', expr_str)

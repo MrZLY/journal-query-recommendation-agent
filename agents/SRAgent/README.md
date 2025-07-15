@@ -24,12 +24,12 @@ pip install -r requirements.txt
 ```
 
 2. **配置环境变量**
-在项目根目录创建 `.env` 文件：
+在项目Nexusagent_SR内创建 `.env` 文件：
 ```bash
 # 模型配置
 DEEPRESEARCH_MODEL=
 DEEPRESEARCH_ENDPOINT=
-DEEPRESEARCH_GEMINI_API_KEY=
+DEEPRESEARCH_API_KEY=
 TAVILY_API_KEY=
 SEARCH_TOOL=tavily
 
