@@ -85,13 +85,8 @@ sr_iteration_agent = SequentialAgent(
 
 
 
-rootagent = LlmAgent(
+rootagent = SequentialAgent(
     name="NexusAgent",
-    description="I coordinate greetings and tasks.Execute the symbolic regression workflow: research -> SR iteration",
-    instruction="I coordinate greetings and tasks.Execute the symbolic regression workflow: research -> SR iteration",
-    model=LiteLlm(model=model),
-    sub_agents=[
-        research_agent,
-        sr_iteration_agent,
-    ],
+    description="Execute the symbolic regression workflow: research -> SR iteration",
+    sub_agents=[research_agent,sr_iteration_agent],
 )
