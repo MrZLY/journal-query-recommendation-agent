@@ -20,17 +20,6 @@ npm install
 npm run dev
 ```
 
-前端将在 http://localhost:3000 启动
-
-### 后端启动
-
-```bash
-cd nexus-ui-backend
-pip install -r requirements.txt
-python server.py
-```
-
-后端 API 将在 http://localhost:8000 启动
 
 ## 技术栈
 
@@ -60,9 +49,6 @@ nexus-ui/
 ├── public/             # 静态资源
 └── ...
 
-nexus-ui-backend/
-├── server.py           # FastAPI 服务器
-└── requirements.txt    # Python 依赖
 ```
 
 ## 主要页面
@@ -99,27 +85,3 @@ colors: {
   // ...
 }
 ```
-
-## 部署
-
-### 生产构建
-
-```bash
-# 前端
-cd nexus-ui
-npm run build
-
-# 后端
-cd nexus-ui-backend
-uvicorn server:app --host 0.0.0.0 --port 8000 --workers 4
-```
-
-### Docker 部署
-
-```dockerfile
-# 即将支持
-```
-
-## 许可证
-
-MIT License
