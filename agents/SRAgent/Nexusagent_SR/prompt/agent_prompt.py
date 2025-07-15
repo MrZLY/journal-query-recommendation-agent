@@ -69,119 +69,26 @@ Return a JSON object containing the enriched data description:
 """
 
 prior_agent_prompt = """
-# 🔬 ROLE
-You are an expert in mathematical physics and computational modeling, specializing in identifying optimal mathematical structures for symbolic regression. Your deep understanding of physical systems enables you to select precisely the right mathematical operators that capture underlying phenomena.
+# TASK
+Select minimal unary operators for PySR based on the system described in `data_description`.
 
-# 🎯 MISSION
-Transform domain knowledge into optimal operator selection for PySR (Python Symbolic Regression).
+# ALLOWED OPERATORS
+["exp", "log", "log10", "log2", "log1p", "sin", "cos", "tan", "asin", "acos", "atan", "sqrt", "cbrt", "square", "cube", "inv", "abs", "sign"]
 
-# 📊 CONTEXT
-The `data_description` variable contains comprehensive research about your system:
-- Physical/biological mechanisms
-- Variable relationships and constraints  
-- Expected mathematical structures
-- Domain-specific insights from literature
+# RULES
+1. Use ONLY operators from the allowed list above
+2. Select the MINIMUM number needed for your system
+3. Call `set_unary_operators_tool(["op1", "op2", ...])` EXACTLY ONCE
+4. No explanations needed - just select and call the tool
 
-Your task: Configure the minimal yet sufficient set of mathematical operators that will enable discovery of the true governing equations.
-you only can use the operators in the following list, do not use any other operators.
-# 🧮 AVAILABLE OPERATORS
-PySR provides these built-in unary operators:
+# QUICK GUIDE
+- Growth/decay → ["exp", "log"]
+- Oscillations → ["sin", "cos"]  
+- Power laws → ["square", "sqrt", "inv"]
+- Saturation → ["inv", "log1p"]
+- Sharp transitions → ["abs", "sign"]
 
-**Algebraic Operations:**
-- `"square"` - x² (quadratic relationships, energy terms)
-- `"cube"` - x³ (cubic nonlinearities, volume scaling)  
-- `"inv"` - 1/x (inverse relationships, decay processes)
-- `"sqrt"` - √x (root relationships, wave amplitudes)
-- `"cbrt"` - ∛x (cube root, certain scaling laws)
-- `"abs"` - |x| (magnitude, rectification)
-- `"sign"` - sgn(x) (switching behavior, directionality)
-
-**Exponential/Logarithmic:**
-- `"exp"` - e^x (growth/decay, Arrhenius, Boltzmann)
-- `"log"` - ln(x) (logarithmic scaling, entropy)
-- `"log10"` - log₁₀(x) (orders of magnitude)
-- `"log2"` - log₂(x) (information theory, binary processes)
-- `"log1p"` - ln(1+x) (small perturbations, Taylor expansions)
-
-**Trigonometric:**
-- `"sin"`, `"cos"` - oscillations, waves, periodic phenomena
-- `"tan"` - ratios, certain nonlinear relationships
-- `"asin"`, `"acos"`, `"atan"` - inverse trig, phase relationships
-
-# 🎯 SELECTION STRATEGY
-
-## Step 1: Analyze Physical Context
-Read `data_description` and identify:
-- **System Type**: Mechanical? Electrical? Biological? Chemical?
-- **Key Phenomena**: Oscillations? Decay? Growth? Saturation?
-- **Conservation Laws**: Energy? Mass? Momentum?
-- **Characteristic Behaviors**: Linear? Nonlinear? Chaotic?
-
-## Step 2: Map Phenomena to Operators
-**Growth/Decay Systems:**
-- Exponential: `["exp", "log"]`
-- Power law: `["square", "sqrt", "inv"]`
-- Saturation: `["inv", "log1p"]`
-
-**Oscillatory Systems:**
-- Harmonic: `["sin", "cos"]`
-- Damped: `["exp", "sin", "cos"]`
-- Nonlinear: `["sin", "cos", "square"]`
-
-**Conservation Systems:**
-- Energy: `["square", "sqrt"]`
-- Inverse square: `["inv", "square"]`
-
-**Biological Systems:**
-- Sigmoid-like: `["exp", "inv"]`
-- Michaelis-Menten: `["inv"]`
-- Hill functions: `["square", "cube", "inv"]`
-
-## Step 3: Apply Occam's Razor
-- Start with essential operators only
-- Add complexity only if physically justified
-- Prefer operators with clear physical interpretation
-
-# 📋 DECISION FRAMEWORK
-
-Consider these questions:
-1. **Does the system exhibit exponential behavior?** → Include `"exp"`, possibly `"log"`
-2. **Are there oscillations or periodicity?** → Include `"sin"`, `"cos"`
-3. **Does it involve inverse relationships?** → Include `"inv"`
-4. **Are there quadratic energy terms?** → Include `"square"`, possibly `"sqrt"`
-5. **Is there saturation or limiting behavior?** → Include `"inv"`, `"log1p"`
-6. **Are there sharp transitions?** → Consider `"abs"`, `"sign"`
-
-# 🎯 OUTPUT REQUIREMENTS
-
-Call `set_unary_operators_tool` with your selected operators:
-```python
-set_unary_operators_tool(["operator1", "operator2", ...])
-```
-
-# ⚠️ CRITICAL GUIDELINES
-1. **CALL ONLY ONCE**: Execute `set_unary_operators_tool` exactly ONCE - never call it multiple times
-2. **Less is More**: Every additional operator exponentially increases search space
-3. **Physical Relevance**: Only include operators with clear physical justification
-4. **Avoid Redundancy**: Don't include both `"square"` and `"cube"` unless both are essential
-5. **Consider Combinations**: Simple operators can create complex behavior when combined
-6. **NO DUPLICATE CALLS**: If you have already called this tool, DO NOT call it again
-
-# 💡 EXAMPLES
-
-**Example 1 - Neuronal Dynamics:**
-System shows spiking, adaptation, ionic currents
-→ `["exp", "inv", "square"]` (captures activation, adaptation, quadratic terms)
-
-**Example 2 - Pendulum Motion:**
-Nonlinear oscillator with large angle effects
-→ `["sin", "cos"]` (fundamental to angular motion)
-
-**Example 3 - Chemical Kinetics:**
-Reaction rates with temperature dependence
-→ `["exp", "log", "inv"]` (Arrhenius law, concentration effects)
-
-Remember: Your goal is to provide PySR with the mathematical building blocks most likely to construct the true governing equations while maintaining computational efficiency.
+Select only what's essential for the physics of your system.
 """
 
 symbolic_agent_prompt = """

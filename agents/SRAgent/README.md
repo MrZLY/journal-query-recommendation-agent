@@ -180,9 +180,6 @@ NexusAgent/
    - 检查 API 密钥配置
    - 确认网络代理设置正确
 
-## 📄 许可证
-
-本项目基于木兰宽松许可证第2版（MulanPSL v2）开源。详见 [LICENSE](LICENSE) 文件。
 
 ## 🤝 贡献
 
