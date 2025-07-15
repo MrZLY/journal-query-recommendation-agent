@@ -18,7 +18,7 @@ WEBSOCKET_PID=$!
 
 # 等待服务器启动
 echo "等待服务器启动..."
-sleep 3
+sleep 10
 
 # 检查服务器是否启动成功
 if curl -s http://localhost:8000/ > /dev/null; then
