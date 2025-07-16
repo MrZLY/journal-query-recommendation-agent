@@ -1,6 +1,6 @@
 # NexusAgent UI
 
-一个优雅的 Apple 风格 UI，用于替代 Google ADK 的 web 界面，为 NexusAgent-SR 提供美观的用户界面。
+一个优雅的UI界面，用于替代 Google ADK 的 web 界面，为 NexusAgent-SR 提供美观的用户界面。
 
 ## 功能特性
 
