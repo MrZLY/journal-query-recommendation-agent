@@ -16,19 +16,6 @@ echo "启动 NexusAgent WebSocket 服务器..."
 python nexus-websocket-server.py > websocket.log 2>&1 &
 WEBSOCKET_PID=$!
 
-# 等待服务器启动（最多 60 秒）
-echo "等待服务器启动..."
-MAX_WAIT=60
-for i in $(seq 1 $MAX_WAIT); do
-    if curl -s http://localhost:8000/ > /dev/null; then
-        echo "✅ WebSocket 服务器已启动 (PID: $WEBSOCKET_PID)"
-        break
-    fi
-    sleep 1
-done
-
-
-
 # 启动前端
 echo "启动前端..."
 cd nexus-ui
@@ -44,9 +31,8 @@ echo ""
 echo "日志文件："
 echo "- 服务器日志: websocket.log"
 echo "- 前端日志: frontend.log"
-echo ""
 echo "使用方法："
-echo "1. 在浏览器中打开 http://localhost:5173"
+echo "在浏览器中打开 http://localhost:5173"
 echo ""
 echo "按 Ctrl+C 停止所有服务"
 echo ""
