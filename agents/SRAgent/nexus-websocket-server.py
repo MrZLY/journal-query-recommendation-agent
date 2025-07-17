@@ -9,7 +9,7 @@ import asyncio
 import json
 import logging
 from pathlib import Path
-from typing import Optional, Set, Dict, List
+from typing import Optional, Dict, List
 from datetime import datetime
 from dataclasses import dataclass, field, asdict
 import uuid
@@ -80,40 +80,48 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-class SessionManager:
-    def __init__(self):
-        self.active_connections: Set[WebSocket] = set()
+class ConnectionContext:
+    """每个WebSocket连接的独立上下文"""
+    def __init__(self, websocket: WebSocket):
+        self.websocket = websocket
         self.sessions: Dict[str, Session] = {}
         self.runners: Dict[str, Runner] = {}
         self.session_services: Dict[str, InMemorySessionService] = {}
+        self.current_session_id: Optional[str] = None
+        self.shell_state: Dict[str, any] = {
+            "cwd": os.getcwd(),
+            "env": os.environ.copy()
+        }
+        # 为每个连接生成唯一的user_id
+        self.user_id = f"user_{uuid.uuid4().hex[:8]}"
+
+class SessionManager:
+    def __init__(self):
+        self.active_connections: Dict[WebSocket, ConnectionContext] = {}
         # Use configuration values
         self.app_name = agent_config.config.get("agent", {}).get("name", "NexusAgent")
-        self.user_id = "user_001"
-        self.current_session_id: Optional[str] = None
-        # 为每个WebSocket连接维护独立的shell状态
-        self.shell_sessions: Dict[WebSocket, Dict[str, any]] = {}
         
-    async def create_session(self) -> Session:
+    async def create_session(self, context: ConnectionContext) -> Session:
         """创建新会话"""
         session_id = str(uuid.uuid4())
         session = Session(id=session_id)
         
-        # 先将会话添加到列表，让前端立即看到
-        self.sessions[session_id] = session
-        logger.info(f"创建新会话: {session_id}")
+        # 先将会话添加到连接的会话列表
+        context.sessions[session_id] = session
+        logger.info(f"为用户 {context.user_id} 创建新会话: {session_id}")
         
         # 异步创建 session service 和 runner，避免阻塞
-        asyncio.create_task(self._init_session_runner(session_id))
+        asyncio.create_task(self._init_session_runner(context, session_id))
         
         return session
     
-    async def _init_session_runner(self, session_id: str):
+    async def _init_session_runner(self, context: ConnectionContext, session_id: str):
         """异步初始化会话的runner"""
         try:
             session_service = InMemorySessionService()
             await session_service.create_session(
                 app_name=self.app_name,
-                user_id=self.user_id,
+                user_id=context.user_id,
                 session_id=session_id
             )
             
@@ -123,73 +131,78 @@ class SessionManager:
                 app_name=self.app_name
             )
             
-            self.session_services[session_id] = session_service
-            self.runners[session_id] = runner
+            context.session_services[session_id] = session_service
+            context.runners[session_id] = runner
             
             logger.info(f"Runner 初始化完成: {session_id}")
             
         except Exception as e:
             logger.error(f"初始化Runner失败: {e}")
             # 清理失败的会话
-            if session_id in self.sessions:
-                del self.sessions[session_id]
-            if session_id in self.session_services:
-                del self.session_services[session_id]
-            if session_id in self.runners:
-                del self.runners[session_id]
+            if session_id in context.sessions:
+                del context.sessions[session_id]
+            if session_id in context.session_services:
+                del context.session_services[session_id]
+            if session_id in context.runners:
+                del context.runners[session_id]
     
-    def get_session(self, session_id: str) -> Optional[Session]:
+    def get_session(self, context: ConnectionContext, session_id: str) -> Optional[Session]:
         """获取会话"""
-        return self.sessions.get(session_id)
+        return context.sessions.get(session_id)
     
-    def get_all_sessions(self) -> List[Session]:
-        """获取所有会话列表"""
-        return list(self.sessions.values())
+    def get_all_sessions(self, context: ConnectionContext) -> List[Session]:
+        """获取连接的所有会话列表"""
+        return list(context.sessions.values())
     
-    def delete_session(self, session_id: str) -> bool:
+    def delete_session(self, context: ConnectionContext, session_id: str) -> bool:
         """删除会话"""
-        if session_id in self.sessions:
-            del self.sessions[session_id]
-            if session_id in self.runners:
-                del self.runners[session_id]
-            if session_id in self.session_services:
-                del self.session_services[session_id]
-            logger.info(f"删除会话: {session_id}")
+        if session_id in context.sessions:
+            del context.sessions[session_id]
+            if session_id in context.runners:
+                del context.runners[session_id]
+            if session_id in context.session_services:
+                del context.session_services[session_id]
+            logger.info(f"用户 {context.user_id} 删除会话: {session_id}")
             return True
         return False
     
-    async def switch_session(self, session_id: str) -> bool:
+    async def switch_session(self, context: ConnectionContext, session_id: str) -> bool:
         """切换当前会话"""
-        if session_id in self.sessions:
-            self.current_session_id = session_id
-            logger.info(f"切换到会话: {session_id}")
+        if session_id in context.sessions:
+            context.current_session_id = session_id
+            logger.info(f"用户 {context.user_id} 切换到会话: {session_id}")
             return True
         return False
     
     async def connect_client(self, websocket: WebSocket):
         """连接新客户端"""
         await websocket.accept()
-        self.active_connections.add(websocket)
         
-        # 如果没有会话，创建一个默认会话
-        if not self.sessions:
-            session = await self.create_session()
-            self.current_session_id = session.id
+        # 为新连接创建独立的上下文
+        context = ConnectionContext(websocket)
+        self.active_connections[websocket] = context
+        
+        logger.info(f"新用户连接: {context.user_id}")
+        
+        # 创建默认会话
+        session = await self.create_session(context)
+        context.current_session_id = session.id
             
         # 发送初始会话信息
-        await self.send_sessions_list(websocket)
+        await self.send_sessions_list(context)
         
     def disconnect_client(self, websocket: WebSocket):
         """断开客户端连接"""
-        self.active_connections.discard(websocket)
-        # 清理shell会话
-        if websocket in self.shell_sessions:
-            del self.shell_sessions[websocket]
+        if websocket in self.active_connections:
+            context = self.active_connections[websocket]
+            logger.info(f"用户断开连接: {context.user_id}")
+            # 清理该连接的所有资源
+            del self.active_connections[websocket]
     
-    async def send_sessions_list(self, websocket: Optional[WebSocket] = None):
+    async def send_sessions_list(self, context: ConnectionContext):
         """发送会话列表到客户端"""
         sessions_data = []
-        for session in self.sessions.values():
+        for session in context.sessions.values():
             sessions_data.append({
                 "id": session.id,
                 "title": session.title,
@@ -201,17 +214,14 @@ class SessionManager:
         message = {
             "type": "sessions_list",
             "sessions": sessions_data,
-            "current_session_id": self.current_session_id
+            "current_session_id": context.current_session_id
         }
         
-        if websocket:
-            await websocket.send_json(message)
-        else:
-            await self.broadcast(message)
+        await context.websocket.send_json(message)
     
-    async def send_session_messages(self, session_id: str, websocket: Optional[WebSocket] = None):
+    async def send_session_messages(self, context: ConnectionContext, session_id: str):
         """发送会话的历史消息"""
-        session = self.get_session(session_id)
+        session = self.get_session(context, session_id)
         if not session:
             return
             
@@ -232,32 +242,24 @@ class SessionManager:
             "messages": messages_data
         }
         
-        if websocket:
-            await websocket.send_json(message)
-        else:
-            await self.broadcast(message)
+        await context.websocket.send_json(message)
     
-    async def broadcast(self, message: dict):
-        """广播消息到所有客户端"""
+    async def send_to_connection(self, context: ConnectionContext, message: dict):
+        """发送消息到特定连接"""
         # 为消息添加唯一标识符
         if 'id' not in message:
             message['id'] = f"{message.get('type', 'unknown')}_{datetime.now().timestamp()}"
         
-        disconnected = set()
-        for connection in self.active_connections:
-            try:
-                await connection.send_json(message)
-            except Exception as e:
-                logger.error(f"发送消息失败: {e}")
-                disconnected.add(connection)
-        
-        # 移除断开的连接
-        self.active_connections -= disconnected
+        try:
+            await context.websocket.send_json(message)
+        except Exception as e:
+            logger.error(f"发送消息失败: {e}")
+            self.disconnect_client(context.websocket)
     
-    async def process_message(self, message: str, websocket: WebSocket):
+    async def process_message(self, context: ConnectionContext, message: str):
         """处理用户消息"""
-        if not self.current_session_id:
-            await websocket.send_json({
+        if not context.current_session_id:
+            await context.websocket.send_json({
                 "type": "error", 
                 "content": "没有活动的会话"
             })
@@ -265,19 +267,19 @@ class SessionManager:
             
         # 等待runner初始化完成
         retry_count = 0
-        while self.current_session_id not in self.runners and retry_count < 50:  # 最多等待5秒
+        while context.current_session_id not in context.runners and retry_count < 50:  # 最多等待5秒
             await asyncio.sleep(0.1)
             retry_count += 1
             
-        if self.current_session_id not in self.runners:
-            await websocket.send_json({
+        if context.current_session_id not in context.runners:
+            await context.websocket.send_json({
                 "type": "error", 
                 "content": "会话初始化失败，请重试"
             })
             return
             
-        session = self.sessions[self.current_session_id]
-        runner = self.runners[self.current_session_id]
+        session = context.sessions[context.current_session_id]
+        runner = context.runners[context.current_session_id]
         
         # 保存用户消息到会话历史
         session.add_message("user", message)
@@ -296,8 +298,8 @@ class SessionManager:
             
             async for event in runner.run_async(
                 new_message=content,
-                user_id=self.user_id,
-                session_id=self.current_session_id
+                user_id=context.user_id,
+                session_id=context.current_session_id
             ):
                 all_events.append(event)
                 logger.info(f"Received event: {type(event).__name__}")
@@ -323,7 +325,7 @@ class SessionManager:
                                 hasattr(function_call, 'id')):
                                 is_long_running = function_call.id in event.long_running_tool_ids
                             
-                            await self.broadcast({
+                            await self.send_to_connection(context, {
                                 "type": "tool",
                                 "tool_name": tool_name,
                                 "status": "executing",
@@ -375,7 +377,7 @@ class SessionManager:
                                     # 其他类型转换为字符串
                                     result_str = str(response_data)
                                 
-                                await self.broadcast({
+                                await self.send_to_connection(context, {
                                     "type": "tool",
                                     "tool_name": tool_name,
                                     "status": "completed",
@@ -384,7 +386,7 @@ class SessionManager:
                                 })
                             else:
                                 # 没有结果的情况
-                                await self.broadcast({
+                                await self.send_to_connection(context, {
                                     "type": "tool",
                                     "tool_name": tool_name,
                                     "status": "completed",
@@ -430,23 +432,23 @@ class SessionManager:
                 # 保存助手回复到会话历史
                 session.add_message("assistant", final_response)
                 
-                await self.broadcast({
+                await self.send_to_connection(context, {
                     "type": "assistant",
                     "content": final_response,
-                    "session_id": self.current_session_id
+                    "session_id": context.current_session_id
                 })
             else:
                 logger.warning("No response content found in events")
             
             # 发送一个空的完成标记，前端会识别这个来停止loading
-            await self.broadcast({
+            await self.send_to_connection(context, {
                 "type": "complete",
                 "content": ""
             })
                     
         except Exception as e:
             logger.error(f"处理消息时出错: {e}")
-            await websocket.send_json({
+            await context.websocket.send_json({
                 "type": "error",
                 "content": f"处理消息失败: {str(e)}"
             })
@@ -458,6 +460,14 @@ manager = SessionManager()
 async def websocket_endpoint(websocket: WebSocket):
     """WebSocket 端点"""
     await manager.connect_client(websocket)
+    
+    # 获取该连接的上下文
+    context = manager.active_connections.get(websocket)
+    if not context:
+        logger.error("无法获取连接上下文")
+        await websocket.close()
+        return
+        
     try:
         while True:
             data = await websocket.receive_json()
@@ -466,20 +476,20 @@ async def websocket_endpoint(websocket: WebSocket):
             if message_type == "message":
                 content = data.get("content", "").strip()
                 if content:
-                    await manager.process_message(content, websocket)
+                    await manager.process_message(context, content)
                     
             elif message_type == "create_session":
                 # 创建新会话
-                session = await manager.create_session()
-                await manager.switch_session(session.id)
-                await manager.send_sessions_list(websocket)
-                await manager.send_session_messages(session.id, websocket)
+                session = await manager.create_session(context)
+                await manager.switch_session(context, session.id)
+                await manager.send_sessions_list(context)
+                await manager.send_session_messages(context, session.id)
                 
             elif message_type == "switch_session":
                 # 切换会话
                 session_id = data.get("session_id")
-                if session_id and await manager.switch_session(session_id):
-                    await manager.send_session_messages(session_id, websocket)
+                if session_id and await manager.switch_session(context, session_id):
+                    await manager.send_session_messages(context, session_id)
                 else:
                     await websocket.send_json({
                         "type": "error",
@@ -488,23 +498,23 @@ async def websocket_endpoint(websocket: WebSocket):
                     
             elif message_type == "get_sessions":
                 # 获取会话列表
-                await manager.send_sessions_list(websocket)
+                await manager.send_sessions_list(context)
                 
             elif message_type == "delete_session":
                 # 删除会话
                 session_id = data.get("session_id")
-                if session_id and manager.delete_session(session_id):
+                if session_id and manager.delete_session(context, session_id):
                     # 如果删除的是当前会话，切换到其他会话或创建新会话
-                    if session_id == manager.current_session_id:
-                        if manager.sessions:
+                    if session_id == context.current_session_id:
+                        if context.sessions:
                             # 切换到第一个可用会话
-                            first_session_id = list(manager.sessions.keys())[0]
-                            await manager.switch_session(first_session_id)
+                            first_session_id = list(context.sessions.keys())[0]
+                            await manager.switch_session(context, first_session_id)
                         else:
                             # 创建新会话
-                            session = await manager.create_session()
-                            await manager.switch_session(session.id)
-                    await manager.send_sessions_list(websocket)
+                            session = await manager.create_session(context)
+                            await manager.switch_session(context, session.id)
+                    await manager.send_sessions_list(context)
                 else:
                     await websocket.send_json({
                         "type": "error",
@@ -514,7 +524,7 @@ async def websocket_endpoint(websocket: WebSocket):
             elif message_type == "shell_command":
                 command = data.get("command", "").strip()
                 if command:
-                    await execute_shell_command(command, websocket, manager)
+                    await execute_shell_command(command, context)
                 
     except WebSocketDisconnect:
         manager.disconnect_client(websocket)
@@ -638,17 +648,12 @@ DANGEROUS_COMMANDS = {
     'yum', 'brew', 'systemctl', 'service', 'docker', 'kubectl'
 }
 
-async def execute_shell_command(command: str, websocket: WebSocket, manager: SessionManager):
+async def execute_shell_command(command: str, context: ConnectionContext):
     """安全地执行 shell 命令（保持状态）"""
     try:
-        # 获取或创建该连接的shell会话
-        if websocket not in manager.shell_sessions:
-            manager.shell_sessions[websocket] = {
-                "cwd": os.getcwd(),
-                "env": os.environ.copy()
-            }
-        
-        shell_state = manager.shell_sessions[websocket]
+        # 使用连接上下文中的shell状态
+        shell_state = context.shell_state
+        websocket = context.websocket
         
         # 解析命令
         try:

@@ -7,7 +7,7 @@
     "rootAgent": "rootagent"
   },
   "ui": {
-    "title": "NexusAgent SR",
+    "title": "My Agent",
     "theme": {
       "primaryColor": "blue",
       "secondaryColor": "purple"
