@@ -1,0 +1,13 @@
+{
+  "unary_operators": [
+    "exp",
+    "square",
+    "tanh"
+  ],
+  "binary_operators": [
+    "+",
+    "-",
+    "*",
+    "/"
+  ]
+}

@@ -57,6 +57,9 @@ output/
 !output/.gitkeep
 *.tmp
 
+# Session persistence
+nexus_sessions/
+
 # Test coverage
 htmlcov/
 .tox/
