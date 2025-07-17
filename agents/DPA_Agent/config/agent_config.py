@@ -31,7 +31,7 @@ class AgentConfig:
                 "name": "DPA Calculators",
                 "description": "",
                 "welcomeMessage": "Start your simulation by starting a conversation.",
-                "module": "Nexusagent_SR.subagent",
+                "module": "DPA_subagent.subagent",
                 "rootAgent": "rootagent"
             },
             "ui": {
@@ -54,7 +54,7 @@ class AgentConfig:
     def get_agent(self):
         """Dynamically import and return the configured agent"""
         agent_config = self.config.get("agent", {})
-        module_name = agent_config.get("module", "Nexusagent_SR.subagent")
+        module_name = agent_config.get("module", "DPA_subagent.subagent")
         agent_name = agent_config.get("rootAgent", "rootagent")
         
         try:

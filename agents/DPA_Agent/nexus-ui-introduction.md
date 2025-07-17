@@ -30,7 +30,7 @@ NexusAgent (根协调器) - 在 subagent.py 中定义
 {
   "agent": {
     "name": "NexusAgent SR",
-    "module": "Nexusagent_SR.subagent",
+    "module": "DPA_subagent.subagent",
     "rootAgent": "rootagent"
   }
 }

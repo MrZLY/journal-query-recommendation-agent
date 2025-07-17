@@ -37,7 +37,7 @@ Edit `config/agent-config.json`:
     "name": "NexusAgent SR",
     "description": "智能符号回归分析系统",
     "welcomeMessage": "输入您的数据文件路径，开始符号回归分析",
-    "module": "Nexusagent_SR.subagent",
+    "module": "DPA_subagent.subagent",
     "rootAgent": "rootagent"
   }
 }

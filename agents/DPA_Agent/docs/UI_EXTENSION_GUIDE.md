@@ -241,7 +241,7 @@ async def process_message(self, message: str, websocket: WebSocket):
 扩展 Agent 调用：
 
 ```python
-from Nexusagent_SR.custom_agent import CustomAnalysisAgent
+from DPA_subagent.custom_agent import CustomAnalysisAgent
 
 class ExtendedAgentManager(AgentManager):
     def __init__(self):

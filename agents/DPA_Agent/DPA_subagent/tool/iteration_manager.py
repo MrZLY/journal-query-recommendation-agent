@@ -8,8 +8,8 @@ import os
 from pathlib import Path
 from typing import Dict, List, Optional, Union
 from datetime import datetime
-from Nexusagent_SR.tool.pysr_config import load_pysr_config
-from Nexusagent_SR.tool.utils import get_best_expression, get_all_expressions, get_expression_summary
+from DPA_subagent.tool.pysr_config import load_pysr_config
+from DPA_subagent.tool.utils import get_best_expression, get_all_expressions, get_expression_summary
 
 class IterationHistory:
     """Single iteration history record"""

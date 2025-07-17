@@ -10,7 +10,7 @@ NexusAgent-SR is an intelligent agent system for Symbolic Regression built on Go
 ### Setup and Installation
 ```bash
 # Backend setup
-cd Nexusagent_SR
+cd DPA_subagent
 pip install -r requirements.txt
 
 # Frontend setup
@@ -85,20 +85,20 @@ The system now includes a modern web UI in addition to the agent framework:
      - Manages session state and message routing
 
 2. **Agent Layer**:
-   - **Nexusagent_SR/subagent.py**: New agent implementation using Google ADK
+   - **DPA_subagent/subagent.py**: New agent implementation using Google ADK
      - Defines agent hierarchy and communication
      - Manages asynchronous task execution
      - Coordinates multi-round iterations
-   - **Nexusagent_SR/agent.py**: (Deprecated) Original agent orchestration
+   - **DPA_subagent/agent.py**: (Deprecated) Original agent orchestration
 
-2. **Nexusagent_SR/tool/**: Tool implementations
+2. **DPA_subagent/tool/**: Tool implementations
    - `pysr.py`: Standard symbolic regression using PySR library
    - `deepresearch.py`: AI-powered literature research and knowledge extraction
    - `summarize_report.py`: Automatic scientific report generation
    - `iteration_manager.py`: Manages iteration history for multi-round experiments
    - `task_manager.py`: Async task tracking and status management
 
-3. **Nexusagent_SR/prompt/**: Agent prompts and templates
+3. **DPA_subagent/prompt/**: Agent prompts and templates
    - Contains structured prompts for each agent role
    - Defines output formats and research guidelines
 

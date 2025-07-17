@@ -13,13 +13,13 @@ from pathlib import Path
 from typing import List, Optional, Union
 
 # Ensure loading .env file
-import Nexusagent_SR  # noqa: F401
+import DPA_subagent  # noqa: F401
 from litellm import completion
 
 from openai import AzureOpenAI
-from Nexusagent_SR.prompt.agent_prompt import build_SUMMARIZE_PROMPT
-from Nexusagent_SR.tool.iteration_manager import register_summary_report_tool
-from Nexusagent_SR.tool.utils import get_best_expression
+from DPA_subagent.prompt.agent_prompt import build_SUMMARIZE_PROMPT
+from DPA_subagent.tool.iteration_manager import register_summary_report_tool
+from DPA_subagent.tool.utils import get_best_expression
 
 
 

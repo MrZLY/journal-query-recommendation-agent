@@ -17,7 +17,7 @@ __author__ = "NexusAgent Team"
 __license__ = "MIT"
 
 # 从 subagent 导入 rootagent
-from Nexusagent_SR.subagent import rootagent
+from DPA_subagent.subagent import rootagent
 
 __all__ = [
     "rootagent",

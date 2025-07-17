@@ -1,9 +1,9 @@
-from Nexusagent_SR.tool.task_manager import get_task_status, get_task_result
-from Nexusagent_SR.tool.pysr import run_symbolic_pysr
-from Nexusagent_SR.tool.pysr_config import set_unary_operators,set_binary_operators
-from Nexusagent_SR.tool.summarize_report import summarize_report
-from Nexusagent_SR.tool.iteration_manager import iteration_manager
-from Nexusagent_SR.tool.deepresearch import deepresearch_agent
+from DPA_subagent.tool.task_manager import get_task_status, get_task_result
+from DPA_subagent.tool.pysr import run_symbolic_pysr
+from DPA_subagent.tool.pysr_config import set_unary_operators,set_binary_operators
+from DPA_subagent.tool.summarize_report import summarize_report
+from DPA_subagent.tool.iteration_manager import iteration_manager
+from DPA_subagent.tool.deepresearch import deepresearch_agent
 from pathlib import Path
 
 async def run_symbolic_tool_pysr(csv_path: str):

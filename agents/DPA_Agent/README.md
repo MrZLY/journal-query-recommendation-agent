@@ -28,7 +28,7 @@ npm install >/dev/null 2>&1
 ```
 
 2. **配置环境变量**
-在项目Nexusagent_SR内创建 `.env` 文件：
+在项目DPA_subagent内创建 `.env` 文件：
 ```bash
 # 模型配置
 DEEPRESEARCH_MODEL=
@@ -140,7 +140,7 @@ I am working on a standard symbolic regression task. The dataset describes a bio
 ### 目录结构
 ```
 NexusAgent/
-├── Nexusagent_SR/           # 核心代理模块
+├── DPA_subagent/           # 核心代理模块
 │   ├── agent.py            # 主代理编排（已弃用）
 │   ├── subagent.py         # 新的代理实现
 │   ├── prompt/             # 提示词模板

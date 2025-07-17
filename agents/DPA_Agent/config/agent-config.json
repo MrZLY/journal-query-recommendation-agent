@@ -3,7 +3,7 @@
     "name": "DPA Calculators",
     "description": "",
     "welcomeMessage": "Start your simulation by starting a conversation.",
-    "module": "Nexusagent_SR.subagent",
+    "module": "DPA_subagent.subagent",
     "rootAgent": "rootagent"
   },
   "ui": {

@@ -2,7 +2,7 @@
 import uuid  
 from langgraph.checkpoint.memory import MemorySaver
 from open_deep_research.graph import builder
-import Nexusagent_SR
+import DPA_subagent
 import os
 
 memory = MemorySaver()
