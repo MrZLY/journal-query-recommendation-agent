@@ -45,5 +45,5 @@ root_agent = Agent(
     name="mcp_sse_agent",
     model=model,
     instruction="You are an intelligent assistant capable of using external tools via MCP.",
-    tools=[]
+    tools=[toolset]
 )
