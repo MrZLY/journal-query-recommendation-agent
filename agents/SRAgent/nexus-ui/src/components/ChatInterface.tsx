@@ -53,7 +53,6 @@ const ChatInterface: React.FC = () => {
   const [showFileExplorer, setShowFileExplorer] = useState(false)
   const [showShellTerminal, setShowShellTerminal] = useState(false)
   const [shellOutput, setShellOutput] = useState<Array<{ type: 'command' | 'output' | 'error'; content: string; timestamp: Date }>>([]) 
-  const [userId, setUserId] = useState<string | null>(null)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLTextAreaElement>(null)
   const messageIdsRef = useRef<Set<string>>(new Set())
@@ -67,23 +66,8 @@ const ChatInterface: React.FC = () => {
 
   const [ws, setWs] = useState<WebSocket | null>(null)
   const [connectionStatus, setConnectionStatus] = useState<'disconnected' | 'connecting' | 'connected'>('disconnected')
-  
-  // Initialize or retrieve user ID
-  useEffect(() => {
-    const storedUserId = localStorage.getItem('nexus_user_id')
-    if (storedUserId) {
-      setUserId(storedUserId)
-    } else {
-      const newUserId = `user_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
-      localStorage.setItem('nexus_user_id', newUserId)
-      setUserId(newUserId)
-    }
-  }, [])
 
   useEffect(() => {
-    // Only connect when we have a user ID
-    if (!userId) return
-    
     // Load initial file tree
     loadFileTree()
     
@@ -99,19 +83,13 @@ const ChatInterface: React.FC = () => {
       }
       
       setConnectionStatus('connecting')
-      const websocket = new WebSocket(`ws://localhost:8000/ws?user_id=${userId}`)
+      const websocket = new WebSocket('ws://localhost:8000/ws')
       currentWebSocket = websocket
       
       websocket.onopen = () => {
         console.log('WebSocket connected')
         setConnectionStatus('connected')
         setWs(websocket)
-        
-        // Send initial authentication with user ID
-        websocket.send(JSON.stringify({
-          type: 'auth',
-          user_id: userId
-        }))
       }
       
       websocket.onmessage = (event) => {
@@ -151,7 +129,7 @@ const ChatInterface: React.FC = () => {
         currentWebSocket.close()
       }
     }
-  }, [userId])
+  }, [])
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
