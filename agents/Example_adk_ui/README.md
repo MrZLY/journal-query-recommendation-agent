@@ -14,14 +14,13 @@ Agent UI 是一个通用的 Web 界面框架，目前开放为 Google ADK Agent 
 ```
 采用前后端分离架构：
 
-```
 ┌─────────────────┐     WebSocket      ┌─────────────────┐
 │   前端 (React)   │ ←───────────────→ │  后端 (FastAPI)  │
 │   localhost:5173 │                   │  localhost:8000  │
 └─────────────────┘                    └─────────────────┘
          ↓                                      ↓
     Vite + React                          Google ADK + Agent
-```
+
 ```
 
 ## 如何使用
@@ -50,8 +49,8 @@ Agent UI 是一个通用的 Web 界面框架，目前开放为 Google ADK Agent 
    ```json
    {
      "agent": {
-       "module": "your_module_name",    // 你的 Python 模块名
-       "rootAgent": "your_agent_var"    // Agent 导出的变量名
+       "module": "your_module_name",    # 你的 Python 模块名
+       "rootAgent": "your_agent_var"    # Agent 导出的变量名
      }
    }
    ```
