@@ -1,15 +1,13 @@
-import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react'
-import { Send, Bot, User, Loader2, FileText, Terminal } from 'lucide-react'
+import React, { useState, useRef, useEffect, useCallback } from 'react'
+import { Send, Bot, FileText, Terminal } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-import ReactMarkdown from 'react-markdown'
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
-import remarkGfm from 'remark-gfm'
 import SessionList from './SessionList'
 import FileExplorer from './FileExplorer'
 import { ShellTerminal } from './ShellTerminal'
 import { ResizablePanel } from './ResizablePanel'
 import { useAgentConfig } from '../hooks/useAgentConfig'
+import { MessageAnimation, LoadingDots } from './MessageAnimation'
+import { MemoizedMessage } from './MemoizedMessage'
 import axios from 'axios'
 
 const API_BASE_URL = ''  // Use proxy in vite config
@@ -48,6 +46,7 @@ const ChatInterface: React.FC = () => {
   const [currentSessionId, setCurrentSessionId] = useState<string | null>(null)
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
+  const [showLoadingDelay, setShowLoadingDelay] = useState(false)
   const [isCreatingSession, setIsCreatingSession] = useState(false)
   const [fileTree, setFileTree] = useState<FileNode[]>([])
   const [showFileExplorer, setShowFileExplorer] = useState(false)
@@ -56,13 +55,34 @@ const ChatInterface: React.FC = () => {
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLTextAreaElement>(null)
   const messageIdef = useRef<Set<string>>(new Set())
+  const loadingTimeoutRef = useRef<NodeJS.Timeout | null>(null)
   
   // Load agent configuration
   const { config, loading: configLoading } = useAgentConfig()
 
   useEffect(() => {
     scrollToBottom()
-  }, [messages])
+  }, [messages, isLoading])
+
+  // 延迟显示加载动画，避免闪烁
+  useEffect(() => {
+    if (isLoading) {
+      loadingTimeoutRef.current = setTimeout(() => {
+        setShowLoadingDelay(true)
+      }, 200) // 200ms 延迟
+    } else {
+      if (loadingTimeoutRef.current) {
+        clearTimeout(loadingTimeoutRef.current)
+      }
+      setShowLoadingDelay(false)
+    }
+    
+    return () => {
+      if (loadingTimeoutRef.current) {
+        clearTimeout(loadingTimeoutRef.current)
+      }
+    }
+  }, [isLoading])
 
   const [ws, setWs] = useState<WebSocket | null>(null)
   const [connectionStatus, setConnectionStatus] = useState<'disconnected' | 'connecting' | 'connected'>('disconnected')
@@ -132,7 +152,20 @@ const ChatInterface: React.FC = () => {
   }, [])
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+    // 使用setTimeout确保DOM更新后再滚动
+    setTimeout(() => {
+      messagesEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+      // 备用方案：如果scrollIntoView不起作用，直接操作滚动容器
+      const scrollContainer = messagesEndRef.current?.parentElement?.parentElement
+      if (scrollContainer) {
+        // 滚动到底部，但留出一点空间
+        const targetScroll = scrollContainer.scrollHeight - scrollContainer.clientHeight
+        scrollContainer.scrollTo({
+          top: targetScroll,
+          behavior: 'smooth'
+        })
+      }
+    }, 100)
   }
 
   const loadFileTree = async () => {
@@ -229,6 +262,9 @@ const ChatInterface: React.FC = () => {
     setMessages(prev => [...prev, newMessage])
     setInput('')
     setIsLoading(true)
+    
+    // 发送消息后立即滚动到底部
+    scrollToBottom()
 
     // Send message through WebSocket
     ws.send(JSON.stringify({
@@ -341,6 +377,8 @@ const ChatInterface: React.FC = () => {
         }
         return [...prev, toolMessage]
       })
+      // 工具消息后滚动到底部
+      scrollToBottom()
       return
     }
     
@@ -360,10 +398,14 @@ const ChatInterface: React.FC = () => {
         }
         return [...prev, assistantMessage]
       })
+      // 收到新消息后滚动到底部
+      scrollToBottom()
     }
     
     if (type === 'complete') {
       setIsLoading(false)
+      // 加载完成后滚动到底部
+      scrollToBottom()
     }
     
     if (type === 'error') {
@@ -400,9 +442,9 @@ const ChatInterface: React.FC = () => {
       {/* Main Content Area */}
       <div className="flex-1 flex">
         {/* Chat Area */}
-        <div className="flex-1 flex flex-col bg-gradient-to-br from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+        <div className="flex-1 flex flex-col bg-gradient-to-br from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 aurora-bg">
         {/* Header */}
-        <div className="px-4 py-3 border-b border-gray-200/50 dark:border-gray-700/50 backdrop-blur-xl bg-white/70 dark:bg-gray-800/70 flex items-center justify-between">
+        <div className="px-4 py-3 border-b border-gray-200/50 dark:border-gray-700/50 glass-premium glass-glossy flex items-center justify-between">
           <div className="flex items-center gap-3">
             <h1 className="text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               {config.ui?.title || 'Agent'}
@@ -411,14 +453,14 @@ const ChatInterface: React.FC = () => {
           <div className="flex items-center gap-3">
             <button
               onClick={() => setShowShellTerminal(!showShellTerminal)}
-              className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
+              className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors btn-animated"
             >
               <Terminal className="w-4 h-4" />
               {showShellTerminal ? '隐藏终端' : '显示终端'}
             </button>
             <button
               onClick={() => setShowFileExplorer(!showFileExplorer)}
-              className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
+              className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors btn-animated"
             >
               <FileText className="w-4 h-4" />
               {showFileExplorer ? '隐藏文件' : '查看文件'}
@@ -460,172 +502,59 @@ const ChatInterface: React.FC = () => {
                 </div>
               </div>
             ) : (
-              <AnimatePresence initial={false}>
-                {messages.map((message) => (
+              <AnimatePresence initial={false} mode="popLayout">
+                {messages.map((message, index) => (
                   <motion.div
                     key={message.id}
-                    initial={{ opacity: 0, y: 20 }}
+                    layout="position"
+                    initial={index === messages.length - 1 ? { opacity: 0, y: 20 } : false}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.2 }}
                     className={`flex gap-4 ${
                       message.role === 'user' ? 'justify-end' : 'justify-start'
                     }`}
                   >
-                    {message.role !== 'user' && (
-                      <div className="flex-shrink-0">
-                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center shadow-lg">
-                          <Bot className="w-5 h-5 text-white" />
-                        </div>
-                      </div>
-                    )}
-                    
-                    <div className={`max-w-[80%] ${
-                      message.role === 'user' ? 'order-1' : ''
-                    }`}>
-                      <div className={`rounded-2xl px-4 py-3 shadow-sm ${
-                        message.role === 'user'
-                          ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white'
-                          : message.role === 'tool'
-                          ? 'bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-700'
-                          : 'bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-700'
-                      }`}>
-                        {message.role === 'tool' ? (
-                          <div className="prose prose-sm dark:prose-invert max-w-none">
-                            <ReactMarkdown
-                              remarkPlugins={[remarkGfm]}
-                              components={{
-                                code({ node, inline, className, children, ...props }: any) {
-                                  const match = /language-(\w+)/.exec(className || '')
-                                  return !inline && match ? (
-                                    <SyntaxHighlighter
-                                      style={vscDarkPlus}
-                                      language={match[1]}
-                                      PreTag="div"
-                                      customStyle={{
-                                        margin: 0,
-                                        borderRadius: '0.5rem',
-                                        fontSize: '0.875rem'
-                                      }}
-                                      {...props}
-                                    >
-                                      {String(children).replace(/\n$/, '')}
-                                    </SyntaxHighlighter>
-                                  ) : (
-                                    <code className={`${className} bg-gray-200 dark:bg-gray-700 px-1 py-0.5 rounded text-sm`} {...props}>
-                                      {children}
-                                    </code>
-                                  )
-                                },
-                                a({ node, children, href, ...props }: any) {
-                                  return (
-                                    <a
-                                      href={href}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline"
-                                      {...props}
-                                    >
-                                      {children}
-                                    </a>
-                                  )
-                                }
-                              }}
-                            >
-                              {message.content}
-                            </ReactMarkdown>
-                          </div>
-                        ) : message.role === 'assistant' ? (
-                          <div className="prose prose-sm dark:prose-invert max-w-none">
-                            <ReactMarkdown
-                              remarkPlugins={[remarkGfm]}
-                              components={{
-                                code({ node, inline, className, children, ...props }: any) {
-                                  const match = /language-(\w+)/.exec(className || '')
-                                  return !inline && match ? (
-                                    <SyntaxHighlighter
-                                      style={vscDarkPlus}
-                                      language={match[1]}
-                                      PreTag="div"
-                                      customStyle={{
-                                        margin: '0.5rem 0',
-                                        borderRadius: '0.5rem',
-                                        fontSize: '0.875rem'
-                                      }}
-                                      {...props}
-                                    >
-                                      {String(children).replace(/\n$/, '')}
-                                    </SyntaxHighlighter>
-                                  ) : (
-                                    <code className={`${className} bg-gray-200 dark:bg-gray-700 px-1 py-0.5 rounded text-sm`} {...props}>
-                                      {children}
-                                    </code>
-                                  )
-                                },
-                                a({ node, children, href, ...props }: any) {
-                                  return (
-                                    <a
-                                      href={href}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline"
-                                      {...props}
-                                    >
-                                      {children}
-                                    </a>
-                                  )
-                                }
-                              }}
-                            >
-                              {message.content}
-                            </ReactMarkdown>
-                          </div>
-                        ) : (
-                          <p className="text-sm whitespace-pre-wrap">{message.content}</p>
-                        )}
-                      </div>
-                      <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 px-1">
-                        {message.timestamp.toLocaleTimeString('zh-CN')}
-                      </p>
-                    </div>
-                    
-                    {message.role === 'user' && (
-                      <div className="flex-shrink-0 order-2">
-                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center shadow-lg">
-                          <User className="w-5 h-5 text-white" />
-                        </div>
-                      </div>
-                    )}
+                    <MemoizedMessage
+                      id={message.id}
+                      role={message.role}
+                      content={message.content}
+                      timestamp={message.timestamp}
+                      isLastMessage={index === messages.length - 1}
+                      isStreaming={message.isStreaming}
+                    />
                   </motion.div>
                 ))}
               </AnimatePresence>
             )}
             
-            {isLoading && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="flex gap-4"
-              >
-                <div className="flex-shrink-0">
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center shadow-lg">
-                    <Bot className="w-5 h-5 text-white" />
+            {showLoadingDelay && (
+              <MessageAnimation isNew={true} type="assistant">
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="flex gap-4"
+                >
+                  <div className="flex-shrink-0">
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center shadow-lg">
+                      <Bot className="w-5 h-5 text-white" />
+                    </div>
                   </div>
-                </div>
-                <div className="bg-white dark:bg-gray-800 rounded-2xl px-4 py-3 shadow-sm border border-gray-200 dark:border-gray-700">
-                  <div className="flex items-center gap-2">
-                    <Loader2 className="w-4 h-4 animate-spin text-blue-500" />
-                    <span className="text-sm text-gray-600 dark:text-gray-400">正在思考...</span>
+                  <div className="bg-white dark:bg-gray-800 rounded-2xl px-4 py-3 shadow-sm border border-gray-200 dark:border-gray-700">
+                    <LoadingDots />
                   </div>
-                </div>
-              </motion.div>
+                </motion.div>
+              </MessageAnimation>
             )}
             
+            {/* 底部垫高，确保最后一条消息不贴底 */}
+            <div className="h-24" />
             <div ref={messagesEndRef} />
           </div>
         </div>
 
         {/* Input Area */}
-        <div className="border-t border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl p-4">
+        <div className="border-t border-gray-200 dark:border-gray-700 glass-premium p-4">
           <div className="max-w-4xl mx-auto">
             <div className="flex gap-3">
               <textarea
@@ -634,7 +563,7 @@ const ChatInterface: React.FC = () => {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="输入消息..."
-                className="flex-1 resize-none rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 transition-all"
+                className="flex-1 resize-none rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 transition-all input-animated glow"
                 rows={1}
                 style={{
                   minHeight: '48px',
@@ -649,7 +578,7 @@ const ChatInterface: React.FC = () => {
               <button
                 onClick={handleSend}
                 disabled={!input.trim() || isLoading || connectionStatus !== 'connected'}
-                className="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl font-medium hover:from-blue-600 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-lg hover:shadow-xl flex items-center gap-2"
+                className="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl font-medium hover:from-blue-600 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-lg hover:shadow-xl flex items-center gap-2 btn-animated liquid-button"
               >
                 <Send className="w-4 h-4" />
                 发送
@@ -663,9 +592,9 @@ const ChatInterface: React.FC = () => {
         {showFileExplorer && (
           <ResizablePanel
             direction="horizontal"
-            minSize={300}
-            maxSize={600}
-            defaultSize={400}
+            minSize={400}
+            maxSize={800}
+            defaultSize={600}
             className="border-l border-gray-200 dark:border-gray-700"
             resizeBarPosition="start"
           >

@@ -1,9 +1,10 @@
-import React, { useState, useCallback, useRef, useEffect } from 'react'
+import React, { useState, useCallback } from 'react'
 import { ChevronRight, ChevronDown, File, Folder, FileText, Loader2, X, Copy, Check, Maximize2, Minimize2 } from 'lucide-react'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import { motion, AnimatePresence } from 'framer-motion'
 import axios from 'axios'
 
 const API_BASE_URL = ''
@@ -40,45 +41,8 @@ const FileExplorer: React.FC<FileExplorerProps> = ({
   const [fileContentCache, setFileContentCache] = useState<Map<string, string>>(new Map())
   const [isFileContentExpanded, setIsFileContentExpanded] = useState(false)
   const [copiedCode, setCopiedCode] = useState<string | null>(null)
-  const [fileTreeWidth, setFileTreeWidth] = useState(320) // 默认更宽
-  const [iesizingFileTree, setIesizingFileTree] = useState(false)
-  const startWidthRef = useRef(0)
-  const startXRef = useRef(0)
-
-  const handleFileTreeResizeStart = useCallback((e: React.MouseEvent) => {
-    e.preventDefault()
-    setIesizingFileTree(true)
-    startXRef.current = e.clientX
-    startWidthRef.current = fileTreeWidth
-  }, [fileTreeWidth])
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!iesizingFileTree) return
-      
-      const deltaX = e.clientX - startXRef.current
-      const newWidth = Math.max(200, Math.min(800, startWidthRef.current + deltaX))
-      setFileTreeWidth(newWidth)
-    }
-
-    const handleMouseUp = () => {
-      setIesizingFileTree(false)
-    }
-
-    if (iesizingFileTree) {
-      document.addEventListener('mousemove', handleMouseMove)
-      document.addEventListener('mouseup', handleMouseUp)
-      document.body.style.cursor = 'col-resize'
-      document.body.style.userSelect = 'none'
-
-      return () => {
-        document.removeEventListener('mousemove', handleMouseMove)
-        document.removeEventListener('mouseup', handleMouseUp)
-        document.body.style.cursor = ''
-        document.body.style.userSelect = ''
-      }
-    }
-  }, [iesizingFileTree])
+  // 文件树宽度固定，不再需要调整
+  const fileTreeWidth = 280 // 固定宽度
 
   const toggleDirectory = useCallback(async (path: string) => {
     onFileTreeUpdate(fileTree.map(node => {
@@ -303,21 +267,37 @@ const FileExplorer: React.FC<FileExplorerProps> = ({
 
   const renderFileTree = (nodes: FileNode[], level = 0) => {
     return nodes.map((node) => (
-      <div key={node.path}>
-        <div
+      <motion.div
+        key={node.path}
+        initial={{ opacity: 0, x: -10 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -10 }}
+        transition={{ duration: 0.2, delay: level * 0.02 }}
+      >
+        <motion.div
           className={`flex items-center gap-2 px-3 py-1.5 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer rounded-md transition-colors ${
             selectedFilePath === node.path ? 'bg-blue-100 dark:bg-blue-900/30 ring-1 ring-blue-500/20' : ''
           }`}
           style={{ paddingLeft: `${level * 1.5 + 0.75}rem` }}
           onClick={() => node.type === 'directory' ? toggleDirectory(node.path) : selectFile(node.path, node)}
+          whileHover={{ scale: 1.01 }}
+          whileTap={{ scale: 0.99 }}
         >
           {node.type === 'directory' && (
-            node.isExpanded ? 
-              <ChevronDown className="w-4 h-4 text-gray-500" /> : 
+            <motion.div
+              animate={{ rotate: node.isExpanded ? 90 : 0 }}
+              transition={{ duration: 0.2 }}
+            >
               <ChevronRight className="w-4 h-4 text-gray-500" />
+            </motion.div>
           )}
           {node.type === 'directory' ? (
-            <Folder className={`w-4 h-4 ${node.isExpanded ? 'text-blue-600' : 'text-gray-500'}`} />
+            <motion.div
+              animate={{ scale: node.isExpanded ? 1.1 : 1 }}
+              transition={{ duration: 0.2 }}
+            >
+              <Folder className={`w-4 h-4 ${node.isExpanded ? 'text-blue-600' : 'text-gray-500'}`} />
+            </motion.div>
           ) : (
             getFileIcon(node.name)
           )}
@@ -327,11 +307,21 @@ const FileExplorer: React.FC<FileExplorerProps> = ({
           {loadingFiles.has(node.path) && (
             <Loader2 className="w-3 h-3 animate-spin text-gray-400" />
           )}
-        </div>
-        {node.type === 'directory' && node.isExpanded && node.children && (
-          <div>{renderFileTree(node.children, level + 1)}</div>
-        )}
-      </div>
+        </motion.div>
+        <AnimatePresence>
+          {node.type === 'directory' && node.isExpanded && node.children && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              style={{ overflow: 'hidden' }}
+            >
+              {renderFileTree(node.children, level + 1)}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.div>
     ))
   }
 
@@ -361,10 +351,10 @@ const FileExplorer: React.FC<FileExplorerProps> = ({
 
       {/* Content */}
       <div className="flex-1 flex overflow-hidden">
-        {/* File Tree - Resizable Width */}
+        {/* File Tree - Fixed Width */}
         <div 
-          className="border-r border-gray-200 dark:border-gray-700 overflow-y-auto bg-gray-50 dark:bg-gray-900 relative"
-          style={{ width: `${fileTreeWidth}px`, minWidth: '200px' }}
+          className="border-r border-gray-200 dark:border-gray-700 overflow-y-auto bg-gray-50 dark:bg-gray-900"
+          style={{ width: `${fileTreeWidth}px`, flexShrink: 0 }}
         >
           <div className="p-4">
             <h4 className="text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider mb-2">文件列表</h4>
@@ -376,15 +366,6 @@ const FileExplorer: React.FC<FileExplorerProps> = ({
                 <p>暂无文件</p>
               </div>
             )}
-          </div>
-          
-          {/* Resize Handle */}
-          <div
-            className="absolute top-0 right-0 w-1 h-full cursor-col-resize hover:bg-blue-500 bg-transparent transition-colors"
-            onMouseDown={handleFileTreeResizeStart}
-            style={{ touchAction: 'none' }}
-          >
-            <div className="absolute inset-0 -left-1 -right-1" />
           </div>
         </div>
 
