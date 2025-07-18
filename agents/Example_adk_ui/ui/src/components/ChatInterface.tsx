@@ -103,7 +103,20 @@ const ChatInterface: React.FC = () => {
       }
       
       setConnectionStatus('connecting')
-      const websocket = new WebSocket('ws://localhost:8000/ws')
+      // 动态获取 WebSocket URL，支持代理和远程访问
+      const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:'
+      const host = window.location.hostname
+      const port = window.location.port
+      
+      // 如果是通过代理访问，使用当前页面的 host
+      let wsUrl = `${protocol}//${host}`
+      if (port) {
+        wsUrl += `:${port}`
+      }
+      wsUrl += '/ws'
+      
+      console.log('Connecting to WebSocket:', wsUrl)
+      const websocket = new WebSocket(wsUrl)
       currentWebSocket = websocket
       
       websocket.onopen = () => {

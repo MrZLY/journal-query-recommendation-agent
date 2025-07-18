@@ -41,5 +41,9 @@
     "persistent": false,
     "maxSessions": 50,
     "defaultSessionTitle": "New Session"
+  },
+  "server": {
+    "port": 50002,
+    "allowedHosts": ["localhost", "127.0.0.1", "0.0.0.0", "cofg1321640.bohrium.tech"]
   }
 }

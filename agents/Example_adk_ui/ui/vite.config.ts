@@ -10,8 +10,9 @@ export default defineConfig({
     },
   },
   server: {
-    port: parseInt(process.env.FRONTEND_PORT || '50001'),
+    port: parseInt(process.env.FRONTEND_PORT || '50002'),
     allowedHosts: ['localhost', '127.0.0.1', '0.0.0.0',"cofg1321640.bohrium.tech"],
+    host: '0.0.0.0',
     proxy: {
       '/api': {
         target: 'http://localhost:8000',
