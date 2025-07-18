@@ -31,14 +31,13 @@ npm install >/dev/null 2>&1
 在项目Nexusagent_SR内创建 `.env` 文件：
 ```bash
 # 模型配置
-DEEPRESEARCH_MODEL=
-DEEPRESEARCH_ENDPOINT=
-DEEPRESEARCH_API_KEY=
+DEEPRESEARCH_MODEL=deepseek-chat
+DEEPRESEARCH_ENDPOINT=https://api.deepseek.com
+
 TAVILY_API_KEY=
 SEARCH_TOOL=tavily
 
-
-#agent_model
+#LLM model
 MODEL=deepseek/deepseek-chat
 DEEPSEEK_API_KEY=
 

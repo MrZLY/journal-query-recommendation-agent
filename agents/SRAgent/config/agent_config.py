@@ -28,7 +28,7 @@ class AgentConfig:
         """Provide default configuration for NexusAgent SR"""
         return {
             "agent": {
-                "name": "NexusAgent SR",
+                "name": "My Agent",
                 "description": "智能符号回归分析系统",
                 "welcomeMessage": "输入您的数据文件路径，开始符号回归分析",
                 "module": "Nexusagent_SR.subagent",
