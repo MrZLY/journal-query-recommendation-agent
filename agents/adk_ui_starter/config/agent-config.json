@@ -44,6 +44,6 @@
   },
   "server": {
     "port": 50002,
-    "allowedHosts": ["cofg1321640.bohrium.tech"]
+    "allowedHosts": ["localhost", "127.0.0.1", "0.0.0.0", "*"]
   }
 }
