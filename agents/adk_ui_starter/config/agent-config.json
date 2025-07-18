@@ -44,6 +44,6 @@
   },
   "server": {
     "port": 50002,
-    "allowedHosts": ["cofg1321640.bohrium.tech"]
+    "allowedHosts": ["cofg1321640.bohrium.tech"] //add your host here
   }
 }
