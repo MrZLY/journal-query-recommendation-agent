@@ -22,3 +22,5 @@ uvicorn[standard]
 typing-extensions
 httpx[socks]
 
+# Arxiv
+arxiv

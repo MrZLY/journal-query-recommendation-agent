@@ -13,7 +13,7 @@ root_agent = Agent(
     name="my_agent",
     model=LiteLlm(model="your-model"),
     instruction="你的 Agent 指令",
-    tools=[...]  # 你的工具
+    tools=[...] 
 )
 ```
 
@@ -39,6 +39,7 @@ root_agent = Agent(
 # 安装依赖
 pip install -r requirements.txt
 cd ui && npm install
+cd ..
 
 # 启动
 ./start-agent.sh
@@ -72,9 +73,8 @@ cd ui && npm install
 ### API Key 配置
 在 `agent/.env` 文件中配置：
 ```
-DEEPSEEK_API_KEY=your_key
-# 或
-AZURE_OPENAI_API_KEY=your_key
+MODEL=deepseek/deepseek-chat
+DEEPSEEK_API_KEY=your_api_key
 ```
 
 ### 端口冲突
