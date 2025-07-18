@@ -86,6 +86,22 @@ class AgentConfig:
         tools_config = self.config.get("tools", {})
         long_running = tools_config.get("longRunningTools", [])
         return tool_name in long_running
+    
+    def get_server_config(self) -> Dict[str, Any]:
+        """Get server configuration including port and allowed hosts"""
+        # 默认主机始终被允许
+        default_hosts = ["localhost", "127.0.0.1", "0.0.0.0"]
+        
+        server_config = self.config.get("server", {})
+        
+        # 合并默认主机和用户定义的额外主机
+        user_hosts = server_config.get("allowedHosts", [])
+        all_hosts = list(set(default_hosts + user_hosts))  # 使用 set 去重
+        
+        return {
+            "port": server_config.get("port", 50002),
+            "allowedHosts": all_hosts
+        }
 
 # Singleton instance
 agentconfig = AgentConfig()

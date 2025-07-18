@@ -16,9 +16,10 @@ import uuid
 import subprocess
 import shlex
 
-from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse, PlainTextResponse
+from starlette.middleware.base import BaseHTTPMiddleware
 import uvicorn
 
 from google.adk import Runner
@@ -71,14 +72,42 @@ class Session:
 
 app = FastAPI(title="Agent WebSocket Server")
 
+# 获取服务器配置
+server_config = agentconfig.get_server_config()
+allowed_hosts = server_config.get("allowedHosts", ["localhost", "127.0.0.1", "0.0.0.0"])
+
+# 构建允许的 CORS origins
+allowed_origins = []
+for host in allowed_hosts:
+    allowed_origins.extend([
+        f"http://{host}:*",
+        f"https://{host}:*",
+        f"http://{host}",
+        f"https://{host}"
+    ])
+
 # 添加 CORS 中间件
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Host 验证中间件
+class HostValidationMiddleware(BaseHTTPMiddleware):
+    async def dispatch(self, request: Request, call_next):
+        host = request.headers.get("host", "").split(":")[0]
+        if host and host not in allowed_hosts:
+            return PlainTextResponse(
+                content=f"Host '{host}' is not allowed",
+                status_code=403
+            )
+        response = await call_next(request)
+        return response
+
+app.add_middleware(HostValidationMiddleware)
 
 class ConnectionContext:
     """每个WebSocket连接的独立上下文"""
