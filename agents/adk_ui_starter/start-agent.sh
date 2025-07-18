@@ -2,10 +2,6 @@
 
 echo "🚀 启动 Agent 系统..."
 
-unset HTTP_PROXY HTTPS_PROXY http_proxy https_proxy ALL_PROXY all_proxy
-
-echo "已禁用代理设置以确保本地服务正常通信"
-
 # 清理现有进程
 echo "清理现有进程..."
 pkill -f "websocket-server.py" 2>/dev/null
