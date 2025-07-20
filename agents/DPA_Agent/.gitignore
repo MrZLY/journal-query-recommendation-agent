@@ -57,6 +57,7 @@ output/
 !output/.gitkeep
 *.tmp
 
+
 # Test coverage
 htmlcov/
 .tox/
@@ -73,8 +74,8 @@ coverage.xml
 .ipynb_checkpoints
 
 # Production build
-nexus-ui/dist/
-nexus-ui/build/
+-ui/dist/
+-ui/build/
 
 # Misc
 .DS_Store

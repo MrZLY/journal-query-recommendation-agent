@@ -1,194 +1,150 @@
-# NexusAgent-SR
+# Agent UI 
 
-> 🔬 **基于Google ADK的符号回归智能代理系统**  
-> 自动将原始数据转换为可解释的数学模型
+## 这是什么？
 
-[![License: MulanPSL-2.0](https://img.shields.io/badge/License-MulanPSL--2.0-blue.svg)](http://license.coscl.org.cn/MulanPSL2)
-[![Python 3.11+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+Agent UI 是一个通用的 Web 界面框架，目前开放为 Google ADK Agent 提供即插即用的用户界面。
 
-## ✨ 系统特性
+**核心特点：**
+- 提供完整的聊天界面、文件管理、会话管理功能
+- 通过配置文件即可接入任何 ADK Agent
+- 无需修改前端代码
 
-- 🤖 **多智能代理协同** - 基于Google ADK框架的智能代理编排系统
-- 📊 **自动数据分析** - 生成详细的数据特征描述和背景研究
-- 🔍 **深度文献调研** - 基于AI的领域知识提取
-- ⚡ **高效符号回归** - 基于PySR的高性能符号回归
-- 📝 **智能报告生成** - 自动生成科学研究报告并迭代优化
+## 系统架构
 
-## 🚀 快速开始
+```
+采用前后端分离架构：
 
-### 环境配置
+┌─────────────────┐     WebSocket      ┌─────────────────┐
+│   前端 (React)   │ ←───────────────→ │  后端 (FastAPI)  │
+│   localhost:5173 │                   │  localhost:8000  │
+└─────────────────┘                    └─────────────────┘
+         ↓                                      ↓
+    Vite + React                          Google ADK + Agent
+
+```
+
+## 如何使用
+
+### 前提条件
+- Python 3.10+
+- Node.js 16+
+- 一个基于 Google ADK 开发的 Agent
+
+### 安装步骤
 
 1. **安装依赖**
-```bash
-pip install -r requirements.txt
+   ```bash
+   # Python 依赖
+   pip install -r requirements.txt
+   
+   # 前端依赖
+   cd ui
+   npm install
+   cd ..
+   ```
 
-cd nexus-ui
-npm install >/dev/null 2>&1
+2. **配置你的 Agent**
+   
+   编辑 `config/agent-config.json`：
+   ```json
+   {
+     "agent": {
+       "module": "your_module_name",    # 你的 Python 模块名
+       "rootAgent": "your_agent_var"    # Agent 导出的变量名
+     }
+   }
+   ```
 
+3. **配置 API Key**
+   
+   创建 `agent/.env` 文件：
+   ```
+   
+   DEEPSEEK_API_KEY=your_api_key
+   # 或者使用其他模型
+   ```
+
+4. **启动系统**
+   ```bash
+   ./start-agent.sh
+   ```
+
+5. **访问界面**
+   
+   打开浏览器访问 http://localhost:5173
+
+### 示例：替换为你的 Agent
+
+假设你有一个 Agent 文件 `agent/my_agent.py`：
+
+```python
+# my_agent.py
+from google.adk.agents import Agent
+from google.adk.models.lite_llm import LiteLlm
+
+my_assistant = Agent(
+    name="my_assistant",
+    model=LiteLlm(model="deepseek/deepseek-chat"),
+    instruction="你是一个助手",
+    tools=[]
+)
 ```
 
-2. **配置环境变量**
-在项目DPA_subagent内创建 `.env` 文件：
-```bash
-# 模型配置
-DEEPRESEARCH_MODEL=
-DEEPRESEARCH_ENDPOINT=
-DEEPRESEARCH_API_KEY=
-TAVILY_API_KEY=
-SEARCH_TOOL=tavily
-
-
-#agent_model
-MODEL=deepseek/deepseek-chat
-DEEPSEEK_API_KEY=
-
+只需修改配置：
+```json
+{
+  "agent": {
+    "module": "agent.my_agent",
+    "rootAgent": "my_assistant"
+  }
+}
 ```
 
-
-系统启动后，可通过Web界面与NexusAgent进行交互。
-
-## 💻 用户界面 (UI)
-
-NexusAgent-SR 提供了现代化的 Web 用户界面，让您可以更直观地与系统交互。
-
-### UI 特性
-
-- 🎨 **现代化设计** - 基于 React + TailwindCSS 的响应式界面
-- 💬 **实时对话** - WebSocket 支持的实时消息通信
-- 📁 **文件管理** - 直接在界面中查看输出文件和结果
-- 🔄 **任务状态** - 实时显示工具执行和任务进度
-- 🌓 **深色模式** - 支持明暗主题切换
-
-### 启动 UI
-
-```bash
-# 使用启动脚本
-
-./start-nexus.sh
+## 目录结构
 
 ```
-
-访问 http://localhost:5173 即可使用界面。
-
-### UI 架构
-
-- **前端**: React + TypeScript + Vite
-- **后端**: FastAPI + WebSocket
-- **通信**: 实时双向 WebSocket 连接
-
-更多 UI 扩展信息请参考 [UI 扩展指南](docs/UI_EXTENSION_GUIDE.md)。
-
-## 🏗️ 核心架构
-
-### 智能代理编排 (`agent.py`)
-
-系统由以下智能代理组成：
-
-```
-root_agent (NexusAgent)
-├── research_agent     # 数据分析与描述生成
-└── sr_iteration_agent # 符号回归迭代流程
-    ├── prior_agent    # 先验知识配置
-    ├── symbolic_agent # 符号回归执行
-    └── summarize_agent # 结果总结生成
+.
+├── agent/                  # Agent 模块目录
+│   ├── agent.py           # 默认 Agent 实现
+│   └── .env               # 环境变量配置
+├── config/                # 配置目录
+│   ├── agent-config.json  # Agent 配置
+│   └── agent_config.py    # 配置加载器
+├── ui/                    # 前端代码
+│   ├── src/              # React 源码
+│   └── package.json      # 前端依赖
+├── websocket-server.py    # WebSocket 服务器
+├── requirements.txt       # Python 依赖
+└── start-agent.sh        # 启动脚本
 ```
 
-**主要代理功能：**
-- **ResearchAgent**: 生成数据特征描述
-- **PriorAgent**: 设置算子和映射配置
-- **SymbolicAgent**: 执行符号回归算法
-- **SummarizeAgent**: 生成科学研究报告
+## 功能列表
 
-### 工具集合 (`tool/`)
+- ✅ 实时聊天界面
+- ✅ Markdown 消息渲染
+- ✅ 代码语法高亮
+- ✅ 工具执行状态显示
+- ✅ 多会话管理
+- ✅ 文件浏览器
+- ✅ Shell 终端
+- ✅ 可调整面板布局
 
-| 工具模块 | 主要功能 | 说明 |
-|---------|---------|------|
-| `pysr.py` | 标准符号回归 | 基于PySR的多变量符号回归 |
-| `deepresearch.py` | 深度研究 | AI驱动的文献调研和知识提取 |
-| `summarize_report.py` | 报告生成 | 自动生成科学研究报告 |
-| `iteration_manager.py` | 迭代管理 | 管理多轮实验的历史记录 |
-| `task_manager.py` | 任务管理 | 异步任务状态跟踪 |
-| `utils.py` | 工具函数 | 数据处理和表达式简化 |
+## 常见问题
 
-## 📊 使用方式
+1. **端口被占用**
+   - 修改 `websocket-server.py` 中的端口号
+   - 修改 `ui/vite.config.ts` 中的代理配置
 
-### 1. Web界面交互
+2. **Agent 加载失败**
+   - 确保模块路径正确
+   - 确保 Agent 变量名正确
+   - 检查 Python 导入路径
 
-启动 `adk web` 后，在Web界面中输入任务描述：
+3. **API 认证失败**
+   - 检查 `.env` 文件中的 API Key
+   - 确保 API Key 有效
 
-```
-I am working on a standard symbolic regression task. The dataset describes a biophysical neuronal dynamic system, in which: • x₁ represents the membrane potential, • x₂ is a fast activation variable (e.g., associated with fast ion channels), • x₃ is a slow adaptation variable (e.g., representing slow potassium or calcium currents). The objective is to infer the form of the differential equation governing the change in membrane potential, i.e.,   y = dx₁/dt as a function of x₁, x₂, and x₃. It is assumed that the system does not involve magnetic flux modulation.csv path is data/hr_example.csv
+## 下一步
 
-```
-
-
-
-
-## 📋 输出结果
-
-- **📊 最优表达式**: 发现的数学方程
-- **📈 复杂度分析**: 模型复杂度和精度评估  
-- **📝 科学报告**: 包含背景、方法、结果的完整报告
-- **🔍 研究文献**: 相关领域的文献调研结果
-- **📁 结果文件**: 
-  - `output/summarize_report.md` - 总结报告
-  - `results.json` - 完整的符号回归结果
-  - `best.txt` - 最优表达式
-
-## 🛠️ 开发说明
-
-### 目录结构
-```
-NexusAgent/
-├── DPA_subagent/           # 核心代理模块
-│   ├── agent.py            # 主代理编排（已弃用）
-│   ├── subagent.py         # 新的代理实现
-│   ├── prompt/             # 提示词模板
-│   ├── tool/               # 工具集合
-│   └── .env                # 环境配置
-├── nexus-ui/               # 前端界面
-│   ├── src/                # React 源代码
-│   │   ├── components/     # UI 组件
-│   │   └── styles/         # 样式文件
-│   └── package.json        # 前端依赖
-├── data/                   # 示例数据
-├── output/                 # 输出结果
-├── docs/                   # 文档
-│   └── UI_EXTENSION_GUIDE.md # UI 扩展指南
-├── nexus-websocket-server.py # WebSocket 服务器
-└── start-nexus.sh          # 启动脚本
-
-```
-
-### 扩展开发
-- 添加新的符号回归算法: 扩展 `tool/pysr*.py`
-- 集成新的AI模型: 修改 `subagent.py` 中的模型配置
-- 自定义提示词: 编辑 `prompt/agent_prompt.py`
-- 新增工具函数: 在 `tool/agent_tool.py` 中注册
-- 扩展 UI 功能: 参考 [UI 扩展指南](docs/UI_EXTENSION_GUIDE.md)
-- 添加新的 WebSocket 消息类型: 修改 `nexus-websocket-server.py`
-
-## 🔧 故障排除
-
-### 常见问题
-
-1. **WebSocket 连接失败**
-   - 确保后端服务器在 8000 端口运行
-   - 检查防火墙设置
-
-2. **前端无法加载**
-   - 确保已安装 Node.js 和 npm
-   - 运行 `npm install` 安装依赖
-
-3. **代理执行超时**
-   - 检查 API 密钥配置
-   - 确认网络代理设置正确
-
-## 🤝 贡献
-
-欢迎提交 Issue 和 Pull Request！
-
-## 📞 联系方式
-
-如有问题或建议，请通过 GitHub Issues 联系我们。
-
+- 查看 [CONFIG_GUIDE.md](docs/CONFIG_GUIDE.md) 了解详细配置
+- 查看 [QUICKSTART.md](QUICKSTART.md) 快速开始

@@ -25,17 +25,17 @@ class AgentConfig:
             return json.load(f)
     
     def _get_default_config(self) -> Dict[str, Any]:
-        """Provide default configuration for NexusAgent SR"""
+        """Provide default configuration for Agent"""
         return {
             "agent": {
-                "name": "DPA Calculators",
-                "description": "",
-                "welcomeMessage": "Start your simulation by starting a conversation.",
-                "module": "DPA_subagent.subagent",
+                "name": "My Agent",
+                "description": "智能符号回归分析系统",
+                "welcomeMessage": "输入您的数据文件路径，开始符号回归分析",
+                "module": "agent.subagent",
                 "rootAgent": "rootagent"
             },
             "ui": {
-                "title": "DPA Calculators",
+                "title": "Agent",
                 "features": {
                     "showFileExplorer": True,
                     "showSessionList": True
@@ -53,15 +53,15 @@ class AgentConfig:
     
     def get_agent(self):
         """Dynamically import and return the configured agent"""
-        agent_config = self.config.get("agent", {})
-        module_name = agent_config.get("module", "DPA_subagent.subagent")
-        agent_name = agent_config.get("rootAgent", "rootagent")
+        agentconfig = self.config.get("agent", {})
+        module_name = agentconfig.get("module", "agent.subagent")
+        agentname = agentconfig.get("rootAgent", "rootagent")
         
         try:
             module = importlib.import_module(module_name)
-            return getattr(module, agent_name)
+            return getattr(module, agentname)
         except (ImportError, AttributeError) as e:
-            raise ImportError(f"Failed to load agent {agent_name} from {module_name}: {e}")
+            raise ImportError(f"Failed to load agent {agentname} from {module_name}: {e}")
     
     def get_ui_config(self) -> Dict[str, Any]:
         """Get UI-specific configuration"""
@@ -86,6 +86,22 @@ class AgentConfig:
         tools_config = self.config.get("tools", {})
         long_running = tools_config.get("longRunningTools", [])
         return tool_name in long_running
+    
+    def get_server_config(self) -> Dict[str, Any]:
+        """Get server configuration including port and allowed hosts"""
+        # 默认主机始终被允许
+        default_hosts = ["localhost", "127.0.0.1", "0.0.0.0"]
+        
+        server_config = self.config.get("server", {})
+        
+        # 合并默认主机和用户定义的额外主机
+        user_hosts = server_config.get("allowedHosts", [])
+        all_hosts = list(set(default_hosts + user_hosts))  # 使用 set 去重
+        
+        return {
+            "port": server_config.get("port", 50002),
+            "allowedHosts": all_hosts
+        }
 
 # Singleton instance
-agent_config = AgentConfig()
+agentconfig = AgentConfig()
