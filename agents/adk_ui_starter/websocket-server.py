@@ -5,6 +5,7 @@ Agent WebSocket 服务器
 """
 
 import os
+
 import asyncio
 import json
 import logging
@@ -140,7 +141,16 @@ class SessionManager:
         logger.info(f"为用户 {context.user_id} 创建新会话: {session_id}")
         
         # 异步创建 session service 和 runner，避免阻塞
-        asyncio.create_task(self._init_session_runner(context, session_id))
+        task = asyncio.create_task(self._init_session_runner(context, session_id))
+        
+        # 添加错误处理回调
+        def handle_init_error(future):
+            try:
+                future.result()
+            except Exception as e:
+                logger.error(f"初始化会话Runner时发生未处理的错误: {e}", exc_info=True)
+        
+        task.add_done_callback(handle_init_error)
         
         return session
     
@@ -476,7 +486,18 @@ class SessionManager:
             })
                     
         except Exception as e:
-            logger.error(f"处理消息时出错: {e}")
+            import traceback
+            error_details = traceback.format_exc()
+            logger.error(f"处理消息时出错: {e}\n{error_details}")
+            
+            # 如果是 ExceptionGroup，尝试提取更多信息
+            if hasattr(e, '__cause__') and e.__cause__:
+                logger.error(f"根本原因: {e.__cause__}")
+            if hasattr(e, 'exceptions'):
+                logger.error(f"子异常数量: {len(e.exceptions)}")
+                for i, sub_exc in enumerate(e.exceptions):
+                    logger.error(f"子异常 {i}: {sub_exc}", exc_info=(type(sub_exc), sub_exc, sub_exc.__traceback__))
+            
             await context.websocket.send_json({
                 "type": "error",
                 "content": f"处理消息失败: {str(e)}"

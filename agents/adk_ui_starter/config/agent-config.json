@@ -4,7 +4,7 @@
     "description": "Custom Agent",
     "welcomeMessage": "Welcome to chat with me",
     "module": "agent.agent",
-    "rootAgent": "rootagent"
+    "rootAgent": "root_agent"
   },
   "ui": {
     "title": "My Agent",
@@ -43,7 +43,7 @@
     "defaultSessionTitle": "New Session"
   },
   "server": {
-    "port": 50001,
+    "port": 50002,
     "allowedHosts": ["localhost", "127.0.0.1", "0.0.0.0", "*"]
   }
 }

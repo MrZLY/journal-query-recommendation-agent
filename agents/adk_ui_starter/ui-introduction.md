@@ -5,20 +5,8 @@
 ### 1.1 什么是 Agent
 Agent 是一个基于 Google ADK（Agent Development Kit）构建的智能符号回归系统。它通过多智能体协作，自动将原始数据转换为可解释的数学模型。
 
-### 1.2 Agent 架构
-系统采用分层的智能体架构：
 
-```
-
-```
-
-每个智能体都有明确的职责：
-- **ResearchAgent**: 分析输入数据，生成特征描述
-- **PriorAgent**: 根据数据特征配置合适的数学算子
-- **SymbolicAgent**: 执行 Py 符号回归算法
-- **SummarizeAgent**: 生成科学报告
-
-### 1.3 Agent 配置
+### 1.2 Agent 配置
 通过 `config/agent-config.json` 文件可以灵活配置不同的 Agent 实现：
 
 ```json
