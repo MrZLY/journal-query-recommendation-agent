@@ -4,7 +4,7 @@
     "description": "Custom Agent",
     "welcomeMessage": "Welcome to chat with me",
     "module": "agent.agent",
-    "rootAgent": "root_agent"
+    "rootAgent": "rootagent"
   },
   "ui": {
     "title": "My Agent",
@@ -43,7 +43,7 @@
     "defaultSessionTitle": "New Session"
   },
   "server": {
-    "port": 50002,
-    "allowedHosts": ["cofg1321640.bohrium.tech"]
+    "port": 50001,
+    "allowedHosts": ["hjyu1360817.bohrium.tech"]
   }
 }
