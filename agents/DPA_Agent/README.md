@@ -52,7 +52,11 @@ Agent UI 是一个通用的 Web 界面框架，目前开放为 Google ADK Agent 
        "module": "your_module_name",    # 你的 Python 模块名
        "rootAgent": "your_agent_var"    # Agent 导出的变量名
      }
-   }
+   },
+  "server": {
+    "port": 50001,                      # 此处修改port
+    "allowedHosts": ["localhost", "127.0.0.1", "0.0.0.0", "*"]
+  }
    ```
 
 3. **配置 API Key**
@@ -60,8 +64,13 @@ Agent UI 是一个通用的 Web 界面框架，目前开放为 Google ADK Agent 
    创建 `agent/.env` 文件：
    ```
    
+   # LLM-related API
    DEEPSEEK_API_KEY=your_api_key
-   # 或者使用其他模型
+
+   # Bohrium-related information
+   BOHRIUM_EMAIL=your_email
+   BOHRIUM_PASSWORD=your_pwd
+   BOHRIUM_PROJECT_ID=your_id
    ```
 
 4. **启动系统**
@@ -71,51 +80,27 @@ Agent UI 是一个通用的 Web 界面框架，目前开放为 Google ADK Agent 
 
 5. **访问界面**
    
-   打开浏览器访问 http://localhost:5173
+   打开浏览器访问 http://localhost:(port)
 
-### 示例：替换为你的 Agent
 
-假设你有一个 Agent 文件 `agent/my_agent.py`：
-
-```python
-# my_agent.py
-from google.adk.agents import Agent
-from google.adk.models.lite_llm import LiteLlm
-
-my_assistant = Agent(
-    name="my_assistant",
-    model=LiteLlm(model="deepseek/deepseek-chat"),
-    instruction="你是一个助手",
-    tools=[]
-)
-```
-
-只需修改配置：
-```json
-{
-  "agent": {
-    "module": "agent.my_agent",
-    "rootAgent": "my_assistant"
-  }
-}
 ```
 
 ## 目录结构
 
 ```
 .
-├── agent/                  # Agent 模块目录
+├── agent/                 # Agent 模块目录
 │   ├── agent.py           # 默认 Agent 实现
 │   └── .env               # 环境变量配置
 ├── config/                # 配置目录
 │   ├── agent-config.json  # Agent 配置
 │   └── agent_config.py    # 配置加载器
 ├── ui/                    # 前端代码
-│   ├── src/              # React 源码
-│   └── package.json      # 前端依赖
+│   ├── src/               # React 源码
+│   └── package.json       # 前端依赖
 ├── websocket-server.py    # WebSocket 服务器
 ├── requirements.txt       # Python 依赖
-└── start-agent.sh        # 启动脚本
+└── start-agent.sh         # 启动脚本
 ```
 
 ## 功能列表
@@ -143,8 +128,4 @@ my_assistant = Agent(
 3. **API 认证失败**
    - 检查 `.env` 文件中的 API Key
    - 确保 API Key 有效
-
-## 下一步
-
-- 查看 [CONFIG_GUIDE.md](docs/CONFIG_GUIDE.md) 了解详细配置
-- 查看 [QUICKSTART.md](QUICKSTART.md) 快速开始
+   
