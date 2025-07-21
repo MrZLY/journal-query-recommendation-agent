@@ -52,12 +52,10 @@ Agent UI 是一个通用的 Web 界面框架，目前开放为 Google ADK Agent 
        "module": "your_module_name",    # 你的 Python 模块名
        "rootAgent": "your_agent_var"    # Agent 导出的变量名
      }
-   },
-  "server": {
-    "port": 50001,                      # 此处修改port
-    "allowedHosts": ["localhost", "127.0.0.1", "0.0.0.0", "*"]
+     "server": {
+       "port": 50001,                      # 此处修改port
+       "allowedHosts": ["localhost", "127.0.0.1", "0.0.0.0", "*"]
   }
-   ```
 
 3. **配置 API Key**
    
@@ -87,7 +85,6 @@ Agent UI 是一个通用的 Web 界面框架，目前开放为 Google ADK Agent 
 
 ## 目录结构
 
-```
 .
 ├── agent/                 # Agent 模块目录
 │   ├── agent.py           # 默认 Agent 实现
@@ -101,6 +98,7 @@ Agent UI 是一个通用的 Web 界面框架，目前开放为 Google ADK Agent 
 ├── websocket-server.py    # WebSocket 服务器
 ├── requirements.txt       # Python 依赖
 └── start-agent.sh         # 启动脚本
+
 ```
 
 ## 功能列表
