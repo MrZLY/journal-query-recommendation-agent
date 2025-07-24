@@ -63,20 +63,23 @@ BOHRIUM_EXECUTOR_TE = {
 LOCAL_EXECUTOR = {
     "type": "local"
 }
-BOHRIUM_STORAGE = {
-    "type": "bohrium",
-    "username": os.getenv("BOHRIUM_EMAIL"),
-    "password": os.getenv("BOHRIUM_PASSWORD"),
-    "project_id": int(os.getenv("BOHRIUM_PROJECT_ID"))
+HTTPS_STORAGE = {
+  "type": "https",
+  "plugin": {
+        "type": "bohrium",
+        "username": os.getenv("BOHRIUM_EMAIL"),
+        "password": os.getenv("BOHRIUM_PASSWORD"),
+        "project_id": int(os.getenv("BOHRIUM_PROJECT_ID"))
+    }
 }
 
-print('-----', BOHRIUM_STORAGE)
+print('-----', HTTPS_STORAGE)
 
 
 mcp_tools_dpa = CalculationMCPToolset(
-    connection_params=SseServerParams(url="https://dpa-uuid1750659890.app-space.dplink.cc/sse?token=d642e9e197f64539b3e0363d500a96f1"),
+    connection_params=SseServerParams(url="https://dpa-uuid1750659890.app-space.dplink.cc/sse?token=a0d87a7abf8d47cb92403018fd4a9468"),
     # connection_params=SseServerParams(url="http://pfmx1355864.bohrium.tech:50002/sse"),
-    storage=None,
+    storage=HTTPS_STORAGE,
     executor=None,
     executor_map={
         "build_structure": None
@@ -84,12 +87,12 @@ mcp_tools_dpa = CalculationMCPToolset(
 )
 mcp_tools_thermoelectric = CalculationMCPToolset(
     connection_params=SseServerParams(url="https://thermoelectricmcp000-uuid1750905361.app-space.dplink.cc/sse?token=1c1f2140a5504ebcb680f6a7fa2c03db"),
-    storage=None,
+    storage=HTTPS_STORAGE,
     executor=BOHRIUM_EXECUTOR_TE
 )
 # mcp_tools_superconductor = CalculationMCPToolset(
 #     connection_params=SseServerParams(url="https://superconductor-ambient-010-uuid1750845273.app-space.dplink.cc/sse?token=57578d394b564682943a723697f992b1"),
-#     storage=BOHRIUM_STORAGE,
+#     storage=HTTPS_STORAGE,
 #     executor=None
 # )
 root_agent = LlmAgent(
