@@ -1,0 +1,67 @@
+{
+  "1812.02771v2": {
+    "title": "Neural Word Search in Historical Manuscript Collections",
+    "authors": [
+      "Tomas Wilkinson",
+      "Jonas Lindstr\u00f6m",
+      "Anders Brun"
+    ],
+    "summary": "We address the problem of segmenting and retrieving word images in\ncollections of historical manuscripts given a text query. This is commonly\nreferred to as \"word spotting\". To this end, we first propose an end-to-end\ntrainable model based on deep neural networks that we dub Ctrl-F-Net. The model\nsimultaneously generates region proposals and embeds them into a word embedding\nspace, wherein a search is performed. We further introduce a simplified version\ncalled Ctrl-F-Mini. It is faster with similar performance, though it is limited\nto more easily segmented manuscripts. We evaluate both models on common\nbenchmark datasets and surpass the previous state of the art. Finally, in\ncollaboration with historians, we employ the Ctrl-F-Net to search within a\nlarge manuscript collection of over 100 thousand pages, written across two\ncenturies. With only 11 training pages, we enable large scale data collection\nin manuscript-based historical research. This results in a speed up of data\ncollection and the number of manuscripts processed by orders of magnitude.\nGiven the time consuming manual work required to study old manuscripts in the\nhumanities, quick and robust tools for word spotting has the potential to\nrevolutionise domains like history, religion and language.",
+    "pdf_url": "http://arxiv.org/pdf/1812.02771v2",
+    "published": "2018-12-06"
+  },
+  "2509.20856v1": {
+    "title": "Plant identification based on noisy web data: the amazing performance of deep learning (LifeCLEF 2017)",
+    "authors": [
+      "Herve Goeau",
+      "Pierre Bonnet",
+      "Alexis Joly"
+    ],
+    "summary": "The 2017-th edition of the LifeCLEF plant identification challenge is an\nimportant milestone towards automated plant identification systems working at\nthe scale of continental floras with 10.000 plant species living mainly in\nEurope and North America illustrated by a total of 1.1M images. Nowadays, such\nambitious systems are enabled thanks to the conjunction of the dazzling recent\nprogress in image classification with deep learning and several outstanding\ninternational initiatives, such as the Encyclopedia of Life (EOL), aggregating\nthe visual knowledge on plant species coming from the main national botany\ninstitutes. However, despite all these efforts the majority of the plant\nspecies still remain without pictures or are poorly illustrated. Outside the\ninstitutional channels, a much larger number of plant pictures are available\nand spread on the web through botanist blogs, plant lovers web-pages, image\nhosting websites and on-line plant retailers. The LifeCLEF 2017 plant challenge\npresented in this paper aimed at evaluating to what extent a large noisy\ntraining dataset collected through the web and containing a lot of labelling\nerrors can compete with a smaller but trusted training dataset checked by\nexperts. To fairly compare both training strategies, the test dataset was\ncreated from a third data source, i.e. the Pl@ntNet mobile application that\ncollects millions of plant image queries all over the world. This paper\npresents more precisely the resources and assessments of the challenge,\nsummarizes the approaches and systems employed by the participating research\ngroups, and provides an analysis of the main outcomes.",
+    "pdf_url": "http://arxiv.org/pdf/2509.20856v1",
+    "published": "2025-09-25"
+  },
+  "2412.10795v1": {
+    "title": "Reliable and superior elliptic Fourier descriptor normalization and its application software ElliShape with efficient image processing",
+    "authors": [
+      "Hui Wu",
+      "Jia-Jie Yang",
+      "Chao-Qun Li",
+      "Jin-Hua Ran",
+      "Ren-Hua Peng",
+      "Xiao-Quan Wang"
+    ],
+    "summary": "Elliptic Fourier analysis (EFA) is a powerful tool for shape analysis, which\nis often employed in geometric morphometrics. However, the normalization of\nelliptic Fourier descriptors has persistently posed challenges in obtaining\nunique results in basic contour transformations, requiring extensive manual\nalignment. Additionally, contemporary contour/outline extraction methods often\nstruggle to handle complex digital images. Here, we reformulated the procedure\nof EFDs calculation to improve computational efficiency and introduced a novel\napproach for EFD normalization, termed true EFD normalization, which remains\ninvariant under all basic contour transformations. These improvements are\ncrucial for processing large sets of contour curves collected from different\nplatforms with varying transformations. Based on these improvements, we\ndeveloped ElliShape, a user-friendly software. Particularly, the improved\ncontour/outline extraction employs an interactive approach that combines\nautomatic contour generation for efficiency with manual correction for\nessential modifications and refinements. We evaluated ElliShape's stability,\nrobustness, and ease of use by comparing it with existing software using\nstandard datasets. ElliShape consistently produced reliable reconstructed\nshapes and normalized EFD values across different contours and transformations,\nand it demonstrated superior performance in visualization and efficient\nprocessing of various digital images for contour analysis.The output annotated\nimages and EFDs could be utilized in deep learning-based data training, thereby\nadvancing artificial intelligence in botany and offering innovative solutions\nfor critical challenges in biodiversity conservation, species classification,\necosystem function assessment, and related critical issues.",
+    "pdf_url": "http://arxiv.org/pdf/2412.10795v1",
+    "published": "2024-12-14"
+  },
+  "1803.07892v1": {
+    "title": "Taxon and trait recognition from digitized herbarium specimens using deep convolutional neural networks",
+    "authors": [
+      "Sohaib Younis",
+      "Claus Weiland",
+      "Robert Hoehndorf",
+      "Stefan Dressler",
+      "Thomas Hickler",
+      "Bernhard Seeger",
+      "Marco Schmidt"
+    ],
+    "summary": "Herbaria worldwide are housing a treasure of 100s of millions of herbarium\nspecimens, which are increasingly being digitized in recent years and thereby\nmade more easily accessible to the scientific community. At the same time, deep\nlearning algorithms are rapidly improving pattern recognition from images and\nthese techniques are more and more being applied to biological objects. We are\nusing digital images of herbarium specimens in order to identify taxa and\ntraits of these collection objects by applying convolutional neural networks\n(CNN). Images of the 1000 species most frequently documented by herbarium\nspecimens on GBIF have been downloaded and combined with morphological trait\ndata, preprocessed and divided into training and test datasets for species and\ntrait recognition. Good performance in both domains is promising to use this\napproach in future tools supporting taxonomy and natural history collection\nmanagement.",
+    "pdf_url": "http://arxiv.org/pdf/1803.07892v1",
+    "published": "2018-03-21"
+  },
+  "2103.17213v2": {
+    "title": "An effective and friendly tool for seed image analysis",
+    "authors": [
+      "Andrea Loddo",
+      "Cecilia Di Ruberto",
+      "A. M. P. G. Vale",
+      "Mariano Ucchesu",
+      "J. M. Soares",
+      "Gianluigi Bacchetta"
+    ],
+    "summary": "Image analysis is an essential field for several topics in the life sciences,\nsuch as biology or botany. In particular, the analysis of seeds (e.g. fossil\nresearch) can provide significant information on their evolution, the history\nof agriculture, plant domestication and knowledge of diets in ancient times.\nThis work aims to present software that performs image analysis for feature\nextraction and classification from images containing seeds through a novel and\nunique framework. In detail, we propose two plugins \\emph{ImageJ}, one able to\nextract morphological, textual and colour features from seed images, and\nanother to classify seeds into categories using the extracted features. The\nexperimental results demonstrated the correctness and validity of both the\nextracted features and the classification predictions. The proposed tool is\neasily extendable to other fields of image analysis.",
+    "pdf_url": "http://arxiv.org/pdf/2103.17213v2",
+    "published": "2021-03-31"
+  }
+}

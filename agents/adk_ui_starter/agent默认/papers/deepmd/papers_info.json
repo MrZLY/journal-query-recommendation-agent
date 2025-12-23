@@ -1,0 +1,59 @@
+{
+  "2510.05020v1": {
+    "title": "Comparing fine-tuning strategies of MACE machine learning force field for modeling Li-ion diffusion in LiF for batteries",
+    "authors": [
+      "Nada Alghamdi",
+      "Paolo de Angelis",
+      "Pietro Asinari",
+      "Eliodoro Chiavazzo"
+    ],
+    "summary": "Machine learning interatomic potentials (MLIPs) are transforming materials\nscience and engineering by enabling the study of complex phenomena, such as\nthose critical to battery operation. In this work, we benchmark the MACE\nmachine learning model against a well-trained DeePMD potential for predicting\ninterstitial lithium diffusivity in LiF, a key component in the solid\nelectrolyte interphase in Li ion batteries. Our results demonstrate that the\nMACE-MPA-0 foundational model achieves comparable accuracy to well-trained\nDeePMD, in predicting key diffusion properties based on molecular dynamics\nsimulation, while requiring minimal or no training data. For instance, the\nMACE-MPA-0 predicts an activation energy Ea of 0.22 eV, the fine-tuned model\nwith only 300 data points predicts Ea = 0.20 eV, both of which show good\nagreement with the DeePMD model reference value of Ea = 0.24 eV. In this work,\nwe provide a solid test case where fine-tuning approaches - whether using data\ngenerated for DeePMD or data produced by the foundational MACE model itself -\nyield similar robust performance to the DeePMD potential trained with over\n40,000 actively learned data, albeit requiring only a fraction of the training\ndata.",
+    "pdf_url": "http://arxiv.org/pdf/2510.05020v1",
+    "published": "2025-10-06"
+  },
+  "1910.10090v1": {
+    "title": "Simulating diffusion properties of solid-state electrolytes via a neural network potential: Performance and training scheme",
+    "authors": [
+      "Aris Marcolongo",
+      "Tobias Binninger",
+      "Federico Zipoli",
+      "Teodoro Laino"
+    ],
+    "summary": "The recently published DeePMD model\n(https://github.com/deepmodeling/deepmd-kit), based on a deep neural network\narchitecture, brings the hope of solving the time-scale issue which often\nprevents the application of first principle molecular dynamics to physical\nsystems. With this contribution we assess the performance of the DeePMD\npotential on a real-life application and model diffusion of ions in solid-state\nelectrolytes. We consider as test cases the well known Li10GeP2S12,\nLi7La3Zr2O12 and Na3Zr2Si2PO12. We develop and test a training protocol\nsuitable for the computation of diffusion coefficients, which is one of the key\nproperties to be optimized for battery applications, and we find good agreement\nwith previous computations. Our results show that the DeePMD model may be a\nsuccessful component of a framework to identify novel solid-state electrolytes.",
+    "pdf_url": "http://arxiv.org/pdf/1910.10090v1",
+    "published": "2019-10-22"
+  },
+  "2407.10881v2": {
+    "title": "Exciting DeePMD: Learning excited state energies, forces, and non-adiabatic couplings",
+    "authors": [
+      "Lucien Dupuy",
+      "Neepa T. Maitra"
+    ],
+    "summary": "We extend the DeePMD neural network architecture to predict electronic\nstructure properties necessary to perform non-adiabatic dynamics simulations.\nWhile learning the excited state energies and forces follows a straightforward\nextension of the DeePMD approach for ground-state energies and forces, how to\nlearn the map between the non-adiabatic coupling vectors (NACV) and the local\nchemical environment descriptors of DeePMD is less trivial. Most\nimplementations of machine-learning-based non-adiabatic dynamics inherently\napproximate the NACVs, with an underlying assumption that the\nenergy-difference-scaled NACVs are conservative fields. We overcome this\napproximation, implementing the method recently introduced by Richardson [J.\nChem. Phys. 158 011102 (2023)], which learns the symmetric dyad of the\nenergy-difference-scaled NACV. The efficiency and accuracy of our neural\nnetwork architecture is demonstrated through the example of the methaniminium\ncation CH$_2$NH$_2^+$.",
+    "pdf_url": "http://arxiv.org/pdf/2407.10881v2",
+    "published": "2024-07-15"
+  },
+  "1712.03641v2": {
+    "title": "DeePMD-kit: A deep learning package for many-body potential energy representation and molecular dynamics",
+    "authors": [
+      "Han Wang",
+      "Linfeng Zhang",
+      "Jiequn Han",
+      "Weinan E"
+    ],
+    "summary": "Recent developments in many-body potential energy representation via deep\nlearning have brought new hopes to addressing the accuracy-versus-efficiency\ndilemma in molecular simulations. Here we describe DeePMD-kit, a package\nwritten in Python/C++ that has been designed to minimize the effort required to\nbuild deep learning based representation of potential energy and force field\nand to perform molecular dynamics. Potential applications of DeePMD-kit span\nfrom finite molecules to extended systems and from metallic systems to\nchemically bonded systems. DeePMD-kit is interfaced with TensorFlow, one of the\nmost popular deep learning frameworks, making the training process highly\nautomatic and efficient. On the other end, DeePMD-kit is interfaced with\nhigh-performance classical molecular dynamics and quantum (path-integral)\nmolecular dynamics packages, i.e., LAMMPS and the i-PI, respectively. Thus,\nupon training, the potential energy and force field models can be used to\nperform efficient molecular simulations for different purposes. As an example\nof the many potential applications of the package, we use DeePMD-kit to learn\nthe interatomic potential energy and forces of a water model using data\nobtained from density functional theory. We demonstrate that the resulted\nmolecular dynamics model reproduces accurately the structural information\ncontained in the original model.",
+    "pdf_url": "http://arxiv.org/pdf/1712.03641v2",
+    "published": "2017-12-11"
+  },
+  "1806.01020v2": {
+    "title": "Adaptive coupling of a deep neural network potential to a classical force field",
+    "authors": [
+      "Linfeng Zhang",
+      "Han Wang",
+      "Weinan E"
+    ],
+    "summary": "An adaptive modeling method (AMM) that couples a deep neural network\npotential and a classical force field is introduced to address the\naccuracy-efficiency dilemma faced by the molecular simulation community. The\nAMM simulated system is decomposed into three types of regions. The first type\ncaptures the important phenomena in the system and requires high accuracy, for\nwhich we use the Deep Potential Molecular Dynamics (DeePMD) model in this work.\nThe DeePMD model is trained to accurately reproduce the statistical properties\nof the ab initio molecular dynamics. The second type does not require high\naccuracy and a classical force field is used to describe it in an efficient\nway. The third type is used for a smooth transition between the first and the\nsecond types of regions. By using a force interpolation scheme and imposing a\nthermodynamics force in the transition region, we make the DeePMD region\nembedded in the AMM simulated system as if it were embedded in a system that is\nfully described by the accurate potential. A representative example of the\nliquid water system is used to show the feasibility and promise of this method.",
+    "pdf_url": "http://arxiv.org/pdf/1806.01020v2",
+    "published": "2018-06-04"
+  }
+}

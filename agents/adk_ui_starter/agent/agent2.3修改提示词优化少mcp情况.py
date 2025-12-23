@@ -28,8 +28,6 @@ elif use_model == "siliconflow":
     # 硅基流动使用 OpenAI 兼容接口
     model = LiteLlm(
         model="openai/deepseek-ai/DeepSeek-V3.2-Exp",  # 建议使用 V2
-        # model="openai/zai-org/GLM-4.5-Air",  # 建议使用 V2
-        # model="openai/Qwen/Qwen3-235B-A22B-Thinking-2507",  # 建议使用 V2
         api_base="https://api.siliconflow.cn/v1",
         api_key=os.environ.get('SILICONFLOW_API_KEY')
     )
@@ -44,7 +42,6 @@ else:
 toolset = MCPToolset(
     connection_params=SseServerParams(
         url="http://localhost:50001/sse",
-        # url="http://osfi1394291.bohrium.tech:50001/sse",
     ),
 )
 
@@ -88,7 +85,3 @@ JCR 分区（Q1/Q2/Q3/Q4）
 你可调用外部工具（如 web_search、search_papers等等）获取最新、准确的数据''',
     tools=[toolset]
 )
-
-'''
-tar -zcvf dataset.tar.gz /root/build-your-agent/agents/adk_ui_starter
-'''

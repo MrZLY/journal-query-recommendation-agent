@@ -28,9 +28,9 @@ class AgentConfig:
         """Provide default configuration for Agent"""
         return {
             "agent": {
-                "name": "My Agent",
-                "description": "智能符号回归分析系统",
-                "welcomeMessage": "输入您的数据文件路径，开始符号回归分析",
+                "name": "期刊查询/投稿期刊推荐智能体",
+                "description": "期刊查询/投稿期刊推荐智能体",
+                "welcomeMessage": "输入任意期刊，查询影响因子和分区；输入文章摘要/课题描述，利用大模型行进行合适期刊全面推荐。",
                 "module": "agent.subagent",
                 "rootAgent": "rootagent"
             },

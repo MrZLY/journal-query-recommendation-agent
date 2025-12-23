@@ -1,0 +1,73 @@
+{
+  "1508.07797v1": {
+    "title": "Invoking forbidden modes in SnO_2 nanoparticles using tip enhanced Raman spectroscopy",
+    "authors": [
+      "Venkataramana Bonu",
+      "A. Das",
+      "A. K. Sivadasan",
+      "A. K. Tyagi",
+      "Sandip Dhara"
+    ],
+    "summary": "Raman forbidden modes and surface defect related Raman features in SnO_2\nnanostructures carry information about disorder and surface defects which\nstrongly influence important technological applications like catalysis and\nsensing. Due to the weak intensities of these peaks, it is difficult to\nidentify these features by using conventional Raman spectroscopy. Tip enhanced\nRaman spectroscopy (TERS) studies conducted on SnO_2 nanoparticles (NPs) of\nsize 4 and 25 nm have offered significant insights of prevalent defects and\ndisorders. Along with one order enhancement in symmetry allowed Raman modes,\nnew peaks related to disorder and surface defects of SnO_2 NPs were found with\nsignificant intensity. Temperature dependent Raman studies were also carried\nout for these NPs and correlated with the TERS spectra. For quasi-quantum dot\nsized 4 nm NPs, the TERS study was found to be the best technique to probe the\nfinite size related Raman forbidden modes.",
+    "pdf_url": "http://arxiv.org/pdf/1508.07797v1",
+    "published": "2015-08-31"
+  },
+  "1112.4218v1": {
+    "title": "Activated Vibrational Modes and Fermi Resonance in Tip-Enhanced Raman Spectroscopy",
+    "authors": [
+      "Mengtao Sun",
+      "Yurui Fang",
+      "Zhenyu Zhang",
+      "Hongxing Xu"
+    ],
+    "summary": "Using p-aminothiophenol (PATP) molecules on a gold substrate as prototypical\nexamples and high vacuum tip-enhanced Raman spectroscopy (HV-TERS), we show\nthat the vibrational spectra of those molecules are distinctly different from\nthose in typical surface-enhanced Raman spectroscopy. Detailed first-principles\ncalculations help to assign the Raman peaks in the TERS measurements as Raman\nactive and infrared (IR) active vibrational modes of dimercaptoazobenzene\n(DMAB), thus providing strong spectroscopic evidence for the conversion of PATP\ndimerization to DMAB. The activation of the IR active modes is due to enhanced\nelectromagnetic field gradient effects within the gap region of the highly\nasymmetric tip-surface geometry. Our TERS measurements also realize splitting\nof certain vibrational modes due to Fermi resonance between a fundamental mode\nand the overtone of a different mode or a combinational mode. These findings\nhelp to broaden the versatility of TERS as a promising technique for\nultrasensitive molecular spectroscopy.",
+    "pdf_url": "http://arxiv.org/pdf/1112.4218v1",
+    "published": "2011-12-19"
+  },
+  "2509.13075v1": {
+    "title": "Explaining Principles of Tip-Enhanced Raman Images with Ab Initio Modeling",
+    "authors": [
+      "Krystof Brezina",
+      "Yair Litman",
+      "Mariana Rossi"
+    ],
+    "summary": "Tip-enhanced Raman spectroscopy (TERS) is a powerful method for imaging\nvibrational motion and chemically characterizing surface-bound systems.\nTheoretical simulations of TERS images often consider systems in isolation,\nignoring any substrate support, such as metallic surfaces. Here, we show that\nthis omission leads to deviations from experimentally measured data through\nsimulations with a new finite-field formulation of first-principles simulation\nof TERS spectra that can address extended, periodic systems. We show that TERS\nimages of tetracyanoethylene on Ag(100) and defective MoS$_2$ monolayers\ncalculated using isolated molecules or cluster models are qualitatively\ndifferent from those calculated when accounting for the periodicity of the\nsubstrate. For Mg(II)-porphine on Ag(100), a system for which a direct\nexperimental comparison is possible, these simulations prove to be crucial for\nexplaining the spatial variation of TERS intensity patterns and allow us to\nuncover fundamental principles of TERS spectroscopy. We explain how and why\nsurface interactions affect images of out-of-plane vibrational modes much more\nthan those of in-plane modes, providing an important tool for the future\ninterpretation of these images in more complex systems.",
+    "pdf_url": "http://arxiv.org/pdf/2509.13075v1",
+    "published": "2025-09-16"
+  },
+  "1604.06598v1": {
+    "title": "Direct Base-to-Base Transitions in ssDNA Revealed by Tip-Enhanced Raman Scattering",
+    "authors": [
+      "Xiu-Mei Lin",
+      "Tanja Deckert-Gaudig",
+      "Prabha Singh",
+      "Michael Siegmann",
+      "Stephan Kupfer",
+      "Zhenglong Zhang",
+      "Stefanie Gr\u00e4fe",
+      "Volker Deckert"
+    ],
+    "summary": "In the present contribution, specifically designed single-stranded DNA\n(ssDNA) sequences composed of adenine and cytosine were used as nanometric\nrulers to target the maximum achievable spatial resolution of tip-enhanced\nRaman spectroscopy (TERS) under ambient conditions. By stepping along a strand\nwith a TERS tip, the obtained spectra allowed for a clear spectral\ndiscrimination including conformational information of the nucleobases, and\neven sharp adenine-cytosine transitions were detected repeatedly with a spatial\nresolution below 1 nm.",
+    "pdf_url": "http://arxiv.org/pdf/1604.06598v1",
+    "published": "2016-04-22"
+  },
+  "1608.04134v1": {
+    "title": "Quantum State Absorptions Coupled To Resonance Raman Spectroscopy Could Result In A General Explanation of TERS",
+    "authors": [
+      "Zachary D. Schultz",
+      "John Parthenios",
+      "Rimma Dekhter",
+      "Dimitris Anestopoulos",
+      "Spyridon Grammatikopoulos",
+      "Kostantinos Papagelis",
+      "James M. Marr",
+      "David Lewis",
+      "Costas Galiotis",
+      "Dimtry Lev",
+      "Aaron Lewis"
+    ],
+    "summary": "Tip enhanced Raman scattering (TERS) amplifies the intensity of vibrational\nRaman scattering by employing the tip of a probe interacting, in ultra close\nproximity, with a surface. Although a general understanding of the TERS process\nis still to be fully elucidated, scanning tunneling microscopy (STM) feedback\nis often applied with success in TERS to keep a noble metal probe in intimate\nproximity with a noble metal substrate. Since such STM TERS is a common\nmodality, the possible implications of plasmonic fields that may be induced by\nthe tunneling process are investigated and reported. In addition, TERS of a 2D\nresonant molecular system, a MoS2 bilayer crystal and a 2D non-resonant, lipid\nmolecular bilayer is compared. Data with multiple excitation wavelengths and\nsurfaces for the resonant system in the near- (TERS) and far-field regimes are\nreported. An interpretation based on weak coupling interactions within the\nframework of conventional resonance Raman scattering can explain the observed\nTERS enhancements. The non-resonant molecular lipid system, on the other hand,\nrequires strong coupling for a full understanding of the reported observations.",
+    "pdf_url": "http://arxiv.org/pdf/1608.04134v1",
+    "published": "2016-08-14"
+  }
+}

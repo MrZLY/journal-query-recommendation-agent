@@ -1,0 +1,49 @@
+{
+  "1608.04134v1": {
+    "title": "Quantum State Absorptions Coupled To Resonance Raman Spectroscopy Could Result In A General Explanation of TERS",
+    "authors": [
+      "Zachary D. Schultz",
+      "John Parthenios",
+      "Rimma Dekhter",
+      "Dimitris Anestopoulos",
+      "Spyridon Grammatikopoulos",
+      "Kostantinos Papagelis",
+      "James M. Marr",
+      "David Lewis",
+      "Costas Galiotis",
+      "Dimtry Lev",
+      "Aaron Lewis"
+    ],
+    "summary": "Tip enhanced Raman scattering (TERS) amplifies the intensity of vibrational\nRaman scattering by employing the tip of a probe interacting, in ultra close\nproximity, with a surface. Although a general understanding of the TERS process\nis still to be fully elucidated, scanning tunneling microscopy (STM) feedback\nis often applied with success in TERS to keep a noble metal probe in intimate\nproximity with a noble metal substrate. Since such STM TERS is a common\nmodality, the possible implications of plasmonic fields that may be induced by\nthe tunneling process are investigated and reported. In addition, TERS of a 2D\nresonant molecular system, a MoS2 bilayer crystal and a 2D non-resonant, lipid\nmolecular bilayer is compared. Data with multiple excitation wavelengths and\nsurfaces for the resonant system in the near- (TERS) and far-field regimes are\nreported. An interpretation based on weak coupling interactions within the\nframework of conventional resonance Raman scattering can explain the observed\nTERS enhancements. The non-resonant molecular lipid system, on the other hand,\nrequires strong coupling for a full understanding of the reported observations.",
+    "pdf_url": "http://arxiv.org/pdf/1608.04134v1",
+    "published": "2016-08-14"
+  },
+  "1909.04020v4": {
+    "title": "Strong near-field light-matter interaction in plasmon-resonant tip-enhanced Raman scattering in indium nitride",
+    "authors": [
+      "Emanuele Poliani",
+      "Daniel Seidlitz",
+      "Maximilian Ries",
+      "Soo J. Choi",
+      "Jim S. Speck",
+      "Axel Hoffmann",
+      "Markus R. Wagner"
+    ],
+    "summary": "We report a detailed study of the strong near-field Raman scattering\nenhancement which takes place in tip-enhanced Raman scattering (TERS) in indium\nnitride. In addition to the well-known first-order optical phonons of indium\nnitride, near-field Raman modes, not detectable in the far-field, appear when\napproaching the plasmonic probe. The frequencies of these modes coincide with\ncalculated energies of second order combinational modes consisting of optical\nzone center phonons and acoustic phonons at the edge of the Brillouin zone. The\nappearance of strong combinational modes suggests that TERS in indium nitride\nrepresents a special case of Raman scattering in which a resonance condition on\nthe nanometer scale is achieved between the localized surface plasmons (LSPs)\nand surface plasmon polaritons (SPPs) of the probe with the surface charge\noscillation of the material. We suggest that the surface charge accumulation\n(SCA) in InN, which can render the surface a degenerate semiconductor, is the\ndominating reason for the unusually large enhancement of the TERS signal as\ncompared to other inorganic semiconductors. Thus, the plasmon-resonant TERS\n(PR-TERS) process in InN makes this technique an excellent tool for defect\ncharacterization of indium-rich semiconductor heterostructures and\nnanostructures with high carrier concentrations.",
+    "pdf_url": "http://arxiv.org/pdf/1909.04020v4",
+    "published": "2019-09-09"
+  },
+  "2212.11655v1": {
+    "title": "Polarized tip-enhanced Raman spectroscopy at liquid He temperature in ultrahigh vacuum using an off-axis parabolic mirror",
+    "authors": [
+      "Leander Peis",
+      "Ge He",
+      "Daniel Jost",
+      "Gabriele Rager",
+      "Rudi Hackl"
+    ],
+    "summary": "Tip-enhanced Raman spectroscopy (TERS) combines inelastic light scattering\nwell below the diffraction limit down to the nanometer range and scanning probe\nmicroscopy and, possibly, spectroscopy. In this way, topographic and\nspectroscopic as well as single- and two-particle information may\nsimultaneously be collected. While single molecules can now be studied\nsuccessfully, bulk solids are still not meaningfully accessible. It is the\npurpose of the work presented here to outline approaches toward this objective.\nWe describe a home-built, liquid helium cooled, ultrahigh vacuum tip-enhanced\nRaman spectroscopy system (LHe-UHV-TERS). The setup is based on a scanning\ntunneling microscope and, as an innovation, an off-axis parabolic mirror having\na high numerical aperture of approximately $0.85$ and a large working distance.\nThe system is equipped with a fast load-lock chamber, a chamber for the\n\\textit{in situ} preparation of tips, substrates, and samples, and a TERS\nchamber. Base pressure and temperature in the TERS chamber were approximately\n$3\\times 10^{-11}$~mbar and 15~K, respectively. Polarization dependent\ntip-enhanced Raman spectra of the vibration modes of carbon nanotubes were\nsuccessfully acquired at cryogenic temperature. Enhancement factors in the\nrange of $10^7$ were observed. The new features described here including very\nlow pressure and temperature and the external access to the light\npolarizations, thus the selection rules, may pave the way towards the\ninvestigation of bulk and surface materials.",
+    "pdf_url": "http://arxiv.org/pdf/2212.11655v1",
+    "published": "2022-12-22"
+  }
+}

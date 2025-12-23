@@ -1,0 +1,59 @@
+{
+  "2409.06519v1": {
+    "title": "New constructions of DNA codes under multiple constraints and parallel searching algorithms",
+    "authors": [
+      "Guodong Wang",
+      "Hongwei Liu",
+      "Xueyan Chen"
+    ],
+    "summary": "DNA codes have garnered significant interest due to their utilization in\ndigital media storage, cryptography, and DNA computing. In this paper, we first\nextend the results of constructing reversible group codes \\cite{Cengellenmis}\nand reversible composite group codes \\cite{Korban5} to general even-order\nfinite groups. By using these results, we give parallel searching algorithms to\nfind some new DNA codes with better parameters. Secondly, by mapping codes over\n$\\mathbb{F}_4$ to DNA codes, we establish a relationship between the\n$GC$-weight enumerator of DNA codes and the Hamming weight enumerator of their\ntrace codes, which greatly improves the computational efficiency of searching\nfor DNA codes. Based on this relationship, we propose an efficient algorithm\nfor generating DNA codes with $50\\%$ $GC$-content. Furthermore, we find that\nthere is no direct connection between the $GC$-weight enumerator of a DNA code\nand the $GC$-weight enumerator of its dual code. Finally, we present algorithms\nfor determining whether a DNA code is free from secondary structures or\nconflict-free, and some new DNA codes with better parameters under multiple\nconstraints are obtained, which are listed in Tables 1 and 4.",
+    "pdf_url": "http://arxiv.org/pdf/2409.06519v1",
+    "published": "2024-09-10"
+  },
+  "2211.16096v1": {
+    "title": "Construction of Multiple Constrained DNA Codes",
+    "authors": [
+      "Siddhartha Siddhiprada Bhoi",
+      "Paramapalli Udaya",
+      "Abhay Kumar Singh"
+    ],
+    "summary": "DNA sequences are prone to creating secondary structures by folding back on\nthemselves by non-specific hybridization among its nucleotides. The formation\nof secondary structures makes the sequences chemically inactive towards\nsynthesis and sequencing processes. In this letter, our goal is to tackle the\nproblems due to the creation of secondary structures in DNA sequences along\nwith constraints such as not having a large homopolymer run length. In this\npaper, we have presented families of DNA codes with secondary structures of\nstem length at most two and homopolymer run length at most four. By mapping the\nerror correcting codes over $\\Z_{11}$ to DNA nucleotides, we obtained DNA codes\nwith rates $0.5765$ times the rate of corresponding code over $\\Z_{11}$, which\ninclude some new secondary structure free and better-performing codes for DNA\nbased data storage and DNA computing purposes.",
+    "pdf_url": "http://arxiv.org/pdf/2211.16096v1",
+    "published": "2022-11-29"
+  },
+  "1404.5044v1": {
+    "title": "Anomalous Power Law Decay in Solvation Dynamics of DNA: A Mode Coupling Theory Analysis of Ion Contribution",
+    "authors": [
+      "Biman Bagchi"
+    ],
+    "summary": "Several time domain fluorescence Stokes shift (TDFSS) experiments have\nreported a slow power law decay in the hydration dynamics of a DNA molecule.\nSuch a power law has neither been observed in computer simulations nor in some\nother TDFSS experiments. Here we observe that a slow decay may originate from\ncollective ion contribution because in experiments DNA is immersed in a buffer\nsolution, and also from groove bound water and lastly from DNA dynamics itself.\nIn this work we first express the solvation time correlation function in terms\nof dynamic structure factors of the solution. We use mode coupling theory to\ncalculate analytically the time dependence of collective ionic contribution. A\npower law decay in seen to originate from an interplay between long range\nprobe-ion direct correlation function and ion-ion dynamic structure factor.\nAlthough the power law decay is reminiscent of Debye-Falkenhagen effect yet\nsolvation dynamics is dominated by ion atmosphere relaxation times at longer\nlength scales (small wave number) than in electrolyte friction. We further\ndiscuss why this power law may not originate from water motions which have been\ncomputed by molecular dynamics simulations. Lastly, we propose several\nexperiments to check the prediction of the present theoretical work.",
+    "pdf_url": "http://arxiv.org/pdf/1404.5044v1",
+    "published": "2014-04-20"
+  },
+  "1512.00710v1": {
+    "title": "Two-color spectroscopy of UV excited ssDNA complex with a single-wall nanotube probe: Fast nucleobase autoionization mechanism",
+    "authors": [
+      "Tetyana Ignatova",
+      "Alexander Balaeff",
+      "Ming Zheng",
+      "Michael Blades",
+      "Peter Stoeckl",
+      "Slava V. Rotkin"
+    ],
+    "summary": "DNA autoionization is a fundamental process wherein UV-photoexcited\nnucleobases dissipate energy by charge transfer to the environment without\nundergoing chemical damage. Here, single-wall carbon nanotubes (SWNT) are\nexplored as a photoluminescent reporter for studying the mechanism and rates of\nDNA autoionization. Two-color photoluminescence spectroscopy allows separate\nphotoexcitation of the DNA and the SWNTs in the UV and visible range,\nrespectively. A strong SWNT photoluminescence quenching is observed when the UV\npump is resonant with the DNA absorption, consistent with charge transfer from\nthe excited states of the DNA to the SWNT. Semiempirical calculations of the\nDNA-SWNT electronic structure, combined with a Green's function theory for\ncharge transfer, show a 20 fs autoionization rate, dominated by the hole\ntransfer. Rate-equation analysis of the spectroscopy data confirms that the\nquenching rate is limited by the thermalization of the free charge carriers\ntransferred to the nanotube reservoir. The developed approach has a great\npotential for monitoring DNA excitation, autoionization, and chemical damage\nboth {\\it in vivo} and {\\it in vitro}.",
+    "pdf_url": "http://arxiv.org/pdf/1512.00710v1",
+    "published": "2015-12-02"
+  },
+  "1703.02020v1": {
+    "title": "Probing the Structure and in Silico Stability of Cargo Loaded DNA Icosahedron using MD Simulations",
+    "authors": [
+      "Himanshu Joshi",
+      "Dhiraj Bhatia",
+      "Yamuna Krishnan",
+      "Prabal K. Maiti"
+    ],
+    "summary": "Platonic solids such as polyhedra based on DNA have been deployed for\nmultifarious applications such as RNAi delivery, biological targeting and\nbioimaging. All of these applications hinge on the capability of DNA polyhedra\nfor molecular display with high spatial precision. Therefore high resolution\nstructural models of such polyhedra are critical to widen their applications in\nboth materials and biology. Here, we present an atomistic model of a\nwell-characterized DNA icosahedron, with demonstrated versatile functionalities\nin biological systems. We study the structure and dynamics of this DNA\nicosahedron using fully atomistic molecular dynamics simulation in explicit\nwater and ions. The major modes of internal motion have been identified using\nprincipal component analysis. We provide a quantitative estimate of the radius\nof gyration (Rg), solvent accessible surface area (SASA) and volume of the\nicosahedron which is essential to estimate its maximal cargo carrying capacity.\nImportantly, our simulation of gold nanoparticles (AuNP) encapsulated within\nDNA icosahedra revealed enhanced stability of the AuNP loaded DNA icosahedra\ncompared to empty icosahedra. This is consistent with experimental results that\nshow high yields of cargo-encapsulated DNA icosahedra that have led to its\ndiverse applications for precision targeting. These studies reveal that the\nstabilizing interactions between the cargo and the DNA scaffold powerfully\npositions DNA polyhedra as targetable nanocapsules for payload delivery. These\ninsights can be exploited for precise molecular display for diverse biological\napplications.",
+    "pdf_url": "http://arxiv.org/pdf/1703.02020v1",
+    "published": "2017-03-06"
+  }
+}

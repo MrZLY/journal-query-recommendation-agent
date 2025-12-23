@@ -1,0 +1,42 @@
+{
+  "2502.06090v3": {
+    "title": "Tip-Enhanced Raman Spectroscopy of Cell Wall Heterogeneity for Aspergillus Fumigatus",
+    "authors": [
+      "Zhenfei Jiang",
+      "Jizhou Wang",
+      "Zhe He",
+      "Peng Zhang",
+      "Zhenhuan Yi",
+      "Alexei V. Sokolov",
+      "Marlan O. Scully"
+    ],
+    "summary": "Tip-enhanced Raman spectroscopy (TERS) enables nanoscale chemical mapping of\nbiological structures, providing high-resolution, high-signal-to-noise ratio\nimaging into molecular distribution and interactions beyond the capabilities of\nconventional Raman imaging. However, challenges such as the deformation of\nfragile biological cells and the complexity of signal interpretation would\nincrease the difficulty in investigating biological samples with TERS. Here, we\ndemonstrate using TERS to investigate the cell wall heterogeneity of\nAspergillus fumigatus spores. Using TERS imaging and spectral analysis, we map\nthe chemical components including melanin within the fungal cell wall. The\nresults reveal distinct spectral features associated with polysaccharides,\nlipids, and proteins. Furthermore, by comparing the wild-type and albino mutant\nspores, we illuminate the biochemical characteristics of Dihydroxynaphthalene\nmelanin (DHN-melanin) in the fungal cell wall.",
+    "pdf_url": "http://arxiv.org/pdf/2502.06090v3",
+    "published": "2025-02-10"
+  },
+  "2203.06666v1": {
+    "title": "Nanofluidic trapping and enhanced Raman detection of single biomolecules in plasmonic bowl-shaped nanopore",
+    "authors": [
+      "Yingqi Zhao",
+      "Aliaksandr Hubarevich",
+      "Jian-An Huang",
+      "Francesco De Angelis"
+    ],
+    "summary": "Solid-state nanopores are emerging platforms for single-molecule protein\nsequencing due to their tolerance to hash physiology environment and\ncompatibility with different electrical and optical detection methods. However,\nthey suffer from poor molecular manipulations that were twisted with and thus\nlimited by the detection methods. Here, we report a bowl-shaped plasmonic gold\nnanopore on silicon nitride with hydrogel to demonstrate near-field nanofluidic\nmanipulation of DNA translocation for plasmon-enhanced Raman spectroscopic\ndetection. The hydrogel linearized the DNA, and the linear DNA was trapped in\nthe nanopore for tens of seconds due assumably to bipolar effect of the\nnanopore that generate electroosmotic sheath flow and bipolar surface charge\ndistribution. Their combination led to a near-field confinement of the DNA in\nthe nanopore hot spot to allow stable Raman detection. We envision that a\ncombination of Raman spectroscopy with the bowl-shaped nanopores can succeed in\nsingle-molecule protein sequencing in a label-free way",
+    "pdf_url": "http://arxiv.org/pdf/2203.06666v1",
+    "published": "2022-03-13"
+  },
+  "1508.07797v1": {
+    "title": "Invoking forbidden modes in SnO_2 nanoparticles using tip enhanced Raman spectroscopy",
+    "authors": [
+      "Venkataramana Bonu",
+      "A. Das",
+      "A. K. Sivadasan",
+      "A. K. Tyagi",
+      "Sandip Dhara"
+    ],
+    "summary": "Raman forbidden modes and surface defect related Raman features in SnO_2\nnanostructures carry information about disorder and surface defects which\nstrongly influence important technological applications like catalysis and\nsensing. Due to the weak intensities of these peaks, it is difficult to\nidentify these features by using conventional Raman spectroscopy. Tip enhanced\nRaman spectroscopy (TERS) studies conducted on SnO_2 nanoparticles (NPs) of\nsize 4 and 25 nm have offered significant insights of prevalent defects and\ndisorders. Along with one order enhancement in symmetry allowed Raman modes,\nnew peaks related to disorder and surface defects of SnO_2 NPs were found with\nsignificant intensity. Temperature dependent Raman studies were also carried\nout for these NPs and correlated with the TERS spectra. For quasi-quantum dot\nsized 4 nm NPs, the TERS study was found to be the best technique to probe the\nfinite size related Raman forbidden modes.",
+    "pdf_url": "http://arxiv.org/pdf/1508.07797v1",
+    "published": "2015-08-31"
+  }
+}

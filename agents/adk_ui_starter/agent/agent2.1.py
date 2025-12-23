@@ -17,41 +17,19 @@ from dotenv import load_dotenv
 load_dotenv(os.path.join(os.path.dirname(__file__), '.env'))
 
 # Use model from environment or default to deepseek
-# model_type = os.getenv('MODEL', 'deepseek/deepseek-chat')
-
-
-use_model = "siliconflow"  # 您可以在 "deepseek", "siliconflow", "gpt-4o" 之间切换
-
-if use_model == "deepseek":
-    model = LiteLlm(model="deepseek/deepseek-chat")
-elif use_model == "siliconflow":
-    # 硅基流动使用 OpenAI 兼容接口
-    model = LiteLlm(
-        model="openai/deepseek-ai/DeepSeek-V3.2-Exp",  # 建议使用 V2
-        # model="openai/zai-org/GLM-4.5-Air",  # 建议使用 V2
-        # model="openai/Qwen/Qwen3-235B-A22B-Thinking-2507",  # 建议使用 V2
-        api_base="https://api.siliconflow.cn/v1",
-        api_key=os.environ.get('SILICONFLOW_API_KEY')
-    )
-elif use_model == "gpt-4o":
-    # 确保已设置 AZURE_OPENAI_* 环境变量
-    model = LiteLlm(model="azure/gpt-4o")
-else:
-    # 默认模型
-    model = LiteLlm(model="deepseek/deepseek-chat")
+model_type = os.getenv('MODEL', 'deepseek/deepseek-chat')
 
 
 toolset = MCPToolset(
     connection_params=SseServerParams(
         url="http://localhost:50001/sse",
-        # url="http://osfi1394291.bohrium.tech:50001/sse",
     ),
 )
 
 # Create agent
 root_agent = Agent(
     name="mcp_sse_agent",
-    model=model,
+    model=LiteLlm(model=model_type),
     instruction='''You are an intelligent assistant capable of using external tools via MCP.准确讲，你是一个专业的学术期刊智能助手，能够根据用户输入自动判断任务类型并执行相应操作：
 
 📌 任务类型一：期刊查询
@@ -85,10 +63,6 @@ JCR 分区（Q1/Q2/Q3/Q4）
 💡 注意：优先推荐与用户研究高度匹配的期刊，而非单纯追求高 IF。若用户研究偏应用或交叉学科，应兼顾专业性和发表可行性。 
 
 🛠️ 工具调用说明
-你可调用外部工具（如 web_search、search_papers等等）获取最新、准确的数据''',
+你可调用外部工具（如 Web of Science、Scopus、LetPub、JCR、中科院期刊分区表、期刊官网等）获取最新、准确的数据。若某项信息无法获取，请明确标注“暂无公开数据”或“需进一步确认”，切勿编造。''',
     tools=[toolset]
 )
-
-'''
-tar -zcvf dataset.tar.gz /root/build-your-agent/agents/adk_ui_starter
-'''

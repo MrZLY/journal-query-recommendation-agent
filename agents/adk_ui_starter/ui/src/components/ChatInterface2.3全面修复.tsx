@@ -87,9 +87,6 @@ const ChatInterface: React.FC = () => {
 
   const [ws, setWs] = useState<WebSocket | null>(null)
   const [connectionStatus, setConnectionStatus] = useState<'disconnected' | 'connecting' | 'connected'>('disconnected')
-  // Measure available viewport height when embedded under external headers
-  const containerRef = useRef<HTMLDivElement>(null)
-  const [containerHeight, setContainerHeight] = useState<number | null>(null)
 
   useEffect(() => {
     // Load initial file tree
@@ -165,28 +162,6 @@ const ChatInterface: React.FC = () => {
       if (currentWebSocket) {
         currentWebSocket.close()
       }
-    }
-  }, [])
-
-  // Calculate available height for the app so bottom input stays visible even when embedded
-  useEffect(() => {
-    const measure = () => {
-      try {
-        const top = containerRef.current?.getBoundingClientRect().top ?? 0
-        const vh = (window as any).visualViewport?.height ?? window.innerHeight
-        const height = Math.max(320, Math.floor(vh - top))
-        setContainerHeight(height)
-      } catch (_) {
-        // Fallback
-        setContainerHeight(window.innerHeight)
-      }
-    }
-    measure()
-    window.addEventListener('resize', measure)
-    window.addEventListener('orientationchange', measure)
-    return () => {
-      window.removeEventListener('resize', measure)
-      window.removeEventListener('orientationchange', measure)
     }
   }, [])
 
@@ -464,7 +439,7 @@ const ChatInterface: React.FC = () => {
   }, [])
 
   return (
-    <div ref={containerRef} className="flex min-h-0 bg-gray-50 dark:bg-gray-900" style={containerHeight ? { height: containerHeight } : undefined}>
+    <div className="flex h-screen bg-gray-50 dark:bg-gray-900">
       {/* Session List Sidebar for large screens */}
       <div className="hidden lg:block">
         <ResizablePanel
@@ -520,7 +495,7 @@ const ChatInterface: React.FC = () => {
       {/* Main Content Area */}
   <div className="flex-1 min-w-0 flex">
         {/* Chat Area */}
-  <div className="flex-1 min-w-0 flex flex-col bg-gradient-to-br from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 aurora-bg overflow-hidden">
+  <div className="flex-1 min-w-0 flex flex-col bg-gradient-to-br from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 aurora-bg h-screen overflow-hidden">
         {/* Header */}
         <div className="px-4 py-3 border-b border-gray-200/50 dark:border-gray-700/50 glass-premium glass-glossy flex items-center justify-between flex-wrap">
           <div className="flex items-center gap-3">

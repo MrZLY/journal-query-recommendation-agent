@@ -1,0 +1,190 @@
+INFO:     Started server process [1405]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:50001 (Press CTRL+C to quit)
+INFO:     127.0.0.1:47770 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47786 - "POST /messages/?session_id=f28557af13274d378e2b273d7809f999 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:47786 - "POST /messages/?session_id=f28557af13274d378e2b273d7809f999 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:47786 - "POST /messages/?session_id=f28557af13274d378e2b273d7809f999 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:45476 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45484 - "POST /messages/?session_id=d82ebb0d90ac4413ac166a56903f11f1 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:45484 - "POST /messages/?session_id=d82ebb0d90ac4413ac166a56903f11f1 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:45484 - "POST /messages/?session_id=d82ebb0d90ac4413ac166a56903f11f1 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:45484 - "POST /messages/?session_id=d82ebb0d90ac4413ac166a56903f11f1 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=deepmd&id_list=&sortBy=relevance&sortOrder=descending&start=0&max_results=100
+Got first page: 30 of 30 total results
+Results are saved in: papers/deepmd/papers_info.json
+INFO:     127.0.0.1:51806 - "POST /messages/?session_id=d82ebb0d90ac4413ac166a56903f11f1 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:51806 - "POST /messages/?session_id=d82ebb0d90ac4413ac166a56903f11f1 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+INFO:     127.0.0.1:51806 - "POST /messages/?session_id=d82ebb0d90ac4413ac166a56903f11f1 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+INFO:     127.0.0.1:51806 - "POST /messages/?session_id=d82ebb0d90ac4413ac166a56903f11f1 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+INFO:     127.0.0.1:51806 - "POST /messages/?session_id=d82ebb0d90ac4413ac166a56903f11f1 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+INFO:     127.0.0.1:51806 - "POST /messages/?session_id=d82ebb0d90ac4413ac166a56903f11f1 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+INFO:     127.0.0.1:51806 - "POST /messages/?session_id=d82ebb0d90ac4413ac166a56903f11f1 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:45994 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46000 - "POST /messages/?session_id=8114d8567848456598e81dcbd3e256de HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:46000 - "POST /messages/?session_id=8114d8567848456598e81dcbd3e256de HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:46000 - "POST /messages/?session_id=8114d8567848456598e81dcbd3e256de HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:46000 - "POST /messages/?session_id=8114d8567848456598e81dcbd3e256de HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=deepmd&id_list=&sortBy=relevance&sortOrder=descending&start=0&max_results=100
+Got first page: 30 of 30 total results
+Results are saved in: papers/deepmd/papers_info.json
+INFO:     127.0.0.1:34224 - "POST /messages/?session_id=8114d8567848456598e81dcbd3e256de HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:34224 - "POST /messages/?session_id=8114d8567848456598e81dcbd3e256de HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+INFO:     127.0.0.1:34224 - "POST /messages/?session_id=8114d8567848456598e81dcbd3e256de HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+INFO:     127.0.0.1:34224 - "POST /messages/?session_id=8114d8567848456598e81dcbd3e256de HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+INFO:     127.0.0.1:34224 - "POST /messages/?session_id=8114d8567848456598e81dcbd3e256de HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+INFO:     127.0.0.1:34224 - "POST /messages/?session_id=8114d8567848456598e81dcbd3e256de HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+INFO:     127.0.0.1:34224 - "POST /messages/?session_id=8114d8567848456598e81dcbd3e256de HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:33434 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33438 - "POST /messages/?session_id=17ffe02a3e73463496a3ee050876a62a HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:33438 - "POST /messages/?session_id=17ffe02a3e73463496a3ee050876a62a HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:33438 - "POST /messages/?session_id=17ffe02a3e73463496a3ee050876a62a HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:60244 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60254 - "POST /messages/?session_id=58a9f7eca9d747a4b2c327fd2ec4ac0d HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:60254 - "POST /messages/?session_id=58a9f7eca9d747a4b2c327fd2ec4ac0d HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:60254 - "POST /messages/?session_id=58a9f7eca9d747a4b2c327fd2ec4ac0d HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:58280 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58286 - "POST /messages/?session_id=b56a96ca3e3247f9956ce109f95c913b HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:58286 - "POST /messages/?session_id=b56a96ca3e3247f9956ce109f95c913b HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:58286 - "POST /messages/?session_id=b56a96ca3e3247f9956ce109f95c913b HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:58286 - "POST /messages/?session_id=b56a96ca3e3247f9956ce109f95c913b HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Raman+spectroscopy&id_list=&sortBy=relevance&sortOrder=descending&start=0&max_results=100
+Got first page: 100 of 57743 total results
+Results are saved in: papers/raman_spectroscopy/papers_info.json
+INFO:     127.0.0.1:38970 - "POST /messages/?session_id=b56a96ca3e3247f9956ce109f95c913b HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:38984 - "POST /messages/?session_id=b56a96ca3e3247f9956ce109f95c913b HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+INFO:     127.0.0.1:38984 - "POST /messages/?session_id=b56a96ca3e3247f9956ce109f95c913b HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+INFO:     127.0.0.1:38984 - "POST /messages/?session_id=b56a96ca3e3247f9956ce109f95c913b HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+INFO:     127.0.0.1:38984 - "POST /messages/?session_id=b56a96ca3e3247f9956ce109f95c913b HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+INFO:     127.0.0.1:38984 - "POST /messages/?session_id=b56a96ca3e3247f9956ce109f95c913b HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+INFO:     127.0.0.1:38984 - "POST /messages/?session_id=b56a96ca3e3247f9956ce109f95c913b HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:51832 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51848 - "POST /messages/?session_id=5892a46bf07d48bcae016e6862a886bb HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:51848 - "POST /messages/?session_id=5892a46bf07d48bcae016e6862a886bb HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:51848 - "POST /messages/?session_id=5892a46bf07d48bcae016e6862a886bb HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:57848 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57854 - "POST /messages/?session_id=d3bb2f371100470e982da67aa8ed2ff5 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:57854 - "POST /messages/?session_id=d3bb2f371100470e982da67aa8ed2ff5 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:57854 - "POST /messages/?session_id=d3bb2f371100470e982da67aa8ed2ff5 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:51512 - "POST /messages/?session_id=d3bb2f371100470e982da67aa8ed2ff5 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=chemical+theoretical+calculation+algorithm+DNA+structure+analysis&id_list=&sortBy=relevance&sortOrder=descending&start=0&max_results=100
+Got first page: 25 of 1383970 total results
+Results are saved in: papers/chemical_theoretical_calculation_algorithm_dna_structure_analysis/papers_info.json
+INFO:     127.0.0.1:42628 - "POST /messages/?session_id=d3bb2f371100470e982da67aa8ed2ff5 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:48710 - "POST /messages/?session_id=d3bb2f371100470e982da67aa8ed2ff5 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=surface+enhanced+Raman+spectroscopy+TERS+DNA+protein+structure&id_list=&sortBy=relevance&sortOrder=descending&start=0&max_results=100
+Got first page: 100 of 778157 total results
+Results are saved in: papers/surface_enhanced_raman_spectroscopy_ters_dna_protein_structure/papers_info.json
+INFO:     127.0.0.1:48710 - "POST /messages/?session_id=d3bb2f371100470e982da67aa8ed2ff5 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:58284 - "POST /messages/?session_id=d3bb2f371100470e982da67aa8ed2ff5 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=theoretical+chemistry+algorithms+computational+methods&id_list=&sortBy=relevance&sortOrder=descending&start=0&max_results=100
+Got first page: 100 of 1333515 total results
+Results are saved in: papers/theoretical_chemistry_algorithms_computational_methods/papers_info.json
+INFO:     127.0.0.1:58284 - "POST /messages/?session_id=d3bb2f371100470e982da67aa8ed2ff5 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:47916 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47924 - "POST /messages/?session_id=1210dd8da3404785b6bdb201751b01c7 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:47924 - "POST /messages/?session_id=1210dd8da3404785b6bdb201751b01c7 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:47924 - "POST /messages/?session_id=1210dd8da3404785b6bdb201751b01c7 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:51620 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51634 - "POST /messages/?session_id=0a558a22974f4491ad3b125698ecc5b8 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:51634 - "POST /messages/?session_id=0a558a22974f4491ad3b125698ecc5b8 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:51634 - "POST /messages/?session_id=0a558a22974f4491ad3b125698ecc5b8 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:59402 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59412 - "POST /messages/?session_id=7955ace62a284daf9690728ffc0e9725 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:59412 - "POST /messages/?session_id=7955ace62a284daf9690728ffc0e9725 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:59412 - "POST /messages/?session_id=7955ace62a284daf9690728ffc0e9725 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:45828 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45840 - "POST /messages/?session_id=0b102ea2e1754d1dbbb893029c19d1e5 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:45840 - "POST /messages/?session_id=0b102ea2e1754d1dbbb893029c19d1e5 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:45840 - "POST /messages/?session_id=0b102ea2e1754d1dbbb893029c19d1e5 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:55400 - "POST /messages/?session_id=0b102ea2e1754d1dbbb893029c19d1e5 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:47316 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47328 - "POST /messages/?session_id=951e7b9ff3334656af621603c49b7015 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:47328 - "POST /messages/?session_id=951e7b9ff3334656af621603c49b7015 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:47328 - "POST /messages/?session_id=951e7b9ff3334656af621603c49b7015 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:46098 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46102 - "POST /messages/?session_id=58f5c806f8154ffaa663d6b80694bf95 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:46102 - "POST /messages/?session_id=58f5c806f8154ffaa663d6b80694bf95 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:46102 - "POST /messages/?session_id=58f5c806f8154ffaa663d6b80694bf95 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:51634 - "POST /messages/?session_id=58f5c806f8154ffaa663d6b80694bf95 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=chemical+theory+computation+algorithm+DNA+structure+analysis&id_list=&sortBy=relevance&sortOrder=descending&start=0&max_results=100
+Got first page: 100 of 1922520 total results
+Results are saved in: papers/chemical_theory_computation_algorithm_dna_structure_analysis/papers_info.json
+INFO:     127.0.0.1:44784 - "POST /messages/?session_id=58f5c806f8154ffaa663d6b80694bf95 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:44784 - "POST /messages/?session_id=58f5c806f8154ffaa663d6b80694bf95 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=surface+enhanced+Raman+spectroscopy+TERS+DNA+nanotechnology&id_list=&sortBy=relevance&sortOrder=descending&start=0&max_results=100
+Got first page: 100 of 394006 total results
+Results are saved in: papers/surface_enhanced_raman_spectroscopy_ters_dna_nanotechnology/papers_info.json
+INFO:     127.0.0.1:33378 - "POST /messages/?session_id=58f5c806f8154ffaa663d6b80694bf95 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:47804 - "POST /messages/?session_id=58f5c806f8154ffaa663d6b80694bf95 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+INFO:     127.0.0.1:47804 - "POST /messages/?session_id=58f5c806f8154ffaa663d6b80694bf95 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+INFO:     127.0.0.1:47804 - "POST /messages/?session_id=58f5c806f8154ffaa663d6b80694bf95 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+INFO:     127.0.0.1:47804 - "POST /messages/?session_id=58f5c806f8154ffaa663d6b80694bf95 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.83.79:42982 - "GET /sse HTTP/1.1" 200 OK
+INFO:     47.92.83.79:42986 - "POST /messages/?session_id=3cbf5bfec6cc4206821861cd65c6de47 HTTP/1.1" 202 Accepted
+INFO:     47.92.83.79:42986 - "POST /messages/?session_id=3cbf5bfec6cc4206821861cd65c6de47 HTTP/1.1" 202 Accepted
+INFO:     47.92.83.79:42986 - "POST /messages/?session_id=3cbf5bfec6cc4206821861cd65c6de47 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.83.79:45528 - "GET /sse HTTP/1.1" 200 OK
+INFO:     47.92.83.79:45542 - "POST /messages/?session_id=f865758c499943ba9e449315f1d4d9d1 HTTP/1.1" 202 Accepted
+INFO:     47.92.83.79:45542 - "POST /messages/?session_id=f865758c499943ba9e449315f1d4d9d1 HTTP/1.1" 202 Accepted
+INFO:     47.92.83.79:45542 - "POST /messages/?session_id=f865758c499943ba9e449315f1d4d9d1 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1405]

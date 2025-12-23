@@ -1,0 +1,38 @@
+{
+  "2110.03495v1": {
+    "title": "Twist-diameter coupling drives DNA twist changes by salt and temperature",
+    "authors": [
+      "Chen Zhang",
+      "Fujia Tian",
+      "Ying Lu",
+      "Bing Yuan",
+      "Zhi-Jie Tan",
+      "Xing-Hua Zhang",
+      "Liang Dai"
+    ],
+    "summary": "DNA deformations play crucial roles in many biological processes and material\napplications. During DNA deformation, DNA structural parameters often exhibit\nnon-trivial and counterintuitive couplings, such as the twist-stretch and\ntwist-bending couplings. Here, we reveal an unexpectedly strong negative\ntwist-diameter coupling through the synergy of magnetic-tweezers experiments,\natomistic molecular dynamics simulations, and theoretical calculations. In\nexperiments, the DNA twist angle always increases with the concentration of\nNaCl, KCl, or RbCl. Our simulations quantitatively reproduce salt-induced twist\nchanges and reveal the underlying physical mechanism: the reduction of DNA\ndiameter under a high salt concentration leads to the increase in DNA twist\nangle through a strong negative twist-diameter coupling. The twist-diameter\ncoupling is mediated by two dihedral angles in DNA structure and the coupling\nconstant is 4.5 kBT/(deg nm) for one base-pair. Based on this coupling\nconstant, we predict the temperature-dependence of DNA twist -0.0102 deg/K per\nbp, which agrees with our and previous experimental results. Our analysis\nsuggests that the twist-diameter coupling is a common driving force for salt-\nand temperature-induced DNA twist changes.",
+    "pdf_url": "http://arxiv.org/pdf/2110.03495v1",
+    "published": "2021-10-07"
+  },
+  "1404.5044v1": {
+    "title": "Anomalous Power Law Decay in Solvation Dynamics of DNA: A Mode Coupling Theory Analysis of Ion Contribution",
+    "authors": [
+      "Biman Bagchi"
+    ],
+    "summary": "Several time domain fluorescence Stokes shift (TDFSS) experiments have\nreported a slow power law decay in the hydration dynamics of a DNA molecule.\nSuch a power law has neither been observed in computer simulations nor in some\nother TDFSS experiments. Here we observe that a slow decay may originate from\ncollective ion contribution because in experiments DNA is immersed in a buffer\nsolution, and also from groove bound water and lastly from DNA dynamics itself.\nIn this work we first express the solvation time correlation function in terms\nof dynamic structure factors of the solution. We use mode coupling theory to\ncalculate analytically the time dependence of collective ionic contribution. A\npower law decay in seen to originate from an interplay between long range\nprobe-ion direct correlation function and ion-ion dynamic structure factor.\nAlthough the power law decay is reminiscent of Debye-Falkenhagen effect yet\nsolvation dynamics is dominated by ion atmosphere relaxation times at longer\nlength scales (small wave number) than in electrolyte friction. We further\ndiscuss why this power law may not originate from water motions which have been\ncomputed by molecular dynamics simulations. Lastly, we propose several\nexperiments to check the prediction of the present theoretical work.",
+    "pdf_url": "http://arxiv.org/pdf/1404.5044v1",
+    "published": "2014-04-20"
+  },
+  "1409.7266v1": {
+    "title": "Electron Attachment to DNA and RNA Nucleobases: An EOMCC Investigation",
+    "authors": [
+      "Chintya Kumar Dutta",
+      "Turbasu Sengupta",
+      "Nayana Vaval",
+      "Sourav Pal"
+    ],
+    "summary": "We report a benchmark theoretical investigation of both adiabatic and\nvertical electron affinities of five DNA and RNA nucleobases: adenine, guanine,\ncytosine, thymine and uracil using state-of-the-art equation of motion coupled\ncluster (EOMCC) method. We have calculated the vertical electron affinity\nvalues of first five electron attached states of the DNA and RNA nucleobases\nand only the first electron attached state is found to be energetically\naccessible in gas phase. An analysis of the natural orbitals shows that the\nfirst electron attached states of uracil and thymine are valence-bound type and\nundergo significant structural changes on attachment of excess electron, which\nis reflected in the deviation of the adiabatic electron affinity from the\nvertical one. On the other hand, the first electron attached state of cytosine,\nadenine and guanine are dipole-bound type and their structure remain unaffected\non attachment of an extra electron, which results in small deviation of\nadiabatic electron affinity from that of the vertical one. Vertical and\nadiabatic electron affinity values of all the DNA and RNA nucleobases are\nnegative implying that the first electron attached state are not stable, but\nrather resonance states. Previously, reported theoretical studies had shown\nscattered results for electron affinities of DNA and RNA bases, with large\ndeviations from experimental values. Our EOMCC computed values are in very good\nagreement with experimental values and can be used as a reliable benchmark for\ncalibrating new theoretical methods.",
+    "pdf_url": "http://arxiv.org/pdf/1409.7266v1",
+    "published": "2014-09-25"
+  }
+}

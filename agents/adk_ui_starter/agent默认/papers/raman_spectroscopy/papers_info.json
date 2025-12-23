@@ -1,0 +1,68 @@
+{
+  "2311.01259v1": {
+    "title": "Advantages and developments of Raman spectroscopy for electroceramics",
+    "authors": [
+      "Marco Deluca",
+      "Hailong Hu",
+      "Maxim N. Popov",
+      "J\u00fcrgen Spitaler",
+      "Thomas Dieing"
+    ],
+    "summary": "Despite being applied with success in many fields of materials science, Raman\nspectroscopy is not yet determinant in the study of electroceramics. Recent\nexperimental and theoretical developments, however, should increase the\npopularity of Raman spectroscopy in this class of materials. In this Review, we\noutline the fields of application of Raman spectroscopy and microscopy in\nvarious electroceramic systems, defining current key bottlenecks and explaining\npromising recent developments. We focus our attention to recent experimental\ndevelopments, including coupling Raman spectroscopy with other methodologies,\nand modelling approaches involving both the model-based data interpretation and\nthe ab initio calculation of realistic Raman spectra.",
+    "pdf_url": "http://arxiv.org/pdf/2311.01259v1",
+    "published": "2023-11-02"
+  },
+  "1710.09749v1": {
+    "title": "Raman Optothermal Technique for Measuring Thermal Conductivity of Graphene and Related Materials",
+    "authors": [
+      "Hoda Malekpour",
+      "Alexander A. Balandin"
+    ],
+    "summary": "We describe Raman spectroscopy based method of measuring thermal conductivity\nof thin films, and review significant results achieved with this technique\npertinent to graphene and other two-dimensional materials. The optothermal\nRaman method was instrumental for the discovery of unique heat conduction\nproperties of graphene. In this method, Raman spectroscopy is used to determine\nthe local temperature of the sample while the excitation laser is utilized as a\nheat source. The success of Raman spectroscopy in investigating thermal\nconductivity of suspended graphene and graphene-based thin films motivated\nextension of this technique to other materials systems and films.",
+    "pdf_url": "http://arxiv.org/pdf/1710.09749v1",
+    "published": "2017-10-26"
+  },
+  "0706.0775v1": {
+    "title": "Raman Spectroscopy of Nanostructures and Nanosized Materials",
+    "authors": [
+      "Philippe Colomban",
+      "Gw\u00e9nael Gouadec"
+    ],
+    "summary": "The interest of micro and tip-enhanced Raman spectroscopy to analyze\nnanosized and nanostructured materials, chiefly semiconductors, oxides and\npristine or functionalized carbon nanotubes, is reviewed at the light of the\ncontributions to this special issue. Particular attention is paid to the fact\nthat chemical reactions, size or shape distribution, defects, strain and\ncouplings may add to nano-dimensionality in defining the Raman signature.",
+    "pdf_url": "http://arxiv.org/pdf/0706.0775v1",
+    "published": "2007-06-06"
+  },
+  "2002.04674v1": {
+    "title": "Quantum-Enhanced continuous-wave stimulated Raman spectroscopy",
+    "authors": [
+      "R. B. Andrade",
+      "H. Kerdoncuff",
+      "K. Berg-S\u00f8rensen",
+      "T. Gehring",
+      "M. Lassen",
+      "U. L. Andersen"
+    ],
+    "summary": "Stimulated Raman spectroscopy has become a powerful tool to study the\nspatiodynamics of molecular bonds with high sensitivity, resolution and speed.\nHowever, sensitivity and speed of state-of-the-art stimulated Raman\nspectroscopy are currently limited by the shot-noise of the light beam probing\nthe Raman process. Here, we demonstrate an enhancement of the sensitivity of\ncontinuous-wave stimulated Raman spectroscopy by reducing the quantum noise of\nthe probing light below the shot-noise limit by means of amplitude squeezed\nstates of light. Probing polymer samples with Raman shifts around 2950\n$cm^{-1}$ with squeezed states, we demonstrate a quantum-enhancement of the\nstimulated Raman signal-to-noise ratio (SNR) of 3.60 dB relative to the\nshot-noise limited SNR. Our proof-of-concept demonstration of quantum-enhanced\nRaman spectroscopy paves the way for a new generation of Raman microscopes,\nwhere weak Raman transitions can be imaged without the use of markers or an\nincrease in the total optical power.",
+    "pdf_url": "http://arxiv.org/pdf/2002.04674v1",
+    "published": "2020-02-11"
+  },
+  "2304.07740v1": {
+    "title": "Applications of Raman Spectroscopy in Clinical Medicine",
+    "authors": [
+      "Yaping Qi",
+      "Esther Xinyi Chen",
+      "Dan Hu",
+      "Ying Yang",
+      "Zhenping Wu",
+      "Ming Zheng",
+      "Mohammad A. Sadi",
+      "Yucheng Jiang",
+      "Kang Zhang",
+      "Zi Chen",
+      "Yong P. Chen"
+    ],
+    "summary": "Raman spectroscopy provides spectral information related to the specific\nmolecular structures of substances and has been well established as a powerful\ntool for studying biological tissues and diagnosing diseases. This article\nreviews recent advances in Raman spectroscopy and its applications in\ndiagnosing various critical diseases, including cancers, infections, and\nneurodegenerative diseases, and in predicting surgical outcomes. These advances\nare explored through discussion of state-of-the-art forms of Raman\nspectroscopy, such as surface-enhanced Raman spectroscopy, resonance Raman\nspectroscopy, and tip-enhanced Raman spectroscopy employed in biomedical\nsciences. We discuss biomedical applications, including various aspects and\nmethods of ex vivo and in vivo medical diagnosis, sample collection, data\nprocessing, and achievements in realizing the correlation between Raman spectra\nand biochemical information in certain diseases. Finally, we present the\nlimitations of the current study and provide perspectives for future research.",
+    "pdf_url": "http://arxiv.org/pdf/2304.07740v1",
+    "published": "2023-04-16"
+  }
+}

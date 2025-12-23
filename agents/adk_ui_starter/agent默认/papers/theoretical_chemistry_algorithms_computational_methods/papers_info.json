@@ -1,0 +1,52 @@
+{
+  "2111.09967v3": {
+    "title": "Differentiable quantum computational chemistry with PennyLane",
+    "authors": [
+      "Juan Miguel Arrazola",
+      "Soran Jahangiri",
+      "Alain Delgado",
+      "Jack Ceroni",
+      "Josh Izaac",
+      "Antal Sz\u00e1va",
+      "Utkarsh Azad",
+      "Robert A. Lang",
+      "Zeyue Niu",
+      "Olivia Di Matteo",
+      "Romain Moyard",
+      "Jay Soni",
+      "Maria Schuld",
+      "Rodrigo A. Vargas-Hern\u00e1ndez",
+      "Teresa Tamayo-Mendoza",
+      "Cedric Yen-Yu Lin",
+      "Al\u00e1n Aspuru-Guzik",
+      "Nathan Killoran"
+    ],
+    "summary": "This work describes the theoretical foundation for all quantum chemistry\nfunctionality in PennyLane, a quantum computing software library specializing\nin quantum differentiable programming. We provide an overview of fundamental\nconcepts in quantum chemistry, including the basic principles of the\nHartree-Fock method. A flagship feature in PennyLane is the differentiable\nHartree-Fock solver, allowing users to compute exact gradients of molecular\nHamiltonians with respect to nuclear coordinates and basis set parameters.\nPennyLane provides specialized operations for quantum chemistry, including\nexcitation gates as Givens rotations and templates for quantum chemistry\ncircuits. Moreover, built-in simulators exploit sparse matrix techniques for\nrepresenting molecular Hamiltonians that lead to fast simulation for quantum\nchemistry applications. In combination with PennyLane's existing methods for\nconstructing, optimizing, and executing circuits, these methods allow users to\nimplement a wide range of quantum algorithms for quantum chemistry. We discuss\nhow PennyLane can be used to implement variational algorithms for calculating\nground-state energies, excited-state energies, and energy derivatives, all of\nwhich can be differentiated with respect to both circuit and Hamiltonian\nparameters. We provide an example workflow describing how to jointly optimize\ncircuit parameters, nuclear coordinates, and basis set parameters for quantum\nchemistry algorithms. We discuss a functionality for reducing the number of\nqubits by using symmetries and explain how PennyLane can be used to estimate\nquantum resources needed to implement several quantum algorithms. By combining\ninsights from quantum computing, computational chemistry, and machine learning,\nPennyLane is the first library for differentiable quantum computational\nchemistry.",
+    "pdf_url": "http://arxiv.org/pdf/2111.09967v3",
+    "published": "2021-11-18"
+  },
+  "2011.01544v1": {
+    "title": "Post-Hartree-Fock method in Quantum Chemistry for Quantum Computer",
+    "authors": [
+      "Yutaka Shikano",
+      "Hiroshi C. Watanabe",
+      "Ken M. Nakanishi",
+      "Yu-ya Ohnishi"
+    ],
+    "summary": "Quantum computational chemistry is a potential application of quantum\ncomputers that is expected to effectively solve several quantum-chemistry\nproblems, particularly the electronic structure problem. Quantum computational\nchemistry can be compared to the conventional computational devices. This\nreview comprehensively investigates the applications and overview of quantum\ncomputational chemistry, including a review of the Hartree-Fock method for\nquantum information scientists. Quantum algorithms, quantum phase estimation,\nand variational quantum eigensolver, have been applied to the post-Hartree-Fock\nmethod.",
+    "pdf_url": "http://arxiv.org/pdf/2011.01544v1",
+    "published": "2020-11-03"
+  },
+  "2305.06668v1": {
+    "title": "A robust, open-source implementation of the locally optimal block preconditioned conjugate gradient for large eigenvalue problems in quantum chemistry",
+    "authors": [
+      "Tommaso Nottoli",
+      "Ivan Giann\u00ec",
+      "Antoine Levitt",
+      "Filippo Lipparini"
+    ],
+    "summary": "We present two open-source implementations of the Locally Optimal Block\nPreconditioned Conjugate Gradient (LOBPCG) algorithm to find a few eigenvalues\nand eigenvectors of large, possibly sparse matrices. We then test LOBPCG for\nvarious quantum chemistry problems, encompassing medium to large, dense to\nsparse, wellbehaved to ill-conditioned ones, where the standard method\ntypically used is Davidson's diagonalization. Numerical tests show that, while\nDavidson's method remains the best choice for most applications in quantum\nchemistry, LOBPCG represents a competitive alternative, especially when memory\nis an issue, and can even outperform Davidson for ill-conditioned, non\ndiagonally dominant problems.",
+    "pdf_url": "http://arxiv.org/pdf/2305.06668v1",
+    "published": "2023-05-11"
+  }
+}

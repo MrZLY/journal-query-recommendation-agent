@@ -88,7 +88,3 @@ JCR 分区（Q1/Q2/Q3/Q4）
 你可调用外部工具（如 web_search、search_papers等等）获取最新、准确的数据''',
     tools=[toolset]
 )
-
-'''
-tar -zcvf dataset.tar.gz /root/build-your-agent/agents/adk_ui_starter
-'''

@@ -1,0 +1,44 @@
+{
+  "2308.04525v1": {
+    "title": "Quantum gate algorithm for reference-guided DNA sequence alignment",
+    "authors": [
+      "G. D. Varsamis",
+      "I. G. Karafyllidis",
+      "K. M. Gilkes",
+      "U. Arranz",
+      "R. Martin-Cuevas",
+      "G. Calleja",
+      "P. Dimitrakis",
+      "P. Kolovos",
+      "R. Sandaltzopoulos",
+      "H. C. Jessen",
+      "J. Wong"
+    ],
+    "summary": "Reference-guided DNA sequencing and alignment is an important process in\ncomputational molecular biology. The amount of DNA data grows very fast, and\nmany new genomes are waiting to be sequenced while millions of private genomes\nneed to be re-sequenced. Each human genome has 3.2 B base pairs, and each one\ncould be stored with 2 bits of information, so one human genome would take 6.4\nB bits or about 760 MB of storage (National Institute of General Medical\nSciences). Today most powerful tensor processing units cannot handle the volume\nof DNA data necessitating a major leap in computing power. It is, therefore,\nimportant to investigate the usefulness of quantum computers in genomic data\nanalysis, especially in DNA sequence alignment. Quantum computers are expected\nto be involved in DNA sequencing, initially as parts of classical systems,\nacting as quantum accelerators. The number of available qubits is increasing\nannually, and future quantum computers could conduct DNA sequencing, taking the\nplace of classical computing systems. We present a novel quantum algorithm for\nreference-guided DNA sequence alignment modeled with gate-based quantum\ncomputing. The algorithm is scalable, can be integrated into existing classical\nDNA sequencing systems and is intentionally structured to limit computational\nerrors. The quantum algorithm has been tested using the quantum processing\nunits and simulators provided by IBM Quantum, and its correctness has been\nconfirmed.",
+    "pdf_url": "http://arxiv.org/pdf/2308.04525v1",
+    "published": "2023-08-08"
+  },
+  "1703.02020v1": {
+    "title": "Probing the Structure and in Silico Stability of Cargo Loaded DNA Icosahedron using MD Simulations",
+    "authors": [
+      "Himanshu Joshi",
+      "Dhiraj Bhatia",
+      "Yamuna Krishnan",
+      "Prabal K. Maiti"
+    ],
+    "summary": "Platonic solids such as polyhedra based on DNA have been deployed for\nmultifarious applications such as RNAi delivery, biological targeting and\nbioimaging. All of these applications hinge on the capability of DNA polyhedra\nfor molecular display with high spatial precision. Therefore high resolution\nstructural models of such polyhedra are critical to widen their applications in\nboth materials and biology. Here, we present an atomistic model of a\nwell-characterized DNA icosahedron, with demonstrated versatile functionalities\nin biological systems. We study the structure and dynamics of this DNA\nicosahedron using fully atomistic molecular dynamics simulation in explicit\nwater and ions. The major modes of internal motion have been identified using\nprincipal component analysis. We provide a quantitative estimate of the radius\nof gyration (Rg), solvent accessible surface area (SASA) and volume of the\nicosahedron which is essential to estimate its maximal cargo carrying capacity.\nImportantly, our simulation of gold nanoparticles (AuNP) encapsulated within\nDNA icosahedra revealed enhanced stability of the AuNP loaded DNA icosahedra\ncompared to empty icosahedra. This is consistent with experimental results that\nshow high yields of cargo-encapsulated DNA icosahedra that have led to its\ndiverse applications for precision targeting. These studies reveal that the\nstabilizing interactions between the cargo and the DNA scaffold powerfully\npositions DNA polyhedra as targetable nanocapsules for payload delivery. These\ninsights can be exploited for precise molecular display for diverse biological\napplications.",
+    "pdf_url": "http://arxiv.org/pdf/1703.02020v1",
+    "published": "2017-03-06"
+  },
+  "0712.2405v1": {
+    "title": "Identification of DNA-binding protein target sequences by physical effective energy functions. Free energy analysis of lambda repressor-DNA complexes",
+    "authors": [
+      "E. Moroni",
+      "M. Caselle",
+      "F. Fogolari"
+    ],
+    "summary": "Specific binding of proteins to DNA is one of the most common ways in which\ngene expression is controlled. Although general rules for the DNA-protein\nrecognition can be derived, the ambiguous and complex nature of this mechanism\nprecludes a simple recognition code, therefore the prediction of DNA target\nsequences is not straightforward. DNA-protein interactions can be studied using\ncomputational methods which can complement the current experimental methods and\noffer some advantages. In the present work we use physical effective potentials\nto evaluate the DNA-protein binding affinities for the lambda repressor-DNA\ncomplex for which structural and thermodynamic experimental data are available.\nThe effect of conformational sampling by Molecular Dynamics simulations on the\ncomputed binding energy is assessed; results show that this effect is in\ngeneral negative and the reproducibility of the experimental values decreases\nwith the increase of simulation time considered. The free energy of binding for\nnon-specific complexes agrees with earlier theoretical suggestions. Moreover,\nas a results of these analyses, we propose a protocol for the prediction of\nDNA-binding target sequences. The possibility of searching regulatory elements\nwithin the bacteriophage-lambda genome using this protocol is explored. Our\nanalysis shows good prediction capabilities, even in the absence of any\nthermodynamic data and information on the naturally recognized sequence. This\nstudy supports the conclusion that physics-based methods can offer a completely\ncomplementary methodology to sequence-based methods for the identification of\nDNA-binding protein target sequences.",
+    "pdf_url": "http://arxiv.org/pdf/0712.2405v1",
+    "published": "2007-12-14"
+  }
+}

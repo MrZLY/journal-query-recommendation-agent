@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react'
-import { Send, Bot, FileText, Terminal, Menu, X } from 'lucide-react'
+import { Send, Bot, FileText, Terminal } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import SessionList from './SessionList'
 import FileExplorer from './FileExplorer'
@@ -51,7 +51,6 @@ const ChatInterface: React.FC = () => {
   const [fileTree, setFileTree] = useState<FileNode[]>([])
   const [showFileExplorer, setShowFileExplorer] = useState(false)
   const [showShellTerminal, setShowShellTerminal] = useState(false)
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const [shellOutput, setShellOutput] = useState<Array<{ type: 'command' | 'output' | 'error'; content: string; timestamp: Date }>>([]) 
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLTextAreaElement>(null)
@@ -87,9 +86,6 @@ const ChatInterface: React.FC = () => {
 
   const [ws, setWs] = useState<WebSocket | null>(null)
   const [connectionStatus, setConnectionStatus] = useState<'disconnected' | 'connecting' | 'connected'>('disconnected')
-  // Measure available viewport height when embedded under external headers
-  const containerRef = useRef<HTMLDivElement>(null)
-  const [containerHeight, setContainerHeight] = useState<number | null>(null)
 
   useEffect(() => {
     // Load initial file tree
@@ -167,32 +163,6 @@ const ChatInterface: React.FC = () => {
       }
     }
   }, [])
-
-  // Calculate available height for the app so bottom input stays visible even when embedded
-  useEffect(() => {
-    const measure = () => {
-      try {
-        const top = containerRef.current?.getBoundingClientRect().top ?? 0
-        const vh = (window as any).visualViewport?.height ?? window.innerHeight
-        const height = Math.max(320, Math.floor(vh - top))
-        setContainerHeight(height)
-      } catch (_) {
-        // Fallback
-        setContainerHeight(window.innerHeight)
-      }
-    }
-    measure()
-    window.addEventListener('resize', measure)
-    window.addEventListener('orientationchange', measure)
-    return () => {
-      window.removeEventListener('resize', measure)
-      window.removeEventListener('orientationchange', measure)
-    }
-  }, [])
-
-  const handleToggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
 
   const scrollToBottom = () => {
     // 使用setTimeout确保DOM更新后再滚动
@@ -464,87 +434,49 @@ const ChatInterface: React.FC = () => {
   }, [])
 
   return (
-    <div ref={containerRef} className="flex min-h-0 bg-gray-50 dark:bg-gray-900" style={containerHeight ? { height: containerHeight } : undefined}>
-      {/* Session List Sidebar for large screens */}
-      <div className="hidden lg:block">
-        <ResizablePanel
-          direction="horizontal"
-          minSize={200}
-          maxSize={400}
-          defaultSize={280}
-          className="border-r border-gray-200 dark:border-gray-700 h-full"
-        >
-          <SessionList
-            sessions={sessions}
-            currentSessionId={currentSessionId}
-            onCreateSession={handleCreateSession}
-            onSelectSession={handleSelectSession}
-            onDeleteSession={handleDeleteSession}
-          />
-        </ResizablePanel>
-      </div>
-
-      {/* Session List Sidebar for small screens (drawer) */}
-      <AnimatePresence>
-        {isSidebarOpen && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.5 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black z-30 lg:hidden"
-              onClick={handleToggleSidebar}
-            />
-            <motion.div
-              initial={{ x: '-100%' }}
-              animate={{ x: 0 }}
-              exit={{ x: '-100%' }}
-              transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-              className="fixed top-0 left-0 h-full w-72 bg-gray-50 dark:bg-gray-900 border-r border-gray-200 dark:border-gray-700 z-40 lg:hidden"
-            >
-              <SessionList
-                sessions={sessions}
-                currentSessionId={currentSessionId}
-                onCreateSession={handleCreateSession}
-                onSelectSession={(sessionId) => {
-                  handleSelectSession(sessionId);
-                  setIsSidebarOpen(false);
-                }}
-                onDeleteSession={handleDeleteSession}
-              />
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+    <div className="flex h-screen bg-gray-50 dark:bg-gray-900">
+      {/* Session List Sidebar */}
+      <ResizablePanel
+        direction="horizontal"
+        minSize={200}
+        maxSize={400}
+        defaultSize={280}
+        className="border-r border-gray-200 dark:border-gray-700"
+      >
+        <SessionList
+          sessions={sessions}
+          currentSessionId={currentSessionId}
+          onCreateSession={handleCreateSession}
+          onSelectSession={handleSelectSession}
+          onDeleteSession={handleDeleteSession}
+        />
+      </ResizablePanel>
 
       {/* Main Content Area */}
-  <div className="flex-1 min-w-0 flex">
+      <div className="flex-1 flex">
         {/* Chat Area */}
-  <div className="flex-1 min-w-0 flex flex-col bg-gradient-to-br from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 aurora-bg overflow-hidden">
+        <div className="flex-1 flex flex-col bg-gradient-to-br from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 aurora-bg">
         {/* Header */}
-        <div className="px-4 py-3 border-b border-gray-200/50 dark:border-gray-700/50 glass-premium glass-glossy flex items-center justify-between flex-wrap">
+        <div className="px-4 py-3 border-b border-gray-200/50 dark:border-gray-700/50 glass-premium glass-glossy flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <button onClick={handleToggleSidebar} className="lg:hidden p-2 -ml-2 text-gray-600 dark:text-gray-300">
-              <Menu className="w-6 h-6" />
-            </button>
             <h1 className="text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               {config.ui?.title || 'Agent'}
             </h1>
           </div>
-          <div className="flex items-center gap-1 md:gap-3 justify-end min-w-0">
+          <div className="flex items-center gap-3">
             <button
               onClick={() => setShowShellTerminal(!showShellTerminal)}
               className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors btn-animated"
             >
               <Terminal className="w-4 h-4" />
-              <span className="hidden md:inline">{showShellTerminal ? '隐藏终端' : '显示终端'}</span>
+              {showShellTerminal ? '隐藏终端' : '显示终端'}
             </button>
             <button
               onClick={() => setShowFileExplorer(!showFileExplorer)}
               className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors btn-animated"
             >
               <FileText className="w-4 h-4" />
-              <span className="hidden md:inline">{showFileExplorer ? '隐藏文件' : '查看文件'}</span>
+              {showFileExplorer ? '隐藏文件' : '查看文件'}
             </button>
             <div className={`flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium ${
               connectionStatus === 'connected' 
@@ -558,7 +490,7 @@ const ChatInterface: React.FC = () => {
                 connectionStatus === 'connecting' ? 'bg-yellow-500 animate-pulse' : 
                 'bg-red-500'
               }`} />
-              <span className="hidden sm:inline">
+              <span>
                 {connectionStatus === 'connected' ? '已连接' : 
                  connectionStatus === 'connecting' ? '连接中...' : 
                  '未连接'}
@@ -568,8 +500,8 @@ const ChatInterface: React.FC = () => {
         </div>
 
         {/* Messages Area */}
-        <div className="flex-1 min-h-0 min-w-0 overflow-y-auto px-4 py-6 relative">
-          <div className="max-w-4xl mx-auto space-y-6">
+        <div className="flex-1 overflow-y-auto px-4 py-6 relative">
+          <div className="max-w-4xl mx-auto space-y-6 h-full">
             {messages.length === 0 ? (
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center">
@@ -635,16 +567,16 @@ const ChatInterface: React.FC = () => {
         </div>
 
         {/* Input Area */}
-        <div className="border-t border-gray-200 dark:border-gray-700 glass-premium p-4 shrink-0">
+        <div className="border-t border-gray-200 dark:border-gray-700 glass-premium p-4">
           <div className="max-w-4xl mx-auto">
-            <div className="flex flex-wrap gap-3 min-w-0">
+            <div className="flex gap-3">
               <textarea
                 ref={inputRef}
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="输入消息..."
-                className="flex-1 min-w-0 resize-none rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 transition-all input-animated glow"
+                className="flex-1 resize-none rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 transition-all input-animated glow"
                 rows={1}
                 style={{
                   minHeight: '48px',
@@ -659,67 +591,35 @@ const ChatInterface: React.FC = () => {
               <button
                 onClick={handleSend}
                 disabled={!input.trim() || isLoading || connectionStatus !== 'connected'}
-                className="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl font-medium hover:from-blue-600 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-lg hover:shadow-xl flex items-center gap-2 btn-animated liquid-button shrink-0"
+                className="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl font-medium hover:from-blue-600 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-lg hover:shadow-xl flex items-center gap-2 btn-animated liquid-button"
               >
                 <Send className="w-4 h-4" />
-                <span className="hidden sm:inline">发送</span>
+                发送
               </button>
             </div>
           </div>
         </div>
         </div>
         
-        {/* File Explorer Sidebar - Desktop (md+) */}
+        {/* File Explorer Sidebar */}
         {showFileExplorer && (
-          <div className="hidden md:block">
-            <ResizablePanel
-              direction="horizontal"
-              minSize={400}
-              maxSize={800}
-              defaultSize={600}
-              className="border-l border-gray-200 dark:border-gray-700"
-              resizeBarPosition="start"
-            >
-              <FileExplorer
-                isOpen={showFileExplorer}
-                onClose={() => setShowFileExplorer(false)}
-                fileTree={fileTree}
-                onFileTreeUpdate={setFileTree}
-                onLoadFileTree={loadFileTree}
-              />
-            </ResizablePanel>
-          </div>
+          <ResizablePanel
+            direction="horizontal"
+            minSize={400}
+            maxSize={800}
+            defaultSize={600}
+            className="border-l border-gray-200 dark:border-gray-700"
+            resizeBarPosition="start"
+          >
+            <FileExplorer
+              isOpen={showFileExplorer}
+              onClose={() => setShowFileExplorer(false)}
+              fileTree={fileTree}
+              onFileTreeUpdate={setFileTree}
+              onLoadFileTree={loadFileTree}
+            />
+          </ResizablePanel>
         )}
-
-        {/* File Explorer Drawer - Mobile (sm) */}
-        <AnimatePresence>
-          {showFileExplorer && (
-            <>
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 0.5 }}
-                exit={{ opacity: 0 }}
-                className="fixed inset-0 bg-black z-30 md:hidden"
-                onClick={() => setShowFileExplorer(false)}
-              />
-              <motion.div
-                initial={{ x: '100%' }}
-                animate={{ x: 0 }}
-                exit={{ x: '100%' }}
-                transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                className="fixed top-0 right-0 h-full w-[90vw] max-w-[720px] bg-white dark:bg-gray-800 border-l border-gray-200 dark:border-gray-700 z-40 md:hidden"
-              >
-                <FileExplorer
-                  isOpen={showFileExplorer}
-                  onClose={() => setShowFileExplorer(false)}
-                  fileTree={fileTree}
-                  onFileTreeUpdate={setFileTree}
-                  onLoadFileTree={loadFileTree}
-                />
-              </motion.div>
-            </>
-          )}
-        </AnimatePresence>
       </div>
       
       {/* Shell Terminal */}

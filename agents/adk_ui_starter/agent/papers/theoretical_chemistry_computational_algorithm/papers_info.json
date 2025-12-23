@@ -1,0 +1,57 @@
+{
+  "1706.05413v2": {
+    "title": "Quantum Information and Computation for Chemistry",
+    "authors": [
+      "Jonathan Olson",
+      "Yudong Cao",
+      "Jonathan Romero",
+      "Peter Johnson",
+      "Pierre-Luc Dallaire-Demers",
+      "Nicolas Sawaya",
+      "Prineha Narang",
+      "Ian Kivlichan",
+      "Michael Wasielewski",
+      "Al\u00e1n Aspuru-Guzik"
+    ],
+    "summary": "The NSF Workshop in Quantum Information and Computation for Chemistry\nassembled experts from directly quantum-oriented fields such as algorithms,\nchemistry, machine learning, optics, simulation, and metrology, as well as\nexperts in related fields such as condensed matter physics, biochemistry,\nphysical chemistry, inorganic and organic chemistry, and spectroscopy. The goal\nof the workshop was to summarize recent progress in research at the interface\nof quantum information science and chemistry as well as to discuss the\npromising research challenges and opportunities in the field. Furthermore, the\nworkshop hoped to identify target areas where cross fertilization among these\nfields would result in the largest payoff for developments in theory,\nalgorithms, and experimental techniques. The ideas can be broadly categorized\nin two distinct areas of research that obviously have interactions and are not\nseparated cleanly. The first area is quantum information for chemistry, or how\nquantum information tools, both experimental and theoretical can aid in our\nunderstanding of a wide range of problems pertaining to chemistry. The second\narea is chemistry for quantum information, which aims to discuss the several\naspects where research in the chemical sciences can aid progress in quantum\ninformation science and technology. The results of the workshop are summarized\nin this report.",
+    "pdf_url": "http://arxiv.org/pdf/1706.05413v2",
+    "published": "2017-06-16"
+  },
+  "2111.09967v3": {
+    "title": "Differentiable quantum computational chemistry with PennyLane",
+    "authors": [
+      "Juan Miguel Arrazola",
+      "Soran Jahangiri",
+      "Alain Delgado",
+      "Jack Ceroni",
+      "Josh Izaac",
+      "Antal Sz\u00e1va",
+      "Utkarsh Azad",
+      "Robert A. Lang",
+      "Zeyue Niu",
+      "Olivia Di Matteo",
+      "Romain Moyard",
+      "Jay Soni",
+      "Maria Schuld",
+      "Rodrigo A. Vargas-Hern\u00e1ndez",
+      "Teresa Tamayo-Mendoza",
+      "Cedric Yen-Yu Lin",
+      "Al\u00e1n Aspuru-Guzik",
+      "Nathan Killoran"
+    ],
+    "summary": "This work describes the theoretical foundation for all quantum chemistry\nfunctionality in PennyLane, a quantum computing software library specializing\nin quantum differentiable programming. We provide an overview of fundamental\nconcepts in quantum chemistry, including the basic principles of the\nHartree-Fock method. A flagship feature in PennyLane is the differentiable\nHartree-Fock solver, allowing users to compute exact gradients of molecular\nHamiltonians with respect to nuclear coordinates and basis set parameters.\nPennyLane provides specialized operations for quantum chemistry, including\nexcitation gates as Givens rotations and templates for quantum chemistry\ncircuits. Moreover, built-in simulators exploit sparse matrix techniques for\nrepresenting molecular Hamiltonians that lead to fast simulation for quantum\nchemistry applications. In combination with PennyLane's existing methods for\nconstructing, optimizing, and executing circuits, these methods allow users to\nimplement a wide range of quantum algorithms for quantum chemistry. We discuss\nhow PennyLane can be used to implement variational algorithms for calculating\nground-state energies, excited-state energies, and energy derivatives, all of\nwhich can be differentiated with respect to both circuit and Hamiltonian\nparameters. We provide an example workflow describing how to jointly optimize\ncircuit parameters, nuclear coordinates, and basis set parameters for quantum\nchemistry algorithms. We discuss a functionality for reducing the number of\nqubits by using symmetries and explain how PennyLane can be used to estimate\nquantum resources needed to implement several quantum algorithms. By combining\ninsights from quantum computing, computational chemistry, and machine learning,\nPennyLane is the first library for differentiable quantum computational\nchemistry.",
+    "pdf_url": "http://arxiv.org/pdf/2111.09967v3",
+    "published": "2021-11-18"
+  },
+  "1208.3334v1": {
+    "title": "Computational Complexity in Electronic Structure",
+    "authors": [
+      "James D. Whitfield",
+      "Peter J. Love",
+      "Alan Aspuru-Guzik"
+    ],
+    "summary": "In quantum chemistry, the price paid by all known efficient model chemistries\nis either the truncation of the Hilbert space or uncontrolled approximations.\nTheoretical computer science suggests that these restrictions are not mere\nshortcomings of the algorithm designers and programmers but could stem from the\ninherent difficulty of simulating quantum systems. Extensions of computer\nscience and information processing exploiting quantum mechanics has led to new\nways of understanding the ultimate limitations of computational power.\nInterestingly, this perspective helps us understand widely used model\nchemistries in a new light. In this article, the fundamentals of computational\ncomplexity will be reviewed and motivated from the vantage point of chemistry.\nThen recent results from the computational complexity literature regarding\ncommon model chemistries including Hartree-Fock and density functional theory\nare discussed.",
+    "pdf_url": "http://arxiv.org/pdf/1208.3334v1",
+    "published": "2012-08-16"
+  }
+}

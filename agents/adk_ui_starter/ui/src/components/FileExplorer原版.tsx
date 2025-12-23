@@ -369,8 +369,8 @@ const FileExplorer: React.FC<FileExplorerProps> = ({
           </div>
         </div>
 
-  {/* File Content */}
-  <div className="flex-1 min-w-0 flex flex-col bg-gray-50 dark:bg-gray-900">
+        {/* File Content */}
+        <div className="flex-1 flex flex-col bg-gray-50 dark:bg-gray-900" style={{ minWidth: '400px' }}>
           {selectedFileContent ? (
             <>
               <div className="px-4 py-3 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 flex items-center justify-between">
