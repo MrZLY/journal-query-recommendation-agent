@@ -577,7 +577,7 @@ const ChatInterface: React.FC = () => {
                   <h3 className="text-lg font-medium text-gray-600 dark:text-gray-400 mb-2">
                     欢迎使用 {config.agent?.name || 'Agent'}
                   </h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-500">
+                  <p className="text-sm text-gray-500 dark:text-gray-500 whitespace-pre-wrap">
                     {config.agent?.welcomeMessage || '输入您的数据文件路径，开始符号回归分析'}
                   </p>
                 </div>
