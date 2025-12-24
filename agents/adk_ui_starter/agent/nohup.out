@@ -571,3 +571,39 @@ INFO:     Application startup complete.
 ERROR:    [Errno 98] error while attempting to bind on address ('0.0.0.0', 50001): address already in use
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
+INFO:     204.76.203.50:52098 - "GET http%3A//azenv.net/ HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     162.142.125.206:40148 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     162.142.125.206:49742 - "GET / HTTP/1.1" 404 Not Found
+INFO:     162.142.125.206:49760 - "PRI %2A HTTP/2.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     162.142.125.206:49784 - "GET /login HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     176.65.149.202:52464 - "GET / HTTP/1.1" 404 Not Found
+INFO:     176.65.149.202:52480 - "GET /index.htm HTTP/1.1" 404 Not Found
+INFO:     113.215.189.92:42855 - "GET / HTTP/1.1" 404 Not Found
+INFO:     204.76.203.50:35012 - "GET http%3A//azenv.net/ HTTP/1.1" 404 Not Found
+INFO:     59.82.83.161:29192 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     185.226.197.27:33827 - "GET / HTTP/1.1" 404 Not Found
+INFO:     185.226.197.27:48145 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     165.154.11.170:46980 - "GET / HTTP/1.1" 404 Not Found
+INFO:     165.154.11.170:46992 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     165.154.11.170:47000 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     165.154.11.170:47006 - "GET /sitemap.xml HTTP/1.1" 404 Not Found
+INFO:     165.154.11.170:47018 - "GET /sse HTTP/1.1" 200 OK
+INFO:     165.154.11.170:36250 - "GET /sse HTTP/1.1" 200 OK
+INFO:     165.154.11.170:36260 - "POST /messages/?session_id=bd94ab77b61d4424873fe25e3ec25a0a HTTP/1.1" 202 Accepted
+INFO:     165.154.11.170:36276 - "POST /messages/?session_id=bd94ab77b61d4424873fe25e3ec25a0a HTTP/1.1" 202 Accepted
+INFO:     165.154.11.170:36280 - "POST /messages/?session_id=bd94ab77b61d4424873fe25e3ec25a0a HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     176.65.149.202:43704 - "GET / HTTP/1.1" 404 Not Found
+INFO:     176.65.149.202:43714 - "GET /index.htm HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     204.76.203.50:52616 - "GET http%3A//azenv.net/ HTTP/1.1" 404 Not Found
