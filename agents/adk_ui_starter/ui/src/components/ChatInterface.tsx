@@ -643,7 +643,7 @@ const ChatInterface: React.FC = () => {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
-                placeholder="输入消息..."
+                placeholder="输入消息... (10光子/次)"
                 className="flex-1 min-w-0 resize-none rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 transition-all input-animated glow"
                 rows={1}
                 style={{
@@ -664,6 +664,9 @@ const ChatInterface: React.FC = () => {
                 <Send className="w-4 h-4" />
                 <span className="hidden sm:inline">发送</span>
               </button>
+            </div>
+            <div className="text-xs text-gray-400 mt-2 text-right">
+              每次对话消耗 10 光子
             </div>
           </div>
         </div>

@@ -16,6 +16,9 @@ from dataclasses import dataclass, field, asdict
 import uuid
 import subprocess
 import shlex
+import requests
+import time
+import random
 
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -124,6 +127,45 @@ class ConnectionContext:
         }
         # 为每个连接生成唯一的user_id
         self.user_id = f"user_{uuid.uuid4().hex[:8]}"
+
+
+def charge_photon(access_key, client_name, sku_id=10047, amount=10):
+    if not access_key:
+        logger.warning("No access key found, skipping charge")
+        return False, "No access key"
+    
+    timestamp = int(time.time())
+    rand_part = random.randint(1000, 9999)
+    bizNo = int(f"{timestamp}{rand_part}")
+    
+    url = "https://openapi.dp.tech/openapi/v1/api/integral/consume"
+    headers = {
+        "accessKey": access_key,
+        "x-app-key": client_name if client_name else "",
+        "Content-Type": "application/json"
+    }
+    payload = {
+        "bizNo": bizNo,
+        "changeType": 1,
+        "eventValue": amount,
+        "skuId": sku_id,
+        "scene": "appCustomizeCharge"
+    }
+    
+    try:
+        resp = requests.post(url, headers=headers, json=payload, timeout=10)
+        logger.info(f"Charge response: {resp.text}")
+        if resp.status_code == 200:
+            data = resp.json()
+            if data.get("code") == 0:
+                return True, "Success"
+            else:
+                return False, f"API Error: {data}"
+        else:
+            return False, f"HTTP Error: {resp.status_code}"
+    except Exception as e:
+        logger.error(f"Charge failed: {e}")
+        return False, str(e)
 
 class SessionManager:
     def __init__(self):
@@ -320,6 +362,22 @@ class SessionManager:
         session = context.sessions[context.current_session_id]
         runner = context.runners[context.current_session_id]
         
+        
+        # Charge photon
+        access_key = context.websocket.cookies.get("appAccessKey")
+        client_name = context.websocket.cookies.get("clientName")
+        
+        if access_key:
+            success, msg = await asyncio.to_thread(charge_photon, access_key, client_name)
+            if not success:
+                logger.error(f"Photon charge failed: {msg}")
+                await context.websocket.send_json({
+                    "type": "error", 
+                    "content": f"Photon charge failed: {msg}"
+                })
+        else:
+            logger.info("No access key found in cookies, skipping photon charge.")
+
         # 保存用户消息到会话历史
         session.add_message("user", message)
         

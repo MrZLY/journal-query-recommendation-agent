@@ -1,0 +1,661 @@
+INFO:     Started server process [1405]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:50001 (Press CTRL+C to quit)
+INFO:     127.0.0.1:47770 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47786 - "POST /messages/?session_id=f28557af13274d378e2b273d7809f999 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:47786 - "POST /messages/?session_id=f28557af13274d378e2b273d7809f999 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:47786 - "POST /messages/?session_id=f28557af13274d378e2b273d7809f999 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:45476 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45484 - "POST /messages/?session_id=d82ebb0d90ac4413ac166a56903f11f1 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:45484 - "POST /messages/?session_id=d82ebb0d90ac4413ac166a56903f11f1 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:45484 - "POST /messages/?session_id=d82ebb0d90ac4413ac166a56903f11f1 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:45484 - "POST /messages/?session_id=d82ebb0d90ac4413ac166a56903f11f1 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=deepmd&id_list=&sortBy=relevance&sortOrder=descending&start=0&max_results=100
+Got first page: 30 of 30 total results
+Results are saved in: papers/deepmd/papers_info.json
+INFO:     127.0.0.1:51806 - "POST /messages/?session_id=d82ebb0d90ac4413ac166a56903f11f1 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:51806 - "POST /messages/?session_id=d82ebb0d90ac4413ac166a56903f11f1 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+INFO:     127.0.0.1:51806 - "POST /messages/?session_id=d82ebb0d90ac4413ac166a56903f11f1 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+INFO:     127.0.0.1:51806 - "POST /messages/?session_id=d82ebb0d90ac4413ac166a56903f11f1 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+INFO:     127.0.0.1:51806 - "POST /messages/?session_id=d82ebb0d90ac4413ac166a56903f11f1 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+INFO:     127.0.0.1:51806 - "POST /messages/?session_id=d82ebb0d90ac4413ac166a56903f11f1 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+INFO:     127.0.0.1:51806 - "POST /messages/?session_id=d82ebb0d90ac4413ac166a56903f11f1 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:45994 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46000 - "POST /messages/?session_id=8114d8567848456598e81dcbd3e256de HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:46000 - "POST /messages/?session_id=8114d8567848456598e81dcbd3e256de HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:46000 - "POST /messages/?session_id=8114d8567848456598e81dcbd3e256de HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:46000 - "POST /messages/?session_id=8114d8567848456598e81dcbd3e256de HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=deepmd&id_list=&sortBy=relevance&sortOrder=descending&start=0&max_results=100
+Got first page: 30 of 30 total results
+Results are saved in: papers/deepmd/papers_info.json
+INFO:     127.0.0.1:34224 - "POST /messages/?session_id=8114d8567848456598e81dcbd3e256de HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:34224 - "POST /messages/?session_id=8114d8567848456598e81dcbd3e256de HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+INFO:     127.0.0.1:34224 - "POST /messages/?session_id=8114d8567848456598e81dcbd3e256de HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+INFO:     127.0.0.1:34224 - "POST /messages/?session_id=8114d8567848456598e81dcbd3e256de HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+INFO:     127.0.0.1:34224 - "POST /messages/?session_id=8114d8567848456598e81dcbd3e256de HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+INFO:     127.0.0.1:34224 - "POST /messages/?session_id=8114d8567848456598e81dcbd3e256de HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+INFO:     127.0.0.1:34224 - "POST /messages/?session_id=8114d8567848456598e81dcbd3e256de HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:33434 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33438 - "POST /messages/?session_id=17ffe02a3e73463496a3ee050876a62a HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:33438 - "POST /messages/?session_id=17ffe02a3e73463496a3ee050876a62a HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:33438 - "POST /messages/?session_id=17ffe02a3e73463496a3ee050876a62a HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     Started server process [6638]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:50001 (Press CTRL+C to quit)
+INFO:     47.92.83.79:46920 - "GET /sse HTTP/1.1" 200 OK
+INFO:     47.92.83.79:46926 - "POST /messages/?session_id=9323a6936e8144a18b5c503f746df687 HTTP/1.1" 202 Accepted
+INFO:     47.92.83.79:46926 - "POST /messages/?session_id=9323a6936e8144a18b5c503f746df687 HTTP/1.1" 202 Accepted
+INFO:     47.92.83.79:46926 - "POST /messages/?session_id=9323a6936e8144a18b5c503f746df687 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.83.79:55768 - "POST /messages/?session_id=9323a6936e8144a18b5c503f746df687 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+response: https://www.bing.com/search?q=2024+%E5%8C%96%E5%AD%A6%E7%90%86%E8%AE%BA%E8%AE%A1%E7%AE%97%E7%AE%97%E6%B3%95+%E5%88%86%E5%AD%90%E5%8A%A8%E5%8A%9B%E5%AD%A6+DFT+%E6%9C%9F%E5%88%8A+%E5%BD%B1%E5%93%8D%E5%9B%A0%E5%AD%90+%E5%88%86%E5%8C%BA 302
+Error to search using bing backend: https://www.bing.com/search?q=2024+%E5%8C%96%E5%AD%A6%E7%90%86%E8%AE%BA%E8%AE%A1%E7%AE%97%E7%AE%97%E6%B3%95+%E5%88%86%E5%AD%90%E5%8A%A8%E5%8A%9B%E5%AD%A6+DFT+%E6%9C%9F%E5%88%8A+%E5%BD%B1%E5%93%8D%E5%9B%A0%E5%AD%90+%E5%88%86%E5%8C%BA return None. params={'q': '2024 化学理论计算算法 分子动力学 DFT 期刊 影响因子 分区'} content=None data=None
+Warning: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+正在执行网络搜索: 2024 化学理论计算算法 分子动力学 DFT 期刊 影响因子 分区...
+INFO:     47.92.83.79:55768 - "POST /messages/?session_id=9323a6936e8144a18b5c503f746df687 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+response: https://www.bing.com/search?q=%E7%94%9F%E7%89%A9%E7%BB%93%E6%9E%84%E8%A7%A3%E6%9E%90+DNA+%E7%BB%93%E6%9E%84%E7%94%9F%E7%89%A9%E5%AD%A6+%E6%9C%9F%E5%88%8A+%E5%BD%B1%E5%93%8D%E5%9B%A0%E5%AD%90+%E5%88%86%E5%8C%BA 302
+Error to search using bing backend: https://www.bing.com/search?q=%E7%94%9F%E7%89%A9%E7%BB%93%E6%9E%84%E8%A7%A3%E6%9E%90+DNA+%E7%BB%93%E6%9E%84%E7%94%9F%E7%89%A9%E5%AD%A6+%E6%9C%9F%E5%88%8A+%E5%BD%B1%E5%93%8D%E5%9B%A0%E5%AD%90+%E5%88%86%E5%8C%BA return None. params={'q': '生物结构解析 DNA 结构生物学 期刊 影响因子 分区'} content=None data=None
+Warning: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+正在执行网络搜索: 生物结构解析 DNA 结构生物学 期刊 影响因子 分区...
+INFO:     47.92.83.79:55768 - "POST /messages/?session_id=9323a6936e8144a18b5c503f746df687 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+response: https://www.bing.com/search?q=%E8%A1%A8%E9%9D%A2%E5%A2%9E%E5%BC%BA%E6%8B%89%E6%9B%BC%E6%95%A3%E5%B0%84TERS+SERS+%E8%A1%A8%E9%9D%A2%E7%A7%91%E5%AD%A6+%E6%9C%9F%E5%88%8A+%E5%BD%B1%E5%93%8D%E5%9B%A0%E5%AD%90+%E5%88%86%E5%8C%BA 302
+Error to search using bing backend: https://www.bing.com/search?q=%E8%A1%A8%E9%9D%A2%E5%A2%9E%E5%BC%BA%E6%8B%89%E6%9B%BC%E6%95%A3%E5%B0%84TERS+SERS+%E8%A1%A8%E9%9D%A2%E7%A7%91%E5%AD%A6+%E6%9C%9F%E5%88%8A+%E5%BD%B1%E5%93%8D%E5%9B%A0%E5%AD%90+%E5%88%86%E5%8C%BA return None. params={'q': '表面增强拉曼散射TERS SERS 表面科学 期刊 影响因子 分区'} content=None data=None
+Warning: RuntimeWarning: This package (`duckduckgo_search`) has been renamed to `ddgs`! Use `pip install ddgs` instead.
+正在执行网络搜索: 表面增强拉曼散射TERS SERS 表面科学 期刊 影响因子 分区...
+INFO:     47.92.83.79:55768 - "POST /messages/?session_id=9323a6936e8144a18b5c503f746df687 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.83.79:60618 - "POST /messages/?session_id=9323a6936e8144a18b5c503f746df687 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=theoretical+chemistry+computational+algorithm&id_list=&sortBy=relevance&sortOrder=descending&start=0&max_results=100
+Got first page: 100 of 1027202 total results
+Results are saved in: papers/theoretical_chemistry_computational_algorithm/papers_info.json
+INFO:     47.92.83.79:60618 - "POST /messages/?session_id=9323a6936e8144a18b5c503f746df687 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.83.79:60618 - "POST /messages/?session_id=9323a6936e8144a18b5c503f746df687 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=DNA+structure+computational+biology&id_list=&sortBy=relevance&sortOrder=descending&start=0&max_results=100
+Got first page: 100 of 1069716 total results
+Results are saved in: papers/dna_structure_computational_biology/papers_info.json
+INFO:     47.92.83.79:60618 - "POST /messages/?session_id=9323a6936e8144a18b5c503f746df687 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.83.79:60618 - "POST /messages/?session_id=9323a6936e8144a18b5c503f746df687 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=TERS+surface+enhanced+Raman+scattering&id_list=&sortBy=relevance&sortOrder=descending&start=0&max_results=100
+Got first page: 100 of 440606 total results
+Results are saved in: papers/ters_surface_enhanced_raman_scattering/papers_info.json
+INFO:     47.92.83.79:46098 - "POST /messages/?session_id=9323a6936e8144a18b5c503f746df687 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+Tool already exists: doaj_journal_info
+INFO:     Started server process [6986]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+ERROR:    [Errno 98] error while attempting to bind on address ('0.0.0.0', 50001): address already in use
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [6638]
+Tool already exists: doaj_journal_info
+INFO:     Started server process [6989]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:50001 (Press CTRL+C to quit)
+INFO:     47.92.83.79:44142 - "GET /sse HTTP/1.1" 200 OK
+INFO:     47.92.83.79:44156 - "POST /messages/?session_id=4ffa5ef927384a268580742c54638d57 HTTP/1.1" 202 Accepted
+INFO:     47.92.83.79:44156 - "POST /messages/?session_id=4ffa5ef927384a268580742c54638d57 HTTP/1.1" 202 Accepted
+INFO:     47.92.83.79:44156 - "POST /messages/?session_id=4ffa5ef927384a268580742c54638d57 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.83.79:34222 - "POST /messages/?session_id=4ffa5ef927384a268580742c54638d57 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: 化学理论计算算法 生物结构解析 DNA 表面TERS 学术期刊 推荐 影响因子...
+INFO:     47.92.83.79:34234 - "POST /messages/?session_id=4ffa5ef927384a268580742c54638d57 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.83.79:55412 - "POST /messages/?session_id=4ffa5ef927384a268580742c54638d57 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: The Journal of Chemical Physics Journal of Physical Chemistry Langmuir Chemical Science Physical Review B computational chemistry...
+INFO:     47.92.83.79:55412 - "POST /messages/?session_id=4ffa5ef927384a268580742c54638d57 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.83.79:34724 - "POST /messages/?session_id=4ffa5ef927384a268580742c54638d57 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: Nucleic Acids Research Biophysical Journal Nature Communications Science Advances Biochemistry DNA structure TERS...
+INFO:     47.92.83.79:34728 - "POST /messages/?session_id=4ffa5ef927384a268580742c54638d57 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.83.79:34424 - "POST /messages/?session_id=4ffa5ef927384a268580742c54638d57 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: The Journal of Chemical Physics impact factor 2023 2024 chemical physics journals ranking...
+INFO:     47.92.83.79:34424 - "POST /messages/?session_id=4ffa5ef927384a268580742c54638d57 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.83.79:59818 - "POST /messages/?session_id=4ffa5ef927384a268580742c54638d57 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: Nucleic Acids Research impact factor 2023 ACS journals Physical Chemistry ranking TERS spectroscopy...
+INFO:     47.92.83.79:56192 - "POST /messages/?session_id=4ffa5ef927384a268580742c54638d57 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+Tool already exists: doaj_journal_info
+INFO:     Started server process [2126]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:50001 (Press CTRL+C to quit)
+INFO:     47.92.147.111:41061 - "GET /sse HTTP/1.1" 200 OK
+INFO:     47.92.147.111:29604 - "POST /messages/?session_id=1f6eaacd199441efa571a40043f9d7b2 HTTP/1.1" 202 Accepted
+INFO:     47.92.147.111:29604 - "POST /messages/?session_id=1f6eaacd199441efa571a40043f9d7b2 HTTP/1.1" 202 Accepted
+INFO:     47.92.147.111:29604 - "POST /messages/?session_id=1f6eaacd199441efa571a40043f9d7b2 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:53710 - "POST /messages/?session_id=1f6eaacd199441efa571a40043f9d7b2 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.83.79:35468 - "GET /sse HTTP/1.1" 200 OK
+INFO:     47.92.83.79:35476 - "POST /messages/?session_id=852eb2b4a4464ed4af18eed781620ccc HTTP/1.1" 202 Accepted
+INFO:     47.92.83.79:35476 - "POST /messages/?session_id=852eb2b4a4464ed4af18eed781620ccc HTTP/1.1" 202 Accepted
+INFO:     47.92.83.79:35476 - "POST /messages/?session_id=852eb2b4a4464ed4af18eed781620ccc HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:27314 - "POST /messages/?session_id=1f6eaacd199441efa571a40043f9d7b2 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: 化学理论计算算法 生物结构DNA解析 表面TERS 学术期刊 最新影响因子...
+INFO:     47.92.147.111:11334 - "POST /messages/?session_id=1f6eaacd199441efa571a40043f9d7b2 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.83.79:42034 - "POST /messages/?session_id=852eb2b4a4464ed4af18eed781620ccc HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: 化学理论计算算法 生物结构解析 DNA 表面TERS 学术期刊 影响因子 中科院分区...
+INFO:     47.92.147.111:11877 - "POST /messages/?session_id=1f6eaacd199441efa571a40043f9d7b2 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: "化学理论计算" "DNA结构解析" "表面增强拉曼 TERS" 学术期刊 影响因子 2025...
+INFO:     47.92.83.79:42034 - "POST /messages/?session_id=852eb2b4a4464ed4af18eed781620ccc HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:38170 - "POST /messages/?session_id=1f6eaacd199441efa571a40043f9d7b2 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.83.79:39178 - "POST /messages/?session_id=852eb2b4a4464ed4af18eed781620ccc HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: 表面增强拉曼光谱 TERS 期刊 纳米光子学 理论计算化学 Journal of Physical Chemistry 影响因子...
+INFO:     47.92.147.111:62141 - "POST /messages/?session_id=1f6eaacd199441efa571a40043f9d7b2 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: "Journal of Chemical Physics" "Nucleic Acids Research" "Journal of Physical Chemistry" "ACS Nano" "Nature Communications" "Science Advances" 最新影响因子 2025 JCR分区...
+INFO:     47.92.83.79:39178 - "POST /messages/?session_id=852eb2b4a4464ed4af18eed781620ccc HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:43922 - "POST /messages/?session_id=1f6eaacd199441efa571a40043f9d7b2 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.83.79:51562 - "POST /messages/?session_id=852eb2b4a4464ed4af18eed781620ccc HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: Journal of Chemical Theory and Computation Physical Chemistry Chemical Physics Nucleic Acids Research DNA 结构解析 期刊 影响因子...
+INFO:     47.92.83.79:56070 - "POST /messages/?session_id=852eb2b4a4464ed4af18eed781620ccc HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     44.220.188.94:56258 - "GET / HTTP/1.1" 404 Not Found
+INFO:     59.82.21.187:61670 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     162.216.150.109:60244 - "GET / HTTP/1.1" 404 Not Found
+INFO:     59.82.21.27:49359 - "GET / HTTP/1.1" 404 Not Found
+Tool already exists: doaj_journal_info
+INFO:     Started server process [1145]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:50001 (Press CTRL+C to quit)
+INFO:     47.92.147.111:4714 - "GET /sse HTTP/1.1" 200 OK
+INFO:     47.92.147.111:58634 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+INFO:     47.92.147.111:58634 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+INFO:     47.92.147.111:58634 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:58634 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: Nature journal 2024 impact factor JCR classification ISSN...
+INFO:     47.92.147.111:1298 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:1298 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: Nature 期刊 中科院分区 大类小类 材料科学 工程技术 分区情况...
+INFO:     47.92.147.111:24576 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:24576 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: Nature journal founding year scope aims readership academic reputation acceptance rate...
+INFO:     47.92.147.111:24576 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.83.79:35546 - "GET /sse HTTP/1.1" 200 OK
+INFO:     47.92.83.79:35558 - "POST /messages/?session_id=73cd01d8a01b49189b00d8eee4994a97 HTTP/1.1" 202 Accepted
+INFO:     47.92.83.79:35558 - "POST /messages/?session_id=73cd01d8a01b49189b00d8eee4994a97 HTTP/1.1" 202 Accepted
+INFO:     47.92.83.79:35558 - "POST /messages/?session_id=73cd01d8a01b49189b00d8eee4994a97 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.83.79:35558 - "POST /messages/?session_id=73cd01d8a01b49189b00d8eee4994a97 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: Nature journal impact factor 2024 JCR partition中科院分区...
+INFO:     47.92.83.79:35558 - "POST /messages/?session_id=73cd01d8a01b49189b00d8eee4994a97 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.83.79:35558 - "POST /messages/?session_id=73cd01d8a01b49189b00d8eee4994a97 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: Nature期刊中科院分区2024年综合大类1区...
+INFO:     47.92.83.79:35558 - "POST /messages/?session_id=73cd01d8a01b49189b00d8eee4994a97 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.83.79:35032 - "GET /sse HTTP/1.1" 200 OK
+INFO:     47.92.83.79:35038 - "POST /messages/?session_id=8a541351566c46409c87459f28b72db0 HTTP/1.1" 202 Accepted
+INFO:     47.92.83.79:35038 - "POST /messages/?session_id=8a541351566c46409c87459f28b72db0 HTTP/1.1" 202 Accepted
+INFO:     47.92.83.79:35038 - "POST /messages/?session_id=8a541351566c46409c87459f28b72db0 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.83.79:44898 - "POST /messages/?session_id=8a541351566c46409c87459f28b72db0 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: Nature journal impact factor 2023 2024 中科院分区 JCR分区...
+INFO:     47.92.83.79:44898 - "POST /messages/?session_id=8a541351566c46409c87459f28b72db0 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:10113 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:51119 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: chemistry computational methods theoretical calculation DNA structure analysis TERS surface enhanced Raman scattering academic journals 2024...
+INFO:     47.92.147.111:51119 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:51119 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: Journal of Chemical Theory and Computation JCIM Journal of Computational Chemistry TERS DNA computational modeling impact factor 2024 SCIE...
+INFO:     47.92.147.111:51119 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:51119 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: Analytical Chemistry ACS Physical Chemistry Chemical Science Physical Chemistry Chemical Physics Nature Communications DNA structure modeling spectroscopy journals 2024...
+INFO:     47.92.147.111:51119 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:47370 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: Journal of Chemical Physics Journal of Physical Chemistry Nucleic Acids Research Biophysical Journal structure function DNA spectroscopy 2024 impact factor...
+INFO:     47.92.147.111:47370 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:41911 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:58258 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: 化学理论计算算法 生物结构解析 DNA 表面TERS 学术期刊 推荐 2024...
+INFO:     47.92.147.111:54200 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:64440 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: "Chemical Physics" "Journal of Chemical Theory and Computation" "Nucleic Acids Research" TERS Raman 期刊 最新影响因子 分区...
+INFO:     47.92.147.111:24832 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:35486 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: "Physical Chemistry Chemical Physics" "Journal of Physical Chemistry" "Nature Communications" IF 2024 中科院分区 JCR...
+INFO:     47.92.147.111:35486 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:43746 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:51665 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:51665 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: TAXON 期刊 影响因子 中科院分区 JCR 分区 植物分类学...
+INFO:     47.92.147.111:51665 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:51665 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: "TAXON" journal impact factor 2024 plant systematics classification Wiley...
+INFO:     47.92.147.111:51665 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:56707 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: "TAXON" 中科院分区 SCI 期刊 植物分类学 系统发育学 进化生物学...
+INFO:     47.92.147.111:56707 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:56707 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在 DOAJ 中搜索期刊: TAXON...
+INFO:     47.92.147.111:56707 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:50054 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:23941 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: 植物采集史 植物学史 历史植物学 合适期刊 投稿 影响因子...
+INFO:     47.92.147.111:23941 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:8121 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: 植物学史 科学史 期刊 history of botany 植物采集史 文献...
+INFO:     47.92.147.111:8846 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:60636 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:52597 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: "Journal of the History of Biology" 影响因子 中科院分区 投稿指南...
+INFO:     47.92.147.111:52597 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:53335 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: "Journal of the History of Biology" 主编 编辑委员会 投稿系统 历史期刊...
+INFO:     47.92.147.111:30436 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:59811 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:2371 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: "Journal of the History of Collections" 影响因子 中科院分区 投稿指南...
+INFO:     47.92.147.111:2371 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:54122 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: "Journal of the History of Collections" Oxford University Press 收藏史 博物馆 专题...
+INFO:     47.92.147.111:54122 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:47807 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:65183 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: "Perspectives in Plant Ecology, Evolution and Systematics" 影响因子 中科院分区 投稿指南...
+INFO:     47.92.147.111:65183 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:24943 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: "Perspectives in Plant Ecology, Evolution and Systematics" Elsevier 影响因子 投稿 植物生态...
+INFO:     47.92.147.111:24943 - "POST /messages/?session_id=3f5718453c9947658818da487ea01034 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:39006 - "GET /sse HTTP/1.1" 200 OK
+INFO:     47.92.147.111:43684 - "POST /messages/?session_id=db368f9d7f6545678773de7bd5d1d433 HTTP/1.1" 202 Accepted
+INFO:     47.92.147.111:43684 - "POST /messages/?session_id=db368f9d7f6545678773de7bd5d1d433 HTTP/1.1" 202 Accepted
+INFO:     47.92.147.111:43684 - "POST /messages/?session_id=db368f9d7f6545678773de7bd5d1d433 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:14413 - "POST /messages/?session_id=db368f9d7f6545678773de7bd5d1d433 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: Perspectives in Plant Ecology, Evolution and Systematics impact factor 2024 journal info...
+INFO:     47.92.147.111:14413 - "POST /messages/?session_id=db368f9d7f6545678773de7bd5d1d433 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:14413 - "POST /messages/?session_id=db368f9d7f6545678773de7bd5d1d433 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: Perspectives in Plant Ecology Evolution and Systematics 中科院分区 JCR分区 期刊特点 评价...
+INFO:     47.92.147.111:14413 - "POST /messages/?session_id=db368f9d7f6545678773de7bd5d1d433 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:14413 - "POST /messages/?session_id=db368f9d7f6545678773de7bd5d1d433 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在 DOAJ 中搜索期刊: Perspectives in Plant Ecology, Evolution and Systematics...
+INFO:     47.92.147.111:14413 - "POST /messages/?session_id=db368f9d7f6545678773de7bd5d1d433 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:58627 - "POST /messages/?session_id=db368f9d7f6545678773de7bd5d1d433 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:53787 - "POST /messages/?session_id=db368f9d7f6545678773de7bd5d1d433 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=plant+collection+history+ethnobotany+historical+botany&id_list=&sortBy=relevance&sortOrder=descending&start=0&max_results=100
+Got first page: 100 of 170615 total results
+Results are saved in: papers/plant_collection_history_ethnobotany_historical_botany/papers_info.json
+INFO:     47.92.147.111:46574 - "POST /messages/?session_id=db368f9d7f6545678773de7bd5d1d433 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:46574 - "POST /messages/?session_id=db368f9d7f6545678773de7bd5d1d433 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: plant collection history ethnobotany historical botany journals impact factor 2024...
+INFO:     47.92.147.111:46574 - "POST /messages/?session_id=db368f9d7f6545678773de7bd5d1d433 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:28208 - "POST /messages/?session_id=db368f9d7f6545678773de7bd5d1d433 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: "historical ethnobotany" "history of plant collecting" journals JCR Q1 Q2...
+INFO:     47.92.147.111:27467 - "POST /messages/?session_id=db368f9d7f6545678773de7bd5d1d433 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:3972 - "POST /messages/?session_id=db368f9d7f6545678773de7bd5d1d433 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:56003 - "POST /messages/?session_id=db368f9d7f6545678773de7bd5d1d433 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: TAXON journal plant collection history ethnobotany impact factor...
+INFO:     47.92.147.111:56003 - "POST /messages/?session_id=db368f9d7f6545678773de7bd5d1d433 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:31701 - "POST /messages/?session_id=db368f9d7f6545678773de7bd5d1d433 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:11013 - "POST /messages/?session_id=db368f9d7f6545678773de7bd5d1d433 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: "Taxon" "Wiley" "SCI" "SCIE" 中国 期刊 收录...
+INFO:     47.92.147.111:11013 - "POST /messages/?session_id=db368f9d7f6545678773de7bd5d1d433 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:56161 - "POST /messages/?session_id=db368f9d7f6545678773de7bd5d1d433 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: Plants MDPI 中科院 分区 SCI SCIE 收录...
+INFO:     47.92.147.111:8553 - "POST /messages/?session_id=db368f9d7f6545678773de7bd5d1d433 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:5803 - "POST /messages/?session_id=db368f9d7f6545678773de7bd5d1d433 HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: "Journal of Ethnobiology and Ethnomedicine" SCI SCIE 收录...
+INFO:     47.92.147.111:5803 - "POST /messages/?session_id=db368f9d7f6545678773de7bd5d1d433 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:14042 - "GET /sse HTTP/1.1" 200 OK
+INFO:     47.92.147.111:30167 - "POST /messages/?session_id=fb9d7c7cb1934e57bcb6a90ff804b1b1 HTTP/1.1" 202 Accepted
+INFO:     47.92.147.111:30167 - "POST /messages/?session_id=fb9d7c7cb1934e57bcb6a90ff804b1b1 HTTP/1.1" 202 Accepted
+INFO:     47.92.147.111:30167 - "POST /messages/?session_id=fb9d7c7cb1934e57bcb6a90ff804b1b1 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     47.92.147.111:18221 - "POST /messages/?session_id=fb9d7c7cb1934e57bcb6a90ff804b1b1 HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.138.179:54880 - "GET / HTTP/1.1" 404 Not Found
+INFO:     167.94.138.179:40348 - "GET / HTTP/1.1" 404 Not Found
+INFO:     167.94.138.179:40356 - "PRI %2A HTTP/2.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.138.179:38212 - "PRI %2A HTTP/2.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.138.179:38222 - "GET /security.txt HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     113.141.80.245:51980 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     87.236.176.20:46155 - "GET / HTTP/1.1" 404 Not Found
+Tool already exists: doaj_journal_info
+INFO:     Started server process [874]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:50001 (Press CTRL+C to quit)
+INFO:     162.216.149.65:60986 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:42384 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42388 - "POST /messages/?session_id=25ff26b136eb4b2faa45561f6cd7dc7d HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:42388 - "POST /messages/?session_id=25ff26b136eb4b2faa45561f6cd7dc7d HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:42388 - "POST /messages/?session_id=25ff26b136eb4b2faa45561f6cd7dc7d HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     165.154.227.205:43728 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     206.168.34.127:40038 - "GET / HTTP/1.1" 404 Not Found
+INFO:     206.168.34.127:48274 - "PRI %2A HTTP/2.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     206.168.34.127:48286 - "PRI %2A HTTP/2.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     206.168.34.127:59826 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     162.216.150.197:64248 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     162.216.150.90:62832 - "GET / HTTP/1.1" 404 Not Found
+INFO:     162.216.150.173:64450 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     199.45.154.144:40964 - "GET / HTTP/1.1" 404 Not Found
+INFO:     199.45.154.144:45614 - "GET / HTTP/1.1" 404 Not Found
+INFO:     199.45.154.144:45626 - "PRI %2A HTTP/2.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     199.45.154.144:52942 - "PRI %2A HTTP/2.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     199.45.154.144:52958 - "GET /security.txt HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.138.163:37176 - "GET / HTTP/1.1" 404 Not Found
+INFO:     167.94.138.163:36936 - "PRI %2A HTTP/2.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.138.163:34886 - "PRI %2A HTTP/2.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.138.163:34890 - "GET /robots.txt HTTP/1.1" 404 Not Found
+Tool already exists: doaj_journal_info
+INFO:     Started server process [2285]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+ERROR:    [Errno 98] error while attempting to bind on address ('0.0.0.0', 50001): address already in use
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+Tool already exists: doaj_journal_info
+INFO:     Started server process [2335]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+ERROR:    [Errno 98] error while attempting to bind on address ('0.0.0.0', 50001): address already in use
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+Tool already exists: doaj_journal_info
+INFO:     Started server process [2378]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+ERROR:    [Errno 98] error while attempting to bind on address ('0.0.0.0', 50001): address already in use
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+Tool already exists: doaj_journal_info
+INFO:     Started server process [1146]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:50001 (Press CTRL+C to quit)
+Tool already exists: doaj_journal_info
+INFO:     Started server process [1976]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+ERROR:    [Errno 98] error while attempting to bind on address ('0.0.0.0', 50001): address already in use
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+Tool already exists: doaj_journal_info
+INFO:     Started server process [2426]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+ERROR:    [Errno 98] error while attempting to bind on address ('0.0.0.0', 50001): address already in use
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     127.0.0.1:59030 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59032 - "POST /messages/?session_id=90eb33c837b34f6887c1db3b02f5505e HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:59032 - "POST /messages/?session_id=90eb33c837b34f6887c1db3b02f5505e HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:59032 - "POST /messages/?session_id=90eb33c837b34f6887c1db3b02f5505e HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:33784 - "POST /messages/?session_id=90eb33c837b34f6887c1db3b02f5505e HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: Nature 期刊 影响因子 2024 中科院分区 JCR分区...
+INFO:     127.0.0.1:33784 - "POST /messages/?session_id=90eb33c837b34f6887c1db3b02f5505e HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:41892 - "POST /messages/?session_id=90eb33c837b34f6887c1db3b02f5505e HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: "Nature" 期刊 影响因子 2024最新 学术界评价 期刊特色...
+INFO:     127.0.0.1:41892 - "POST /messages/?session_id=90eb33c837b34f6887c1db3b02f5505e HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     127.0.0.1:59582 - "POST /messages/?session_id=90eb33c837b34f6887c1db3b02f5505e HTTP/1.1" 202 Accepted
+Processing request of type CallToolRequest
+正在使用 Tavily API 执行网络搜索: Nature 期刊投稿难度 审稿周期 接受率 学术声誉评价...
+INFO:     127.0.0.1:40792 - "POST /messages/?session_id=90eb33c837b34f6887c1db3b02f5505e HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+Tool already exists: doaj_journal_info
+INFO:     Started server process [2849]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+ERROR:    [Errno 98] error while attempting to bind on address ('0.0.0.0', 50001): address already in use
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+Tool already exists: doaj_journal_info
+INFO:     Started server process [2956]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+ERROR:    [Errno 98] error while attempting to bind on address ('0.0.0.0', 50001): address already in use
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     204.76.203.50:52098 - "GET http%3A//azenv.net/ HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     162.142.125.206:40148 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     162.142.125.206:49742 - "GET / HTTP/1.1" 404 Not Found
+INFO:     162.142.125.206:49760 - "PRI %2A HTTP/2.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     162.142.125.206:49784 - "GET /login HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     176.65.149.202:52464 - "GET / HTTP/1.1" 404 Not Found
+INFO:     176.65.149.202:52480 - "GET /index.htm HTTP/1.1" 404 Not Found
+INFO:     113.215.189.92:42855 - "GET / HTTP/1.1" 404 Not Found
+INFO:     204.76.203.50:35012 - "GET http%3A//azenv.net/ HTTP/1.1" 404 Not Found
+INFO:     59.82.83.161:29192 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     185.226.197.27:33827 - "GET / HTTP/1.1" 404 Not Found
+INFO:     185.226.197.27:48145 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     165.154.11.170:46980 - "GET / HTTP/1.1" 404 Not Found
+INFO:     165.154.11.170:46992 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     165.154.11.170:47000 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     165.154.11.170:47006 - "GET /sitemap.xml HTTP/1.1" 404 Not Found
+INFO:     165.154.11.170:47018 - "GET /sse HTTP/1.1" 200 OK
+INFO:     165.154.11.170:36250 - "GET /sse HTTP/1.1" 200 OK
+INFO:     165.154.11.170:36260 - "POST /messages/?session_id=bd94ab77b61d4424873fe25e3ec25a0a HTTP/1.1" 202 Accepted
+INFO:     165.154.11.170:36276 - "POST /messages/?session_id=bd94ab77b61d4424873fe25e3ec25a0a HTTP/1.1" 202 Accepted
+INFO:     165.154.11.170:36280 - "POST /messages/?session_id=bd94ab77b61d4424873fe25e3ec25a0a HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+INFO:     176.65.149.202:43704 - "GET / HTTP/1.1" 404 Not Found
+INFO:     176.65.149.202:43714 - "GET /index.htm HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     204.76.203.50:52616 - "GET http%3A//azenv.net/ HTTP/1.1" 404 Not Found
+Tool already exists: doaj_journal_info
+INFO:     Started server process [3647]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:50001 (Press CTRL+C to quit)
+Tool already exists: doaj_journal_info
+INFO:     Started server process [5384]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+ERROR:    [Errno 98] error while attempting to bind on address ('0.0.0.0', 50001): address already in use
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+Tool already exists: doaj_journal_info
+INFO:     Started server process [5574]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+ERROR:    [Errno 98] error while attempting to bind on address ('0.0.0.0', 50001): address already in use
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     127.0.0.1:41396 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41412 - "POST /messages/?session_id=d6a5ff94d3e444e3b9a8b4ce965ad7cc HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:41412 - "POST /messages/?session_id=d6a5ff94d3e444e3b9a8b4ce965ad7cc HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:41412 - "POST /messages/?session_id=d6a5ff94d3e444e3b9a8b4ce965ad7cc HTTP/1.1" 202 Accepted
+Processing request of type ListToolsRequest
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     91.230.168.195:44035 - "GET / HTTP/1.1" 404 Not Found
+INFO:     91.230.168.225:51655 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     176.117.107.62:58704 - "CONNECT 1.1.1.1%3A443 HTTP/1.0" 404 Not Found
+INFO:     176.117.107.62:58706 - "CONNECT 176.117.107.62%3A80 HTTP/1.0" 404 Not Found
+INFO:     176.117.107.62:58714 - "CONNECT 176.117.107.62%3A80 HTTP/1.0" 404 Not Found
+INFO:     204.76.203.50:33334 - "GET http%3A//azenv.net/ HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     199.45.154.133:38366 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     199.45.154.133:58482 - "GET / HTTP/1.1" 404 Not Found
+INFO:     199.45.154.133:58500 - "PRI %2A HTTP/2.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     199.45.154.133:36896 - "GET /security.txt HTTP/1.1" 404 Not Found
+INFO:     59.82.83.223:33155 - "GET / HTTP/1.1" 404 Not Found
+INFO:     204.76.203.50:51250 - "GET http%3A//azenv.net/ HTTP/1.1" 404 Not Found
+INFO:     162.216.149.116:64170 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     113.215.189.191:40857 - "GET / HTTP/1.1" 404 Not Found
+INFO:     35.203.211.28:62834 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     204.76.203.50:58792 - "GET http%3A//azenv.net/ HTTP/1.1" 404 Not Found
