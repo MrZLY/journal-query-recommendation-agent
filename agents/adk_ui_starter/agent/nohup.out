@@ -659,3 +659,15 @@ INFO:     35.203.211.28:62834 - "GET / HTTP/1.1" 404 Not Found
 WARNING:  Invalid HTTP request received.
 WARNING:  Invalid HTTP request received.
 INFO:     204.76.203.50:58792 - "GET http%3A//azenv.net/ HTTP/1.1" 404 Not Found
+INFO:     162.216.149.186:61710 - "GET / HTTP/1.1" 404 Not Found
+Tool already exists: doaj_journal_info
+INFO:     Started server process [7224]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+ERROR:    [Errno 98] error while attempting to bind on address ('0.0.0.0', 50001): address already in use
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+WARNING:  Invalid HTTP request received.
+INFO:     91.196.152.76:49715 - "GET / HTTP/1.1" 404 Not Found
+INFO:     91.196.152.61:38363 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     204.76.203.50:43978 - "GET http%3A//azenv.net/ HTTP/1.1" 404 Not Found

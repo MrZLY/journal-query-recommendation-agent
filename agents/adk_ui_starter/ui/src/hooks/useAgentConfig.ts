@@ -28,6 +28,7 @@ interface AgentConfig {
     port: number
     reconnectInterval?: number
   }
+  photon_cost?: number
 }
 
 const defaultConfig: AgentConfig = {
@@ -50,7 +51,8 @@ const defaultConfig: AgentConfig = {
   websocket: {
     host: 'localhost',
     port: 8000
-  }
+  },
+  photon_cost: 10
 }
 
 export function useAgentConfig() {

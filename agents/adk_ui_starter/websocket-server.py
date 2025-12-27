@@ -129,6 +129,13 @@ class ConnectionContext:
         self.user_id = f"user_{uuid.uuid4().hex[:8]}"
 
 
+
+def get_photon_cost():
+    try:
+        return int(os.getenv("guangzi_num"))
+    except ValueError:
+        return 10
+
 def charge_photon(access_key, client_name, sku_id=10047, amount=10):
     if not access_key:
         logger.warning("No access key found, skipping charge")
@@ -368,7 +375,7 @@ class SessionManager:
         client_name = context.websocket.cookies.get("clientName")
         
         if access_key:
-            success, msg = await asyncio.to_thread(charge_photon, access_key, client_name)
+            success, msg = await asyncio.to_thread(charge_photon, access_key, client_name, amount=get_photon_cost())
             if not success:
                 logger.error(f"Photon charge failed: {msg}")
                 await context.websocket.send_json({
@@ -737,7 +744,8 @@ async def get_config():
         "agent": agentconfig.config.get("agent", {}),
         "ui": agentconfig.get_ui_config(),
         "files": agentconfig.get_files_config(),
-        "websocket": agentconfig.get_websocket_config()
+        "websocket": agentconfig.get_websocket_config(),
+        "photon_cost": get_photon_cost()
     })
 
 # 安全的命令白名单
